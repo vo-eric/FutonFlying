@@ -40,11 +40,10 @@ Component Hierarchy
   * Date Component
   * Host Container
 
-Routes
------------------------------------------------------------------------
+## Routes
 
-        Path               |   Component
----------------------------|------------------------------
+Path | Component
+---------------------------|-------------------
 "/sign-up"                 |   "AuthFormContainer"
 "/log-in"                  |   "AuthFormContainer"
 "/futons/:futonId"         |   "HostsContainer"
