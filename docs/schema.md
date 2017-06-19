@@ -17,7 +17,7 @@ interests       | string    | not null
   - belongs_to: city
 
 
-##city
+## city
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key

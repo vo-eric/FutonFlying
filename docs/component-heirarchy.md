@@ -43,11 +43,11 @@ Component Hierarchy
 Routes
 -----------------------------------------------------------------------
 
-        Path                                Component
-----------------------------------------------------------------------
-"/sign-up"                                "AuthFormContainer"
-"/log-in"                                 "AuthFormContainer"
-"/futons/:futonId"                        "HostsContainer"
-"/futons/:futonId/booking"                "BookingContainer"
-"/search"                                 "Search"
-"/home"                                   "DashboardContainer"
+        Path                   |             Component
+-------------------------------|--------------------------------------
+"/sign-up"                     |           "AuthFormContainer"
+"/log-in"                      |          "AuthFormContainer"
+"/futons/:futonId"             |           "HostsContainer"
+"/futons/:futonId/booking"     |           "BookingContainer"
+"/search"                      |           "Search"
+"/home"                        |           "DashboardContainer"
