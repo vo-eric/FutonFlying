@@ -1,11 +1,11 @@
 ## Design Documents
-* [View Wireframes][views]
+* [View Wireframes][wireframes]
 * [React Components][components]
 * [Sample State][sample-state]
 * [API Endpoints][api-endpoints]
 * [DB Schema][schema]
 
-[views]: ./wireframe
+[wireframes]: ./wireframes
 [components]: ./components.md
 [sample-state]: ./sample-state.md
 [api-endpoints]: ./api-endpoints.md
