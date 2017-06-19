@@ -1,39 +1,39 @@
 HTML API
 ----------------------------------------------------------------
 
-###Root
+### Root
   * GET /
 
 JSON API
 ----------------------------------------------------------------------
 
-###Users
+### Users
   * POST /api/users
   * PATCH /api/users
 
-###Session
+### Session
   * POST /api/session
   * DELETE /api/session
 
-###Hostings
+### Hostings
   * GET /api/hostings
   * POST /api/hostings
   * GET /api/hostings/:id
   * DELETE /api/hostings/:id
   * PATCH /api/hostings/:id
 
-###Bookings
+### Bookings
   * GET /api/bookings
   * POST /api/bookings
   * GET /api/bookings/:id
   * DELETE /api/bookings/:id
 
-###Reviews
+### Reviews
   * GET /api/hosts/:host_id/reviews
   * POST /api/hosts/:host_id/reviews
   * DELETE /api/hosts/:host_id/reviews/:review_id
 
-###Profile
+### Profile
   * POST /api/profile
   * GET /api/profile/:id
   * PATCH /api/profile/:id

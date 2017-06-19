@@ -6,7 +6,7 @@
 * [DB Schema][schema]
 
 [wireframes]: ./wireframes
-[components]: ./components.md
+[components]: ./component-heirarchy.md
 [sample-state]: ./sample-state.md
 [api-endpoints]: ./api-endpoints.md
 [schema]: ./schema.md
