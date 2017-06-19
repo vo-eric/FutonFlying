@@ -1,24 +1,24 @@
 Component Hierarchy
 -----------------------------------------------------------------------
 
-###AuthFormContainer
+### AuthFormContainer
   * Sign Up
   * Log In
 
-###DashboardContainer/HomeContainer
+### DashboardContainer/HomeContainer
   * Header
   * User Details
   * Trips Index
   * Guests Index
   * Searchbar
 
-###Header (persistent throughout all pages if signed in & not in dashboard)
+### Header (persistent throughout all pages if signed in & not in dashboard)
   * Logo
   * Current User Photo
   * Messages
   * Search (not available if in dashboard)
 
-###Search
+### Search
   * Hosts Index
     * Hosts Index Item (showing X random hosts)
   * Visitors Index
@@ -27,16 +27,16 @@ Component Hierarchy
   * Map Container
   * Information Container
 
-###UsersContainer
+### UsersContainer
   * Booking Container
     * Date Component (if they are accepting guests)
   * Message Container
 
-###BookingContainer
+### BookingContainer
   * Date Component
   * Traveler Container
 
-###HostingContainer
+### HostingContainer
   * Date Component
   * Host Container
 
