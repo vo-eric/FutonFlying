@@ -1,4 +1,4 @@
-{
+```js{
   currentUser: {
     id: 1,
     first_name: "Trent",
@@ -45,4 +45,4 @@
       }
     }
   }
-}
+}```
