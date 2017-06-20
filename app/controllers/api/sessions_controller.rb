@@ -1,11 +1,11 @@
 class Api::SessionsController < ApplicationController
   def create
-    @user = User.find_by_credentials(
+    user = User.find_by_credentials(
       params[:user][:username],
       params[:user][:password]
     )
 
-    if @user
+    if user
       login(user)
       render "api/users/show"
     else
@@ -17,7 +17,7 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout
-      render "{}"
+      render "api/users/show"
     else
       render json: ["You can't destroy what's not there"], status: 404
     end
