@@ -1,17 +1,16 @@
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      fname: "",
+      lname: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
   }
 
   update(property) {
@@ -37,7 +36,7 @@ class SessionForm extends React.Component {
   renderErrors() {
     return (
       <ul>
-        {this.props.errors.map(error, i) => (
+        {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
@@ -48,19 +47,16 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+      <div>
+        <form onSubmit={this.handleSubmit}>
           Welcome to FutonFlying!
           <br/>
-          Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
-          <div className="login-form">
+          <div>
             <br/>
             <label>Username:
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="login-input"
               />
             </label>
             <br/>
@@ -68,7 +64,6 @@ class SessionForm extends React.Component {
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"
               />
             </label>
             <br/>
@@ -80,4 +75,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default withRouter(SessionForm);
+export default SessionForm;

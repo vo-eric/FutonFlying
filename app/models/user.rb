@@ -24,9 +24,6 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  # has_many :reviews, :bookings, :hostings
-  # belongs_to :city
-
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
     @user && @user.is_password?(password) ? @user : nil
@@ -43,6 +40,7 @@ class User < ActiveRecord::Base
 
   def reset_session_token
     self.session_token = SecureRandom.urlsafe_base64(16)
+    ensure_session_token_uniqueness
     self.save
     self.session_token
   end
