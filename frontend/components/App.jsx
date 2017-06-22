@@ -8,8 +8,11 @@ const App = () => (
   <div>
     <HeaderContainer />
     <ModalContainer />
-    <Route path="/login" component={SessionFormContainer} />
-    <Route path="/signup" component={SessionFormContainer} />
+    <p> YOU CANT STOP THE BEAT. YOU CANT STOP THE BEAT.
+      YOU CANT STOP THE BEAT. YOU CANT STOP THE BEAT.
+      YOU CANT STOP THE BEAT. YOU CANT STOP THE BEAT. 
+      YOU CANT STOP THE BEAT. YOU CANT STOP THE BEAT.
+      YOU CANT STOP THE BEAT. YOU CANT STOP THE BEAT. </p>
   </div>
 );
 

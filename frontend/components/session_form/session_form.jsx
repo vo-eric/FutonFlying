@@ -41,35 +41,99 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="username"
-            value={this.state.username}
-            onChange={this.update('username')}
-            className="login-input"
-          />
+    if (this.props.formType === 'login') {
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              placeholder="username"
+              value={this.state.username}
+              onChange={this.update('username')}
+              className="login-input"
+            />
+            <br/>
+            <input
+              type="password"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="login-input"
+            />
           <br/>
-          <input
-            type="password"
-            placeholder="username"
-            value={this.state.password}
-            onChange={this.update('password')}
-            className="login-input"
-          />
-        <br/>
-        <span>
-          or
-        </span>
-        <br/>
-          <input type="submit" value="Submit" />
-      </form>
-    </div>
-    );
+          <br/>
+            <input type="submit" value="Submit" />
+        </form>
+      </div>
+      );
+    } else if (this.props.formType === 'signup') {
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              placeholder="first name"
+              value={this.state.fname}
+              onChange={this.update('fname')}
+              className="signup-input"
+            />
+
+            <input
+              type="text"
+              placeholder="last name"
+              value={this.state.lname}
+              onChange={this.update('lname')}
+              clasName="signup-input"
+            />
+
+            <input
+              type="text"
+              placeholder="username"
+              value={this.state.username}
+              onChange={this.update('username')}
+              clasName="signup-input"
+            />
+
+            <input
+              type="text"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              clasName="signup-input"
+            />
+
+          </form>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              placeholder="username"
+              value={this.state.username}
+              onChange={this.update('username')}
+              className="login-input"
+              />
+            <br/>
+            <input
+              type="password"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="login-input"
+              />
+            <br/>
+            <br/>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      );
+    }
   }
 
+  //NOTE: want to add a guest user
 
 }
 

@@ -26,7 +26,7 @@ class Header extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className="sign-out">
-          <span onClick={this.handleClick}>Sign Out</span>
+          <button onClick={this.handleClick}>Sign Out</button>
         </div>
         //want this to redirect to the homepage
       );
@@ -36,23 +36,24 @@ class Header extends React.Component {
   notLoggedIn() {
     if (!this.props.currentUser) {
       return (
-        <div>
+        <section className="header">
+          <span className="wordmark">futon flying</span>
+          <div className="auth-buttons">
+            <button
+              className='join-button'
+              onClick={() => this.clearErrorsOpenModal(
+                <SessionFormContainer formType='signup' />)}>
+              Join
+            </button>
 
-          <button
-            className='join-button'
-            onClick={() => this.clearErrorsOpenModal(
-              <SessionFormContainer formType='signup' />)}>
-            Join
-          </button>
-
-          <button
-            className='login-button'
-            onClick={() => this.clearErrorsOpenModal(
-              <SessionFormContainer formType='login' />)}>
-            Log In
-          </button>
-
-        </div>
+            <button
+              className='login-button'
+              onClick={() => this.clearErrorsOpenModal(
+                <SessionFormContainer formType='login' />)}>
+              Log In
+            </button>
+          </div>
+        </section>
       );
     }
   }

@@ -17,10 +17,13 @@ class Modal extends React.Component {
   render () {
     if (this.props.modalIsOpen) {
       return (
-        <div>
-          <span className="close-modal">TEXT</span>
-          <span className="session-modal">TEXT</span>
-          <button onClick={this.handleClick}>CLOSE</button>
+        <div className="auth-modal">
+          <button
+            className="close-modal"
+            onClick={this.handleClick}
+          >
+          CLOSE</button>
+        <span className="session-modal"><SessionFormContainer /></span>
         </div>
       );
     } else {
