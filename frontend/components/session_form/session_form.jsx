@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
-      password: "",
-      fname: "",
-      lname: "",
+      password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -24,14 +22,11 @@ class SessionForm extends React.Component {
     const user = this.state;
     this.props.processForm({user});
   }
-
-  navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">Sign Up</Link>;
-    } else {
-      return <Link to="/login">Log In</Link>;
-    }
-  }
+  // if (this.props.formType === 'login') {
+  //   this.props.login({user}).then(this.props.closeModal);
+  // } else if (this.props.formType === 'signup') {
+  //   this.props.singup({user}).then(this.props.closeModal);
+  // }
 
   renderErrors() {
     return (
@@ -49,30 +44,33 @@ class SessionForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          Welcome to FutonFlying!
+          <input
+            type="text"
+            placeholder="username"
+            value={this.state.username}
+            onChange={this.update('username')}
+            className="login-input"
+          />
           <br/>
-          <div>
-            <br/>
-            <label>Username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-              />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-              />
-            </label>
-            <br/>
-            <input type="submit" value="Submit" />
-          </div>
-        </form>
-      </div>
+          <input
+            type="password"
+            placeholder="username"
+            value={this.state.password}
+            onChange={this.update('password')}
+            className="login-input"
+          />
+        <br/>
+        <span>
+          or
+        </span>
+        <br/>
+          <input type="submit" value="Submit" />
+      </form>
+    </div>
     );
   }
+
+
 }
 
 export default SessionForm;
