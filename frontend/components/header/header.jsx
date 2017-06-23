@@ -2,17 +2,22 @@ import React from 'react';
 import { Link, Route, Redirect } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
 import ModalContainer from '../modal/modal_container';
+import { login } from '../../actions/session_actions';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.clearErrorsOpenModal = this.clearErrorsOpenModal.bind(this)
+    this.clearErrorsOpenModal = this.clearErrorsOpenModal.bind(this);
+    this.handleDemoClick = this.handleDemoClick.bind(this);
   }
 
   handleClick(e) {
-    e.preventDefault();
     this.props.logout();
+  }
+
+  handleDemoClick(e) {
+    this.props.loginWenBo({user: {username: 'thebigbo92', password: 'boAndArro'}});
   }
 
   clearErrorsOpenModal(component) {
@@ -40,6 +45,9 @@ class Header extends React.Component {
     }
   }
 
+
+    // user1 = User.create!({username: "thebigbo92", password: "boAndArro", fname: "Wen Bo", lname: "Xie"})
+
   notLoggedIn() {
     if (!this.props.currentUser) {
       return (
@@ -59,6 +67,13 @@ class Header extends React.Component {
                 onClick={() => this.clearErrorsOpenModal(
                   <SessionFormContainer formType='login' />)}>
                 Log In
+              </button>
+
+              <button
+                className='login-guest'
+                onClick={this.handleDemoClick}
+              >
+                Guest
               </button>
             </div>
           </section>

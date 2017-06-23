@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { logout, clearErrors, login } from '../../actions/session_actions';
-import { openModal } from '../../actions/modal_actions';
+import { logout, clearErrors } from '../../actions/session_actions';
 import Header from './header';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ( state ) => {
   return {
@@ -12,10 +12,9 @@ const mapStateToProps = ( state ) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loginWenBo: (user) => dispatch(login(user)),
     logout: () => dispatch(logout()),
-    clearErrors: () => dispatch(clearErrors()),
-    openModal: (component) => dispatch(openModal(component))
+    openModal: (component) => dispatch(openModal(component)),
+    clearErrors: () => dispatch(clearErrors());
   };
 };
 

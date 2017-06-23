@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Header from '../header/header';
 import SessionFormContainer from './session_form_container';
-
+import ModalContainer from '../modal/modal_container';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -102,7 +102,7 @@ class SessionForm extends React.Component {
       return (
         <input
           type='submit'
-          value='Log in with Username'
+          value='Create an Account'
           className='submit-button'
         />
       );
@@ -114,6 +114,44 @@ class SessionForm extends React.Component {
           className='submit-button'
         />
       );
+    }
+  }
+
+  switchForm() {
+    if (this.props.formType === 'signup') {
+      return (
+        <div className='footer'>
+          <div className='alt-text'>
+            Already a member?
+            <br/>
+            <br/>
+            <button
+              className='form-switch'
+              onClick={() => this.clearErrorsOpenModal(
+                <SessionFormContainer formType='login' />)}
+            >
+            Log In
+            </button>
+          </div>
+        </div>
+      );
+    } else if (this.props.formType === 'login') {
+      return (
+        <div className='footer'>
+          <div className='alt-text'>
+            Don't have an account?
+            <br/>
+            <br/>
+            <button
+              className='form-switch'
+              onClick={() => this.clearErrorsOpenModal(
+                <SessionFormContainer formType='signup' />)}
+            >
+            Join
+            </button>
+          </div>
+        </div>
+      )
     }
   }
 
@@ -142,6 +180,7 @@ class SessionForm extends React.Component {
                 className="sign-log"
                 />
               {this.renderButton()}
+              {this.switchForm()}
             </div>
           </div>
         </form>

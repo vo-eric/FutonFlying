@@ -10,19 +10,20 @@
 
 .auth-modal {
   border: 1px solid #aeb5ba;
+  transition: .3s;
   font-family: 'Lato', sans-serif;
-  height: 603px;
-  width: 400px;
-  background: white;
+  height: 90%;
+  width: 50%;
+  background: rgba(255, 255, 255, 1);
   z-index: 2000;
   margin: 5% auto;
   border-radius: 5px;
 }
 
 .outside-modal {
+  transition: .3s;
   z-index: 1;
-  background: black;
-  opacity: .92;
+  background: rgba(0, 0, 0, .92);
   width: 100%;
   height: 100%;
   position: fixed;
@@ -67,4 +68,21 @@
   width: 100%;
   background: white;
   border: 1px solid #aeb5ba;
+}
+
+.alt-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.form-switch {
+  width: 30%;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid #287fb8;
+  background: white;
+  border-radius: 4px;
+  outline: 0;
 }

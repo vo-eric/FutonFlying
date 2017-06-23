@@ -10,8 +10,11 @@ class Modal extends React.Component {
   }
 
   handleClick(e) {
-    e.preventDefault;
     this.props.closeModal();
+  }
+
+  stopPropagation(e) {
+    e.stopPropagation();
   }
 
   // onClick={() => this.props.closeModal()}
@@ -19,8 +22,14 @@ class Modal extends React.Component {
   render () {
     if (this.props.modalIsOpen) {
       return (
-        <div className='outside-modal'>
-          <div className="auth-modal">
+        <div
+          className='outside-modal'
+          onClick={this.handleClick}
+        >
+          <div
+            className="auth-modal"
+            onClick={this.stopPropagation}
+          >
             <button
               className="close-modal"
               onClick={this.handleClick}
