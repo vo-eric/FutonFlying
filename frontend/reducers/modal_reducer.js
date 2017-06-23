@@ -13,7 +13,6 @@ const ModalReducer = (state = initialState, action) => {
   Object.freeze(state);
   switch(action.type) {
     case OPEN_MODAL:
-    debugger
       return Object.assign(
         {},
         state,

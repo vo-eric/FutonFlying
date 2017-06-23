@@ -3,12 +3,15 @@ import { withRouter } from 'react-router-dom';
 import Header from '../header/header';
 import SessionFormContainer from './session_form_container';
 
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      fname: "",
+      lname: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearErrorsOpenModal = this.clearErrorsOpenModal.bind(this);
@@ -27,34 +30,35 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = this.state;
-    this.props.processForm({user});
+    const user = Object.assign({},this.state);
+      if (this.props.formType === 'login') {
+        this.props.login({ user }).then(this.props.closeModal);
+      } else if (this.props.formType === 'signup') {
+        this.props.signup({ user }).then(this.props.closeModal);
+      }
+      this.setState({username: "", password: "", fname: "", lname: ""})
   }
 
-  handleFName() {
+  handleName() {
     if (this.props.formType === 'signup') {
       return (
-        <input
-          type="text"
-          placeholder="first name"
-          value={this.state.fname}
-          onChange={this.update('fname')}
-          className="signup-input"
-        />
-      );
-    }
-  }
+        <div className='whole-name'>
+          <input
+            type="text"
+            placeholder="first name"
+            value={this.state.fname}
+            onChange={this.update('fname')}
+            className="left-name"
+          />
 
-  handleLName() {
-    if (this.props.formType === 'signup') {
-      return (
-        <input
-          type="text"
-          placeholder="last name"
-          value={this.state.lname}
-          onChange={this.update('lname')}
-          clasName="signup-input"
-        />
+          <input
+            type="text"
+            placeholder="last name"
+            value={this.state.lname}
+            onChange={this.update('lname')}
+            className="right-name"
+          />
+      </div>
       );
     }
   }
@@ -75,19 +79,41 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'login') {
       return(
         <section>
-          <div className='sign-log'>
+          <div className='modal-head'>
             Log in to Futon Flying
           </div>
         </section>
       );
-    } else {
+    } else if (this.props.formType === 'signup'){
       return(
         <section>
-          <div className='sign-log'>
-            Sign up for Futon Flying
+          <div className='modal-head'>
+            Join Futonflying for free
           </div>
         </section>
       )
+    } else {
+      return ("You are here because formType is not login or signup");
+    }
+  }
+
+  renderButton() {
+    if (this.props.formType === 'signup') {
+      return (
+        <input
+          type='submit'
+          value='Log in with Username'
+          className='submit-button'
+        />
+      );
+    } else if (this.props.formType === 'login'){
+      return (
+        <input
+          type='submit'
+          value='Log In'
+          className='submit-button'
+        />
+      );
     }
   }
 
@@ -95,29 +121,28 @@ class SessionForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          {this.modalToRender()}
-          {this.renderErrors()}
-          {this.handleFName()}
-          {this.handleLName()}
           <div className='user-form'>
-            <input
-              type="text"
-              placeholder="username"
-              value={this.state.username}
-              onChange={this.update('username')}
-              className="login-input"
-            />
-            <br/>
-            <input
-              type="password"
-              placeholder="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              className="login-input"
-            />
-          <br/>
-          <br/>
-            <input type="submit" value="Submit" />
+            {this.modalToRender()}
+            {this.renderErrors()}
+            {this.handleName()}
+            <div className='auth-form'>
+              <input
+                type="text"
+                placeholder="username"
+                value={this.state.username}
+                onChange={this.update('username')}
+                className="sign-log"
+                />
+              <br/>
+              <input
+                type="password"
+                placeholder="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="sign-log"
+                />
+              {this.renderButton()}
+            </div>
           </div>
         </form>
       </div>

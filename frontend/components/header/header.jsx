@@ -18,7 +18,6 @@ class Header extends React.Component {
   clearErrorsOpenModal(component) {
     this.props.clearErrors();
     this.props.openModal(component);
-    debugger;
   }
 
 //Sign Out button will be changed to a photo with a drop down

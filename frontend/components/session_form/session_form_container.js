@@ -8,21 +8,19 @@ const mapStateToProps = state => {
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.session.errors,
+    formType: state.modal.component.props.formType
   };
 };
-// formtype: state.modal.component.props.formType
+// const processForm = (formType === 'login') ? login : signup;
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const formType = ownProps.location.pathname.slice(1);
-  const processForm = (formType === 'login') ? login : signup;
   return {
     login: user => dispatch(login(user)),
     signup: user => dispatch(signup(user)),
     processForm: user => dispatch(processForm(user)),
     clearErrors: () => dispatch(clearErrors()),
     closeModal: () => dispatch(closeModal()),
-    openModal: (component) => dispatch(openModal(component)),
-    formType
+    openModal: (component) => dispatch(openModal(component))
   };
 };
 

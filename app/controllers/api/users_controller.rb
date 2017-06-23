@@ -40,7 +40,8 @@ class Api::UsersController < ApplicationController
     :username,
     :password,
     :bio,
-    :city_id
+    :city_id,
+    :status
     )
   end
 end
