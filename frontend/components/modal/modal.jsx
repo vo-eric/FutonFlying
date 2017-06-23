@@ -14,17 +14,23 @@ class Modal extends React.Component {
     this.props.closeModal();
   }
 
+  // onClick={() => this.props.closeModal()}
+
   render () {
     if (this.props.modalIsOpen) {
       return (
-        <div className="auth-modal">
-          <button
-            className="close-modal"
-            onClick={this.handleClick}
-          >
-          CLOSE</button>
-        <span className="session-modal"><SessionFormContainer /></span>
+        <div>
+          <div className='outside-modal'>
+            <div className="auth-modal">
+              <button
+                className="close-modal"
+                onClick={this.handleClick}
+                >
+                CLOSE</button>
+              <span className="session-modal"><SessionFormContainer /></span>
+            </div>
         </div>
+      </div>
       );
     } else {
       return (

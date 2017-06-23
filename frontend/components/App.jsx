@@ -6,13 +6,10 @@ import ModalContainer from './modal/modal_container';
 
 const App = () => (
   <div>
-    <HeaderContainer />
-    <ModalContainer />
-    <p> YOU CANT STOP THE BEAT. YOU CANT STOP THE BEAT.
-      YOU CANT STOP THE BEAT. YOU CANT STOP THE BEAT.
-      YOU CANT STOP THE BEAT. YOU CANT STOP THE BEAT. 
-      YOU CANT STOP THE BEAT. YOU CANT STOP THE BEAT.
-      YOU CANT STOP THE BEAT. YOU CANT STOP THE BEAT. </p>
+    <section>
+      <ModalContainer />
+      <HeaderContainer />
+    </section>
   </div>
 );
 

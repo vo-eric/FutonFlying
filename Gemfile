@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
+gem 'paperclip', '5.0.0.beta1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'annotate'
 

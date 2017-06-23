@@ -4,7 +4,13 @@
 }
 
 .header {
-  position: relative;
+  position: fixed;
+  width: 100%;
+}
+
+.subheader {
+  justify-content: space-between;
+  background: white;
   display: flex;
   color: white;
   margin: 20px;
@@ -21,7 +27,7 @@
   font-weight: bold;
 }
 
-.join-button {
+.join-button, .sign-out {
   border: 1px solid #287fb8;
   font-family: 'Lato', sans-serif;
   background: #287fb8;
