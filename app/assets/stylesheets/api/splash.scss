@@ -1,0 +1,91 @@
+.tgp-text {
+  font-family: 'Lato', sans-serif;
+  color: #34495e;
+  text-align: center;
+  font-size: 30px;
+  font-style: normal;
+}
+
+.the-grand-piece {
+  background: blue;
+  width: 100%;
+  left: 0;
+  height: 100%;
+}
+
+.tgp-text {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.tgp-top {
+  float: top;
+  height: 75%;
+  background: brown;
+  justify-content: space-between;
+}
+
+.tgp-top-left {
+  width: 50%;
+  background: pink;
+  float: left;
+}
+
+.tgp-top-left-1 {
+  background: red;
+  float: left;
+  width: 50%;
+}
+
+.tgp-top-left-2 {
+  background: black;
+  float: right;
+  width: 50%;
+}
+
+.tgp-top-right {
+  width: 50%;
+  background: green;
+  float: right;
+}
+
+.tgp-top-right-1 {
+  height: 25%;
+  color: green;
+}
+
+.tgp-top-right-2 {
+  height: 75%;
+  background: brown;
+}
+
+.tgp-top-right-2-left {
+  width: 50%;
+  background: purple;
+  float: left;
+}
+
+.tgp-top-right-2-right {
+  width: 50%;
+  background: pink;
+  float: right;
+}
+
+.tgp-bottom {
+  height: 25%;
+  color: orange;
+  float: bottom;
+}
+
+.tgp-bottom-left {
+  width: 50%;
+  color: brown;
+  float: left
+}
+
+.tgp-bottom-right {
+  width: 50%;
+  float: right;
+  color: black;
+}
