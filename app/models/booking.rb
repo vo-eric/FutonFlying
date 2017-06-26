@@ -8,6 +8,8 @@
 #  host_id        :integer          not null
 #  guest_id       :integer          not null
 #  num_guests     :integer          default(1), not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
 #
 
 class Booking < ActiveRecord::Base

@@ -3,7 +3,7 @@ class Api::BookingsController < ApplicationController
 
   def index
     @bookings = current_user.bookings
-    render: index
+    render :index
   end
 
   def show
@@ -19,6 +19,7 @@ class Api::BookingsController < ApplicationController
     else
       render json: @booking.errors.full_messages, status: 422
     end
+
   end
   # def update
   #   @booking = Booking.find(params[:id])
@@ -38,6 +39,7 @@ class Api::BookingsController < ApplicationController
       render "api/bookings/index"
     else
       render json: ["There is no record of this booking"], status: 404
+    end
   end
 
   private

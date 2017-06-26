@@ -157,7 +157,7 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='session-modal'>
         <form onSubmit={this.handleSubmit}>
           <div className='user-form'>
             {this.modalToRender()}

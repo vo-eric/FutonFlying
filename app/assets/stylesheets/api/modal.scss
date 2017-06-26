@@ -3,21 +3,25 @@
   font-family: 'Lato', sans-serif;
   font: 18px;
   padding-bottom: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
   color: #27374c;
   border-bottom: 1px solid #aeb5ba;
   font-weight: bold;
+  justify-content: space-between;
 }
 
-.auth-modal {
-  border: 1px solid #aeb5ba;
+.gen-modal {
+  border: 1px solid #aeb5ba;
   transition: .3s;
   font-family: 'Lato', sans-serif;
-  height: 90%;
-  width: 50%;
+  height: 60%;
+  width: 35%;
   background: rgba(255, 255, 255, 1);
   z-index: 2000;
   margin: 5% auto;
-  border-radius: 5px;
+  border-radius: 7px;
+  overflow: auto;
 }
 
 .outside-modal {
@@ -41,7 +45,7 @@
   border: 1px solid #aeb5ba;
   background: white;
   display: block;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .close-modal {
@@ -61,14 +65,20 @@
 
 .submit-button {
   text-align: left;
+  color: white;
+  text-align: center;
   font: inherit;
-  margin: inherit;
-  border-radius: 4px;
-  height: inherit;
-  width: 100%;
-  background: white;
-  border: 1px solid #aeb5ba;
+  border-radius: 2px;
+  font-size: 12px;
+  margin-right: 5%;
+  height: 30px;
+  width: 104%;
+  background: #287fb8;
+  border: 1px solid #287fb8;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
+
 
 .alt-text {
   font-family: 'Lato', sans-serif;
@@ -80,8 +90,8 @@
   width: 30%;
   font-family: 'Lato', sans-serif;
   font-size: 14px;
-  padding: 5px;
   border: 1px solid #287fb8;
+  color: #287fb8;
   background: white;
   border-radius: 4px;
   outline: 0;

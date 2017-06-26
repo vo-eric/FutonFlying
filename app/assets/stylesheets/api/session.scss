@@ -6,6 +6,8 @@
 
 .whole-name {
   display: flex;
+  padding-bottom: 8px;
+  font-size: 14px;
 }
 
 .left-name {
@@ -18,8 +20,7 @@
   border: 1px solid #aeb5ba;
   background: white;
   display: block;
-  justify-content: space-between;
-  font-size: 16px;
+  font-size: inherit;
 }
 
 .right-name {
@@ -32,6 +33,5 @@
   border: 1px solid #aeb5ba;
   background: white;
   display: block;
-  justify-content: space-between;
-  font-size: 16px;
+  font-size: inherit;
 }

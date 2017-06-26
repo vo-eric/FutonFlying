@@ -27,7 +27,7 @@ class Modal extends React.Component {
           onClick={this.handleClick}
         >
           <div
-            className="auth-modal"
+            className="gen-modal"
             onClick={this.stopPropagation}
           >
             <button
@@ -35,7 +35,7 @@ class Modal extends React.Component {
               onClick={this.handleClick}
               >
               X</button>
-            <span className="session-modal"><SessionFormContainer /></span>
+            <SessionFormContainer />
           </div>
       </div>
       );
