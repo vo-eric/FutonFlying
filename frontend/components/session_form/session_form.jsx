@@ -187,10 +187,6 @@ class SessionForm extends React.Component {
       </div>
     );
   }
-
-
-  //NOTE: want to add a guest user
-
 }
 
 export default SessionForm;

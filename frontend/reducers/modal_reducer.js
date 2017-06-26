@@ -16,7 +16,7 @@ const ModalReducer = (state = initialState, action) => {
       return Object.assign(
         {},
         state,
-        { component: action.component, modalIsOpen: true}
+        { component: action.component, modalIsOpen: true }
       );
     case CLOSE_MODAL:
       return Object.assign(
