@@ -6,14 +6,15 @@
 
 .whole-name {
   display: flex;
-  padding-bottom: 8px;
   font-size: 14px;
+  margin-left: 5%;
+  margin-right: 5%;
+  justify-content: space-between;
+  padding-bottom: 4px;
 }
 
 .left-name {
-  margin-left: 5%;
-  margin-right: 3px;
-  padding-right: 2%;
+  padding-left: 5px;
   border-radius: 4px;
   height: 30px;
   width: 100%;
@@ -24,9 +25,8 @@
 }
 
 .right-name {
-  margin-right: 5%;
-  margin-left: 3px;
-  padding-left: 2%;
+  padding-left: 5px;
+  margin-left: 10px;
   border-radius: 4px;
   height: 30px;
   width: 100%;
