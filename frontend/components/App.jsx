@@ -10,20 +10,6 @@ const App = () => (
     <section>
       <ModalContainer />
       <HeaderContainer />
-      <p>
-        FILLER TEXT <br/>
-        CUTOFF<br/>
-        FILLER TEXT <br/>
-        FILLER TEXT <br/>
-        FILLER TEXT <br/>
-        FILLER TEXT <br/>
-        FILLER TEXT <br/>
-        FILLER TEXT <br/>
-        FILLER TEXT <br/>
-        FILLER TEXT <br/>
-        FILLER TEXT <br/>
-        FILLER TEXT <br/>
-      </p>
       <SplashScreenContainer />
     </section>
   </div>

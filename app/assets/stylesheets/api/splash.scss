@@ -1,91 +1,124 @@
 .tgp-text {
   font-family: 'Lato', sans-serif;
-  color: #34495e;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   font-style: normal;
 }
 
 .the-grand-piece {
-  background: blue;
-  width: 100%;
-  left: 0;
-  height: 100%;
-}
-
-.tgp-text {
-  font-family: 'Lato', sans-serif;
-  color: white;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
 }
 
 .tgp-top {
-  float: top;
+  display: flex;
+  flex-direction: ltr;
   height: 75%;
-  background: brown;
-  justify-content: space-between;
 }
 
 .tgp-top-left {
+  display: flex;
+  flex-direction: ltr;
   width: 50%;
-  background: pink;
-  float: left;
 }
 
 .tgp-top-left-1 {
-  background: red;
-  float: left;
+  display: flex;
+  flex-direction: column;
   width: 50%;
 }
 
 .tgp-top-left-2 {
-  background: black;
-  float: right;
+  display: flex;
+  flex-direction: column;
   width: 50%;
 }
 
 .tgp-top-right {
-  width: 50%;
-  background: green;
-  float: right;
+  display: flex;
+  flex-direction: column;
 }
 
 .tgp-top-right-1 {
-  height: 25%;
-  color: green;
 }
 
 .tgp-top-right-2 {
-  height: 75%;
-  background: brown;
+  display: flex;
+  flex-direction: row;
 }
 
 .tgp-top-right-2-left {
-  width: 50%;
-  background: purple;
-  float: left;
 }
 
 .tgp-top-right-2-right {
-  width: 50%;
-  background: pink;
-  float: right;
+  display: flex;
+  flex-direction: column;
 }
 
 .tgp-bottom {
-  height: 25%;
-  color: orange;
-  float: bottom;
+  display: flex;
+  flex-direction: ltr;
 }
 
 .tgp-bottom-left {
   width: 50%;
-  color: brown;
-  float: left
 }
 
 .tgp-bottom-right {
+  display: flex;
+  flex-direction: ltr;
+}
+
+.p1 {
+  height: 75%;
+  background: red;
+}
+
+.p2 {
+  height: 25%;
+  background: blue;
+}
+
+.p3 {
+  height: 25%;
+  background: orange;
+}
+
+.p4 {
+  height: 75%;
+  background: green;
+}
+
+.p5 {
+  background: red;
+}
+
+.p6 {
+  background: blue;
+  height: 100%;
+}
+
+.p7 {
+  height: 50%;
+  background: orange;
+}
+
+.p8 {
+  height: 50%;
+  background: green;
+}
+
+.p9 {
+  background: orange;
+}
+
+.p10 {
   width: 50%;
-  float: right;
-  color: black;
+  background: red;
+}
+
+.p11 {
+  width: 50%;
+  background: orange;
 }
