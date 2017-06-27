@@ -13,9 +13,11 @@ export const receiveHomes = homes => {
 };
 
 export const receiveSingleHome = home => {
-  type: RECEIVE_SINGLE_HOME,
-  home
-}
+  return {
+    type: RECEIVE_SINGLE_HOME,
+    home
+  };
+};
 
 export const fetchHomes = () => dispatch => {
   return APIUtil.fetchHomes()

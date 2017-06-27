@@ -92,8 +92,6 @@ class SessionForm extends React.Component {
           </div>
         </section>
       )
-    } else {
-      return ("You are here because formType is not login or signup");
     }
   }
 
