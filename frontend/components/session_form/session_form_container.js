@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { closeModal, openModal} from '../../actions/modal_actions';
-import { login, signup, logout, clearErrors } from '../../actions/session_actions';
+import { login, signup, logout } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import Header from '../header/header'
+import { clearErrors } from '../../actions/error_actions';
 
 const mapStateToProps = state => {
   return {

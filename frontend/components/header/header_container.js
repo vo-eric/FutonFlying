@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
-import { logout, clearErrors, login } from '../../actions/session_actions';
+import { logout, login } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 import Header from './header';
+import { clearErrors } from '../../actions/error_actions';
 
 const mapStateToProps = ( state ) => {
   return {

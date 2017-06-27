@@ -1,11 +1,10 @@
 import * as APIUtil from '../../booking_api_util';
+import { receiveErrors } from './error_actions';
 
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_CURRENT_BOOKING = 'RECEIVE_CURRENT_BOOKING';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
-export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
-export const receiveBooking = bookings => {
+export const receiveBookings = bookings => {
   return {
     type: RECEIVE_BOOKINGS,
     bookings
@@ -16,19 +15,6 @@ export const receiveCurrentBooking = currentBooking {
   return {
     type: RECEIVE_CURRENT_BOOKING,
     currentBooking
-  };
-};
-
-export const receiveErrors = errors => {
-  return {
-    type: RECEIVE_ERRORS,
-    errors
-  };
-};
-
-export const clearErrors = () => {
-  return {
-    type: CLEAR_ERRORS
   };
 };
 

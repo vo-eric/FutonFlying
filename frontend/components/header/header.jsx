@@ -3,6 +3,7 @@ import { Link, Route, Redirect } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
 import ModalContainer from '../modal/modal_container';
 import { login } from '../../actions/session_actions';
+import { receiveErrors, clearErrors } from '../../actions/error_actions';
 
 class Header extends React.Component {
   constructor(props) {

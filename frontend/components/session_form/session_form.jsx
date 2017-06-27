@@ -1,8 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import Header from '../header/header';
 import SessionFormContainer from './session_form_container';
 import ModalContainer from '../modal/modal_container';
+import { clearErrors } from '../../actions/error_actions';
 
 class SessionForm extends React.Component {
   constructor(props) {
