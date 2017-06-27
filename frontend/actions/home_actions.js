@@ -19,7 +19,22 @@ export const receiveSingleHome = home => {
   };
 };
 
-export const fetchHomes = () => dispatch => {
-  return APIUtil.fetchHomes()
-    .then((homes) => dispatch(fetchHomes(homes)))
+export const fetchHomes = filters => dispatch => {
+  return APIUtil.fetchHomes(filters)
+    .then((homes) => dispatch(receiveHomes(homes)))
+};
+
+export const fetchSingleHome = id => dispatch => {
+  return APIUtil.fetchSingleHome(id)
+    .then((home) => dispatch(receiveSingleHome(home)))
+};
+
+export const createHome = home => dispatch => {
+  return APIUtil.createHome(home)
+    .then((home) => dispatch(receiveSingleHome(home)))
+};
+
+export const updateHome = home => dispatch => {
+  return APIUtil.updateHome(home)
+    .then((home) => dispatch(receiveHome(home)))
 };
