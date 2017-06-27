@@ -1,124 +1,175 @@
 .tgp-text {
   font-family: 'Lato', sans-serif;
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
   font-style: normal;
 }
 
 .the-grand-piece {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 80%;
+  height: auto;
+  position: auto;
 }
 
 .tgp-top {
   display: flex;
   flex-direction: ltr;
   height: 75%;
+  width: 100%;
 }
 
 .tgp-top-left {
   display: flex;
   flex-direction: ltr;
+  height: 100%;
   width: 50%;
 }
 
 .tgp-top-left-1 {
   display: flex;
   flex-direction: column;
+  height: 100%;
   width: 50%;
 }
 
 .tgp-top-left-2 {
   display: flex;
   flex-direction: column;
+  height: 100%;
   width: 50%;
 }
 
 .tgp-top-right {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 50%;
 }
 
 .tgp-top-right-1 {
+  overflow: hidden;
+  height: 33.3333333333%;
+  width: 100%;
 }
 
 .tgp-top-right-2 {
+  height: 66.6666666667%;
+  width: 100%;
   display: flex;
   flex-direction: row;
 }
 
 .tgp-top-right-2-left {
+  height: 100%;
+  width: 50%;
 }
 
 .tgp-top-right-2-right {
+  height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
 
 .tgp-bottom {
+  height: 25%;
+  width: 100%;
   display: flex;
   flex-direction: ltr;
 }
 
 .tgp-bottom-left {
+  height: 100%;
   width: 50%;
 }
 
 .tgp-bottom-right {
   display: flex;
   flex-direction: ltr;
+  height: 100%;
+  width: 50%;
+}
+
+img {
+  display: inline-block;
+  max-height: 100%;
+  max-width: 100%;
+  border: 5px solid white;
+}
+
+img:hover {
+  transform: scale(1.1);
+  transition: .3s ease-out;
+
 }
 
 .p1 {
-  height: 75%;
-  background: red;
+  overflow: hidden;
+  height: 66.6666666667%;
+  width: 100%;
 }
 
 .p2 {
-  height: 25%;
-  background: blue;
+  overflow: hidden;
+  height: 33.3333333333%;
+  width: 100%;
 }
 
 .p3 {
-  height: 25%;
-  background: orange;
+  overflow: hidden;
+  height: 33.3333333333%;
+  width: 100%;
 }
 
 .p4 {
-  height: 75%;
-  background: green;
+  overflow: hidden;
+  height: 66.6666666667%;
+  width: 100%;
 }
 
 .p5 {
-  background: red;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 .p6 {
-  background: blue;
+  overflow: hidden;
   height: 100%;
+  width: 100%;
 }
 
 .p7 {
+  overflow: hidden;
   height: 50%;
-  background: orange;
+  width: 100%;
 }
 
 .p8 {
+  overflow: hidden;
   height: 50%;
-  background: green;
+  width: 100%;
 }
 
 .p9 {
-  background: orange;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 .p10 {
+  overflow: hidden;
+  height: 100%;
   width: 50%;
-  background: red;
 }
 
 .p11 {
+  overflow: hidden;
+  background: red;
+  height: 100%;
   width: 50%;
-  background: orange;
 }

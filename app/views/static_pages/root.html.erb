@@ -3,6 +3,20 @@
     window.currentUser = <%= render("api/users/user.json.jbuilder",
       user: current_user).html_safe %>
   <% end %>
+
+window.images = {
+  berlin: '<%= image_path("berlin.jpg") %>',
+  copenhagen: '<%= image_path("copenhagen.jpg") %>',
+  halong: '<%= image_path("halong.jpeg") %>',
+  london: '<%= image_path("london.jpg") %>',
+  losangeles: '<%= image_path("losangeles.jpg") %>',
+  lyon: '<%= image_path("lyon.jpg") %>',
+  madrid: '<%= image_path("madrid.jpg") %>',
+  newyork: '<%= image_path("newyork.jpg") %>',
+  porto: '<%= image_path("porto.jpg") %>',
+  vienna: '<%= image_path("vienna.jpg") %>'
+}
+
 </script>
 
 <main id="root"></main>
