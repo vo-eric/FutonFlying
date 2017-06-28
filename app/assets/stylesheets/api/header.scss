@@ -29,10 +29,29 @@
   font-weight: bold;
 }
 
-.join-button, .sign-out, .login-guest {
+.join-button, .sign-out {
   border: 1px solid #287fb8;
   font-family: 'Lato', sans-serif;
   background: #287fb8;
+  color: white;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  max-width: 240px;
+  padding: 8px 12px;
+  text-align: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  white-space: normal;
+  margin: 5px 5px;
+}
+
+.login-guest {
+  border: 1px solid #D4490B;
+  font-family: 'Lato', sans-serif;
+  background: #D4490B;
   color: white;
   border-radius: 3px;
   display: inline-block;

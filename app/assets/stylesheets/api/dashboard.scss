@@ -25,9 +25,9 @@
 
 .dash-fname {
   padding: 10px;
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
-  font-weight: bold;
+  font-weight: 300;
 }
 
 .user-photo {
@@ -41,12 +41,12 @@
   height: auto;
 }
 
-.random-locations {
+.search-all {
   background: white;
   height: auto;
 }
 
-.upcoming-guests, .travel {
+.upcoming-guests, .travel, .random-locations {
   background: white;
   height: auto;
   margin-top: 7px;

@@ -20,6 +20,7 @@ class Dashboard extends React.Component {
 
   //random locations is going to include a search bar that goes to the index page of hosts given the city
   //not so sure about this.
+  //if time permits, have different groups of cities with their individual 'flairs'
 
   render () {
     return(
@@ -35,7 +36,7 @@ class Dashboard extends React.Component {
 
         <div className='trips'>
 
-          <div className='random-locations'>
+          <div className='search-all'>
             <div className='where-text'>
               Where do you want to go?
             </div>
@@ -52,7 +53,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-              There will be three locations here and a search bar that goes to the hosts page
+              There will be three locations here and a search bar that goes to the hosts page...
             </div>
           </div>
 

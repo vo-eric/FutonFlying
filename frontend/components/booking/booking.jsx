@@ -14,6 +14,6 @@ class Booking extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    //going to call the booking and close.
+    //going to 'submit' the booking and close.
   }
 }
