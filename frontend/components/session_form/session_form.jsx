@@ -10,8 +10,6 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      fname: "",
-      lname: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearErrorsOpenModal = this.clearErrorsOpenModal.bind(this);

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628111144) do
+ActiveRecord::Schema.define(version: 20170628133050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,11 +37,16 @@ ActiveRecord::Schema.define(version: 20170628111144) do
   end
 
   create_table "hosts", force: :cascade do |t|
-    t.float   "lng",              null: false
-    t.float   "lat",              null: false
-    t.integer "owner_id",         null: false
-    t.boolean "accepting_guests", null: false
+    t.float   "lng",                             null: false
+    t.float   "lat",                             null: false
+    t.integer "owner_id",                        null: false
+    t.boolean "accepting_guests",                null: false
     t.string  "description"
+    t.boolean "accepting_gusts",  default: true
+    t.string  "fname",                           null: false
+    t.string  "lname",                           null: false
+    t.string  "city"
+    t.string  "location"
     t.index ["owner_id"], name: "index_hosts_on_owner_id", using: :btree
   end
 

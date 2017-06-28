@@ -6,6 +6,8 @@ import SessionFormContainer from './session_form/session_form_container';
 import HeaderContainer from './header/header_container';
 import ModalContainer from './modal/modal_container';
 import SplashScreenContainer from './splash_screen/splash_screen_container';
+import HostShowContainer from './hosts/host_show_container';
+import DashboardContainer from './dashboard/dashboard_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -13,16 +15,13 @@ const App = () => (
     <section>
       <ModalContainer />
       <HeaderContainer />
-      <p>
-        Filler Text <br/>
-        Filler Text <br/>
-        Filler Text <br/>
-        Filler Text <br/>
-        Filler Text <br/>
-        Filler Text <br/>
-        Filler Text <br/>
-      </p>
+      <br/>
+      <br/>
+      <br/>
       <AuthRoute exact path='/' component={SplashScreenContainer} />
+      <ProtectedRoute exact path='/' component={DashboardContainer} />
+      <AuthRoute exact path='/hosts' component={HostShowContainer} />
+      <AuthRoute exact path='/hosts/:id' component={HostShowContainer} />
     </section>
   </div>
 );

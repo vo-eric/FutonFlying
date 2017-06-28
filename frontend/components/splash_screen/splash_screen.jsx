@@ -113,7 +113,7 @@ class SplashScreen extends React.Component {
               </div>
 
               <div className='p11'>
-                <div className='tgp-text'>
+                <div className='other-destinations'>
                   Top Futon Flying Destinations
                 </div>
               </div>

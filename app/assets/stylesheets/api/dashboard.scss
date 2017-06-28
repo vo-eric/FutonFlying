@@ -1,0 +1,74 @@
+.dashboard {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  width: 100%;
+}
+
+.dash-user {
+  width: 15%;
+  padding: 0px 10px 10px 10px;
+}
+
+.dash-user-info {
+  height: 150px;
+  background: white;
+}
+
+.dash-fname {
+  padding: 10px;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.user-photo {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.trips {
+  width: 85%;
+  height: auto;
+}
+
+.travel {
+  background: white;
+  height: auto;
+}
+
+.upcoming-guests {
+  background: white;
+  height: auto;
+  margin-top: 7px;
+}
+
+.plane-icon {
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+.dash-text {
+  padding: 15px 20px 20px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  border-bottom: 1px solid #ecf0f1;
+  line-height: 1.5em;
+}
+
+.home-icon {
+  padding-right: 10px;
+}
+
+.travel-plans {
+  height: 50%;
+}
+
+.inside-text {
+  padding: 15px;
+  text-align: center;
+  background: #fbfcfc;
+  border-bottom: 1px solid #bfcad2;
+}

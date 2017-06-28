@@ -1,16 +1,22 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 
-class HomeShow extends React.Component {
+class HostShow extends React.Component {
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    this.props.fetchSingleHome(this.props.homeId);
+    this.props.fetchSingleHost(this.props.hostId);
   }
 
   render () {
-    const { }
+    return (
+      <div className='host-name'>
+        {host.fname} {host.lname}
+      </div>
+    );
   }
-}
+};
+
+export default HostShow;

@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import HostShow from './host_show';
-import { fetchSingleHome } from '../../actions/chair_actions';
+import { fetchSingleHost } from '../../actions/host_actions';
 
 const mapStateToProps = (state, { match }) => {
+  debugger;
   const hostId = match.params.hostId;
   const host = selectHost(state, match.params.hostId);
-  return { hostId, home }
+  return { hostId, host }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
