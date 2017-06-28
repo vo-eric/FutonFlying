@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: homes
+# Table name: hosts
 #
 #  id               :integer          not null, primary key
 #  lng              :float            not null
@@ -10,7 +10,7 @@
 #  description      :string
 #
 
-class Home < ActiveRecord::Base
+class Host < ActiveRecord::Base
   validates :lng, :lat, :owner, :accepting_guests, presence: true
   validates :accepting_guests, inclusion: { in: [true, false] }
   validates :owner, uniqueness: true
