@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resource :user, except: [:new, :destroy]
     resources :bookings, except: [:edit, :new]
     resource :session, only: [:create, :destroy, :show]
-    resources :homes, except: [:new, :edit]
+    resources :hosts, except: [:new, :edit]
   end
 end
