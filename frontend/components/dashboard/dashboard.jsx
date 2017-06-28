@@ -6,6 +6,21 @@ class Dashboard extends React.Component {
     super(props);
   }
 
+  showTrips() {
+    //if trips > 0, show the upcoming trips
+    //else "You don't have any upcoming trips"
+  }
+
+  showGuests() {
+    //if guests > 0, show all upcoming guests
+    //else "You don't have any upcoming guests"
+  }
+
+  //Where are you going's search bar is going to to navigate to the city page
+
+  //random locations is going to include a search bar that goes to the index page of hosts given the city
+  //not so sure about this.
+
   render () {
     return(
       <div className='dashboard'>
@@ -18,8 +33,17 @@ class Dashboard extends React.Component {
           </div>
         </div>
 
-
         <div className='trips'>
+
+          <div className='random-locations'>
+            <div className='where-text'>
+              Where do you want to go?
+            </div>
+
+            <div className='inside-text'>
+              There will be a search bar here
+            </div>
+          </div>
 
           <div className='random-locations'>
             <div className='dash-text'>
@@ -28,7 +52,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-              There will be three locations here
+              There will be three locations here and a search bar that goes to the hosts page
             </div>
           </div>
 

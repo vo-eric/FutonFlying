@@ -8,6 +8,14 @@ body {
   font-size: 56px;
 }
 
+.tgp-header {
+  font-family: 'Lato', sans-serif;
+  color: #34495e;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 300;
+}
+
 .other-destinations {
   font-family: 'Lato', sans-serif;
   text-align: center;
@@ -107,7 +115,7 @@ img {
   display: inline-block;
   max-height: 100%;
   max-width: 100%;
-  border: 5px solid white;
+  border: 5px solid #f1efea;
 }
 
 img:hover {

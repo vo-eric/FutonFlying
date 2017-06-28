@@ -9,7 +9,7 @@ class SplashScreen extends React.Component {
   render () {
     return (
       <div className='splash'>
-        <div className='tgp-text'>
+        <div className='tgp-header'>
           Top Futonflying Destinations
         </div>
         <br/>
