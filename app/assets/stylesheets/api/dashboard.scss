@@ -3,7 +3,7 @@
   margin-right: auto;
   font-family: 'Lato', sans-serif;
   display: flex;
-  width: 100%;
+  width: 80%;
 }
 
 .dash-user {
@@ -14,6 +14,7 @@
 .dash-user-info {
   height: 150px;
   background: white;
+  border-bottom: 2px solid #bfcad2;
 }
 
 .dash-fname {
@@ -34,20 +35,15 @@
   height: auto;
 }
 
-.travel {
+.random-locations {
   background: white;
   height: auto;
 }
 
-.upcoming-guests {
+.upcoming-guests, .travel {
   background: white;
   height: auto;
   margin-top: 7px;
-}
-
-.plane-icon {
-  font-size: 12px;
-  padding-right: 10px;
 }
 
 .dash-text {
@@ -58,7 +54,7 @@
   line-height: 1.5em;
 }
 
-.home-icon {
+.icons {
   padding-right: 10px;
 }
 
@@ -70,5 +66,5 @@
   padding: 15px;
   text-align: center;
   background: #fbfcfc;
-  border-bottom: 1px solid #bfcad2;
+  border-bottom: 2px solid #bfcad2;
 }
