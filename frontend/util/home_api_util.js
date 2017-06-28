@@ -21,9 +21,9 @@ export const createHome = (data) => {
   });
 };
 
-export const deleteHome = (bookingId) => {
+export const  deleteHome = (id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/homes/${bookingId}`
+    url: `api/homes/${id}`
   });
-}
+};
