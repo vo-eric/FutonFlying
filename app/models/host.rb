@@ -11,15 +11,10 @@
 #
 
 class Host < ActiveRecord::Base
-  validates :lng, :lat, :owner, :accepting_guests, presence: true
+  validates :lng, :lat, :fname, :lname, :accepting_guests, presence: true
   validates :accepting_guests, inclusion: { in: [true, false] }
-  validates :owner, uniqueness: true
 
   has_many :reviews
   has_many :bookings
 
-  belongs_to :owner,
-    class_name: :User,
-    primary_key: :id,
-    foreign_key: :owner_id
 end

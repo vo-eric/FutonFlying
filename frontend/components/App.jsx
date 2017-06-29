@@ -19,9 +19,9 @@ const App = () => (
       <br/>
       <br/>
       <AuthRoute exact path='/' component={SplashScreenContainer} />
-      <ProtectedRoute exact path='/' component={DashboardContainer} />
-      <AuthRoute exact path='/hosts' component={HostShowContainer} />
-      <AuthRoute exact path='/hosts/:id' component={HostShowContainer} />
+      <ProtectedRoute exact path='/about' component={DashboardContainer} />
+      <ProtectedRoute exact path='/hosts' component={HostShowContainer} />
+      <ProtectedRoute exact path='/hosts/:id' component={HostShowContainer} />
     </section>
   </div>
 );

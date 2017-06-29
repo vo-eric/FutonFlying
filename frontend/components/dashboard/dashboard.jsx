@@ -29,7 +29,7 @@ class Dashboard extends React.Component {
         <div className='dash-user'>
           <div className='dash-user-info'>
             <div className='dash-fname'>
-              {this.props.user.fname}
+              {this.props.user.fname} {this.props.user.lname}
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-              There will be three locations here and a search bar that goes to the hosts page...
+              There will be three locations here(hopefully they'll be randomized)
             </div>
           </div>
 

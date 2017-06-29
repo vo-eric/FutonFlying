@@ -18,7 +18,7 @@ class Header extends React.Component {
   }
 
   handleDemoClick(e) {
-    this.props.loginWenBo({user: {username: 'thebigbo92', password: 'boAndArro'}});
+    this.props.loginGuest({user: {username: 'cthanhvo', password: 'password'}});
   }
 
   clearErrorsOpenModal(component) {
@@ -34,7 +34,7 @@ class Header extends React.Component {
         <section className='header'>
           <section className='subheader'>
             <span className='wordmark'>futon flying</span>
-            <div>
+            <div className='header-right'>
               <button
                 className="sign-out"
                 onClick={this.handleClick}>Sign Out</button>

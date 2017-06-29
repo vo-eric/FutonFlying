@@ -13,7 +13,6 @@ const mapStateToProps = state => {
     formType: state.modal.component.props.formType
   };
 };
-// const processForm = (formType === 'login') ? login : signup;
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
