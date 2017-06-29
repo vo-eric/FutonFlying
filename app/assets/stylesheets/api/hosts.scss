@@ -1,0 +1,48 @@
+.hosts-index {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  background: white;
+  font-family: 'Lato', sans-serif;
+}
+
+.hosts-available {
+  margin: 10px 5px;
+}
+
+.host-index-details {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.host-index-info {
+  padding: 10px 5px;
+}
+
+.host-index-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.host-index-location {
+  font-size: 12px;
+}
+
+.index-accepting-guests {
+  padding: 10px 10px 0 0;
+  text-align: center;
+  color: #41b866;
+  font-size: .9rem;
+  font-weight: bold;
+  line-height: 1.25em;
+}
+
+.index-no-guests {
+  padding: 10px 10px 0 0;
+  text-align:  center;
+  color: #ff3f2e;
+  font-size: .75rem;
+  font-weight: bold;
+  line-height: 1.25em;
+}

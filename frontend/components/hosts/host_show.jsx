@@ -1,46 +1,24 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import HostDetail from './host_show_detail';
+import HostShowDetail from './host_show_detail';
 
 class HostShow extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  render() {
-    debugger
-
-    if (this.props.hosts.length === 0) {
-      return (
-        <div className='no-host-availability'>
-          <p>
-            There are no rooms available at this city
-          </p>
-        </div>
-      )
-    } else {
-      let hostsList = (
-        <div className='host-list'>
-          {this.props.hosts.map((host) => (
-            <HostItem key={host.id} host={host} />
-          )
-        )}>
-        </div>
-      );
-
-      return (
-        <section className="hosts-index">
-          <div className="hosts-header">
-            <div className="hosts-available">
-              Available Hosts
-            </div>
-          </div>
-          { hostsList }
-        </section>
-      );
+  componentDidMount() {
+    if (this.props.host.id) {
+      this.props.fetchSingleHost(this.props.hosts.id)
     }
   }
 
-};
-
-export default HostShow;
+  render () {
+    return (
+      <div className='host-show-user'>
+        <div className='host-show-name'>
+          This is a user page  
+        </div>
+      </div>
+    );
+  }
+}

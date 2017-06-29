@@ -2,6 +2,13 @@ body {
   background-color: #f1efea;
 }
 
+.splash {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 600px;
+}
+
 .tgp-text {
   font-family: 'Lato', sans-serif;
   text-align: center;
@@ -23,11 +30,8 @@ body {
 }
 
 .the-grand-piece {
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-direction: column;
-  width: 80%;
   height: auto;
   position: auto;
 }
