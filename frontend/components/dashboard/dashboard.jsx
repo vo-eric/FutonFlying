@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
           <div className='dash-user-info'>
             <div className='user-image'>
               <img
-                src={this.props.user.avatar_url}
+                src={window.images.ctvo}
                 className='user-photo'
               />
             </div>
