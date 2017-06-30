@@ -40,7 +40,10 @@ class HostIndexDetail extends React.Component {
           className='host-index-module'
           onClick={this.handleClick}
         >
-          <i className="fa fa-user img-placeholder" aria-hidden="true"></i>
+        <img
+          src={this.props.host.avatar_url}
+          className='host-index-photo'
+        />
           <div className='host-index-details' >
             <div className='host-index-info'>
               <div className="host-index-name">

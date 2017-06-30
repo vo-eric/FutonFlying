@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  debugger
   return {
   fetchSingleHost: (id) => dispatch(fetchSingleHost(id)),
   openModal: (component) => dispatch(openModal(component)),

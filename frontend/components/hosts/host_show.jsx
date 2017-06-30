@@ -38,14 +38,14 @@ class HostShow extends React.Component {
 
 
   render () {
-    //
-
-    // const hostId = this.props.hostDetails;
     return (
       <div className='host-show-main'>
         <div className='host-show-user'>
-          <div className='host-show-photo'>
-            <i className="fa fa-user show-img-placeholder" aria-hidden="true"></i>
+          <div className='host-photo'>
+            <img
+              src={this.props.hostDetails.avatar_url}
+              className='host-show-photo'
+            />
           </div>
 
           <div className='host-show-name'>

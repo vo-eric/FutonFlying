@@ -7,8 +7,14 @@
   flex-direction: ltr;
 }
 
+.host-photo {
+}
+
 .host-show-photo {
-  text-align: center;
+  margin-top: 5px;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
 }
 
 .show-img-placeholder {
@@ -16,13 +22,16 @@
 }
 
 .host-show-user {
+  text-align: center;
   background: white;
   width: 20%;
   height: auto;
   border-bottom: 2px solid #bfcad2;
+  padding-bottom: 20px
 }
 
 .host-show-name {
+  margin-top: 10px;
   font-size: 30px;
   text-align: center;
 }

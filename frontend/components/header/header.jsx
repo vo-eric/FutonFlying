@@ -33,7 +33,11 @@ class Header extends React.Component {
       return (
         <section className='header'>
           <section className='subheader'>
-            <span className='wordmark'>futon flying</span>
+            <Link
+              to={"/dashboard"}
+              style={{ textDecoration: 'none', color: '#D4490B'}}>
+              <span className='wordmark'>futon flying</span>
+            </Link>
             <div className='header-right'>
               <button
                 className="sign-out"
