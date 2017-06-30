@@ -1,7 +1,8 @@
 class Api::HostsController < ApplicationController
 
   def index
-    @hosts = Host.all
+    hosts = bounds ? Host.in_bounds(bounds) : Host.all
+    render :index
   end
 
   def create
@@ -38,10 +39,17 @@ class Api::HostsController < ApplicationController
     params.require(:host).permit(
       :lng,
       :lat,
-      :owner_id,
+      :fname,
+      :lname,
+      :city,
+      :country,
       :description,
       :accepting_guests
     )
+  end
+
+  def bounds
+    params[:bounds]
   end
 
 end

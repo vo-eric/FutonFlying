@@ -1,8 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class HostIndexDetail extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.props.fetchSingleHost(this.props.host.id);
   }
 
   acceptingGuests() {
@@ -26,7 +32,11 @@ class HostIndexDetail extends React.Component {
 
   render() {
     return (
-        <div className='host-index-module'>
+        <div
+          className='host-index-module'
+          onClick={this.handleClick}
+        >
+          <i className="fa fa-user img-placeholder" aria-hidden="true"></i>
           <div className='host-index-details' >
             <div className='host-index-info'>
               <div className="host-index-name">
@@ -39,7 +49,7 @@ class HostIndexDetail extends React.Component {
             </div>
             { this.acceptingGuests() }
           </div>
-        </div>
+      </div>
     );
   }
 }
