@@ -1,7 +1,8 @@
 import React from 'react';
 import HostShowDetail from './host_show_detail';
 import HostMapContainer from '../hosts_map/hosts_map_container';
-
+import ModalContainer from '../modal/modal_container';
+import BookingsFormContainer from '../booking/bookings_form_container'
 
 class HostShow extends React.Component {
   constructor(props) {
@@ -12,6 +13,11 @@ class HostShow extends React.Component {
     if (this.props.host) {
       this.props.fetchSingleHost(this.props.hosts.id)
     }
+  }
+
+  clearErrorsOpenModal(component) {
+    this.props.clearErrors();
+    this.props.openModal(component);
   }
 
   acceptingGuests() {
@@ -58,6 +64,8 @@ class HostShow extends React.Component {
             <div className='booking-buttons'>
               <button
                 className='request-button'
+                onClick={() => this.clearErrorsOpenModal(
+                  <BookingsFormContainer />)}
               >
               Send Request
               </button>

@@ -13,7 +13,8 @@ user1 = User.create!(
   username: "cthanhvo",
   password: "password",
   fname: "Can",
-  lname: "Vo"
+  lname: "Vo",
+  avatar_file_name: "ctvo.jpg"
 );
 
 host1 = Host.create!(
