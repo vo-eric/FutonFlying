@@ -50,7 +50,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-              There will be a search bar here
+              There should be a search bar here
             </div>
           </div>
 
@@ -86,7 +86,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-              This entire text portion is a placeholder
+              You don't have any upcoming guests
             </div>
           </div>
 
