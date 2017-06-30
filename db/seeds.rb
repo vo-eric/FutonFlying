@@ -14,8 +14,9 @@ user1 = User.create!(
   password: "password",
   fname: "Can",
   lname: "Vo",
-  avatar_file_name: "ctvo.jpg"
+  avatar_file_name: "https://s3.us-east-2.amazonaws.com/futon-flying-dev/users/avatars/000/000/031/original/ctvo.jpg"
 );
+
 
 host1 = Host.create!(
   lat: 40.418639,
