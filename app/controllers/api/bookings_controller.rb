@@ -2,7 +2,8 @@ class Api::BookingsController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @bookings = current_user.bookings
+
+    @bookings = Booking.where("guest_id = #{current_user.id}")
     render :index
   end
 
@@ -12,7 +13,7 @@ class Api::BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user_id = current_user.id
+    @booking.guest_id = @current_user.id
 
     if @booking.save
       render :show

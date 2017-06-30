@@ -13,17 +13,21 @@
 #
 
 class Booking < ActiveRecord::Base
-  validates :check_in_date, :check_out_date, :guest_id, :host_id, presence: true
+  validates :check_in_date, :check_out_date, :guest_id, :host_id, :num_guests, presence: true
+
+  validate :is_after?, :valid_range?
 
   belongs_to :guest,
-    class_name: :user,
+    class_name: :User,
     primary_key: :id,
-    foreign_key: :guest_id
+    foreign_key: :guest_id,
+    optional: true
 
   belongs_to :host,
-    class_name: :user,
+    class_name: :User,
     primary_key: :id,
-    foreign_key: :host_id
+    foreign_key: :host_id,
+    optional: true
 
   def is_after?
     if (check_in_date && check_out_date) && check_in_date < Date.today

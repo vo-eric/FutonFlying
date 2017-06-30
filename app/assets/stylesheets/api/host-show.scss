@@ -1,0 +1,94 @@
+.host-show-main {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: ltr;
+}
+
+.host-show-photo {
+  text-align: center;
+}
+
+.show-img-placeholder {
+  font-size: 5rem;
+}
+
+.host-show-user {
+  background: white;
+  width: 20%;
+  height: auto;
+  border-bottom: 2px solid #bfcad2;
+}
+
+.host-show-name {
+  font-size: 30px;
+  text-align: center;
+}
+
+.host-show-location {
+  font-size: 14px;
+  text-align: center;
+}
+
+.host-show-about {
+  width: 70%;
+  height: auto;
+  margin-left: 10px;
+}
+
+.host-booking {
+  width: 100;
+  height: auto;
+  display: flex;
+  flex-direction: ltr;
+  background: white;
+  border-bottom: 2px solid #bfcad2;
+  justify-content: space-between;
+  padding: 15px 8px;
+}
+
+.show-accepting-guests {
+  color: #41b866;
+  font-size: 1.4em;
+}
+
+.show-no-guests {
+  color: #ff3f2e;
+  font-size: 1.4em;
+}
+
+.booking-buttons {
+  display: flex;
+  flex-direction: ltr;
+}
+
+.request-button {
+  background: #287fb8;
+  border: 1px solid #287fb8;
+  width: auto;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.message-button {
+ background: #287fb8;
+ border: 1px solid #287fb8;
+ width: auto;
+ cursor: pointer;
+ padding: 5px 7px;
+ text-align: center;
+ border-radius: 3px;
+}
+
+.message-icon {
+  color: white;
+  font-size: 20px;
+}

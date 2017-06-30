@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BookingsContainer from '../booking/bookings_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class Dashboard extends React.Component {
   }
 
   showTrips() {
+    // <BookingsContainer />
     //if trips > 0, show the upcoming trips
     //else "You don't have any upcoming trips"
   }
@@ -64,8 +66,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-              You don't have any upcoming trips.<br/>
-              This is a placeholder.
+              <BookingsContainer />
             </div>
           </div>
 
@@ -76,7 +77,6 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-              You don't have any upcoming guests. <br/>
               This entire text portion is a placeholder
             </div>
           </div>

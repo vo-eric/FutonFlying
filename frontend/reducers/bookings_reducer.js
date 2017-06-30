@@ -2,24 +2,23 @@ import {
   RECEIVE_BOOKINGS,
   RECEIVE_CURRENT_BOOKING,
   RECEIVE_ERRORS,
-  CLEAR_ERRORS
+  REMOVE_BOOKING
 } from '../actions/booking_actions';
 
-const nullBooking = {
-  currentBooking: null
-}
-
-const BookingReducer = (state = nullBooking, action) => {
+const BookingReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_BOOKINGS:
-      const bookings = action.bookings
-      return Object.assign({}, nullBooking, { bookings });
+      return action.bookings
     case RECEIVE_CURRENT_BOOKING:
-      const currentBooking = action.currentBooking;
-      return Object.assign({}, state, { currentBooking });
+      let currentBooking = {[action.currentBooking]: action.booking};
+      return Object.assign({}, state, currentBooking);
+    case REMOVE_BOOKING:
+      let newState = Object.assign({}, state)
+      delete newState[action.bookingId];
+      return newState;
     default:
-      return sate;
+      return state;
   }
 };
 

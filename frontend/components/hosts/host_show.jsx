@@ -14,6 +14,23 @@ class HostShow extends React.Component {
     }
   }
 
+  acceptingGuests() {
+    if (this.props.hostDetails.accepting_guests) {
+      return (
+        <div className='show-accepting-guests'>
+          Accepting Guests
+        </div>
+      );
+    } else {
+      return(
+        <div className='show-no-guests'>
+          Not Accepting Guests
+        </div>
+      );
+    }
+  }
+
+
   render () {
     //
 
@@ -22,7 +39,7 @@ class HostShow extends React.Component {
       <div className='host-show-main'>
         <div className='host-show-user'>
           <div className='host-show-photo'>
-            <i className="fa fa-user img-placeholder" aria-hidden="true"></i>
+            <i className="fa fa-user show-img-placeholder" aria-hidden="true"></i>
           </div>
 
           <div className='host-show-name'>
@@ -33,17 +50,29 @@ class HostShow extends React.Component {
             {this.props.hostDetails.city}, {this.props.hostDetails.country}
           </div>
 
-          <div>
-            PLEASE TELL ME THIS WORKED
-          </div>
+        </div>
 
+        <div className='host-show-about'>
+          <div className='host-booking'>
+            { this.acceptingGuests() }
+            <div className='booking-buttons'>
+              <button
+                className='request-button'
+              >
+              Send Request
+              </button>
+
+              <button
+                className='message-button'
+              >
+              <i className="fa fa-envelope-o message-icon" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 }
-
-// {this.props.hostDetails.#THERE.fname} {this.props.hosts.match.params.id}
-
 
 export default HostShow;

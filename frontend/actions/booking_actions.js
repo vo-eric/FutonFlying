@@ -1,8 +1,9 @@
-import * as APIUtil from '../../booking_api_util';
+import * as APIUtil from '../util/booking_api_util';
 import { receiveErrors } from './error_actions';
 
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_CURRENT_BOOKING = 'RECEIVE_CURRENT_BOOKING';
+export const CANCEL_BOOKING = 'CANCEL_BOOKING';
 
 export const receiveBookings = bookings => {
   return {
@@ -11,11 +12,38 @@ export const receiveBookings = bookings => {
   };
 };
 
-export const receiveCurrentBooking = currentBooking {
+export const receiveCurrentBooking = booking => {
   return {
     type: RECEIVE_CURRENT_BOOKING,
-    currentBooking
+    booking
   };
+};
+
+export const cancelBooking = bookingId => {
+  return {
+    type: CANCEL_BOOKING,
+    bookingId
+  }
+}
+
+export const fetchBookings = (userId) => dispatch => {
+  return APIUtil.fetchBookings(userId)
+    .then((bookings) => dispatch(receiveBookings(bookings),
+      (err) => {
+        return dispatch(receiveErrors(err.responseJSON));
+      }
+    )
+  )
+};
+
+export const fetchSingleBooking = (id) => dispatch => {
+  return APIUtil.fetchSingleBooking(id)
+    .then((booking) => dispatch(receiveSingleBooking(booking),
+      (err) => {
+        return dispatch(receiveErrors(err.responseJSON));
+      }
+    )
+  )
 };
 
 export const createBooking = booking => dispatch => {
@@ -28,9 +56,9 @@ export const createBooking = booking => dispatch => {
   )
 };
 
-export const deleteBooking = booking => dispatch => {
-  return APIUtil.deleteBooking(booking)
-    .then((booking) => dispatch(deleteBooking(booking),
+export const deleteBooking = bookingId => dispatch => {
+  return APIUtil.deleteBooking(bookingId)
+    .then(() => dispatch(cancelBooking(booking),
       (err) => {
         return dispatch(receiveErrors(err.responseJSON));
       }

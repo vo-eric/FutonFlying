@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Host.destroy_all
+Booking.destroy_all
 
 user1 = User.create!(
   username: "cthanhvo",
@@ -43,4 +44,22 @@ host3 = Host.create!(
   city: 'Vienna',
   country: 'Austria',
   accepting_guests: true
+)
+
+host4 = Host.create!(
+  lat: 55.679553,
+  lng: 12.585516,
+  fname: 'Wen Bo',
+  lname: 'Xie',
+  city: 'Copenhagen',
+  country: 'Denmark',
+  accepting_guests: true
+)
+
+booking1 = Booking.create!(
+  check_in_date: Date.new(2017, 7, 4),
+  check_out_date: Date.new(2017, 7, 7),
+  host_id: 19,
+  guest_id: 25,
+  num_guests: 2
 )
