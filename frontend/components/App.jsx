@@ -15,18 +15,18 @@ import SearchContainer from './search/search_container';
 
 const App = () => (
   <div>
-    <section>
-      <ModalContainer />
-      <HeaderContainer />
-      <br/>
-      <br/>
-      <br/>
+    <ModalContainer />
+    <HeaderContainer />
+    <br/>
+    <br/>
+    <br/>
+    <Switch>
       <AuthRoute exact path='/' component={SplashScreenContainer} />
       <ProtectedRoute exact path='/dashboard' component={DashboardContainer} />
       <ProtectedRoute path='/search' component={SearchContainer} />
       <ProtectedRoute exact path='/hosts' component={HostIndexContainer} />
       <ProtectedRoute exact path='/hosts/:id' component={HostShowContainer} />
-    </section>
+    </Switch>
   </div>
 );
 export default App;

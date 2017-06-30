@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import HostShow from './host_show';
 import { fetchSingleHost } from '../../actions/host_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+
   return {
-    hostDetails: state.hosts,
+    hostDetails: state.hosts[ownProps.match.params.id],
     currentUser: state.session.currentUser
   };
 };

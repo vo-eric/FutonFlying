@@ -32,6 +32,10 @@ class HostIndexDetail extends React.Component {
 
   render() {
     return (
+      <Link
+        to={`/hosts/${this.props.host.id}`}
+        style={{ textDecoration: 'none', color: 'black' }}
+      >
         <div
           className='host-index-module'
           onClick={this.handleClick}
@@ -50,6 +54,7 @@ class HostIndexDetail extends React.Component {
             { this.acceptingGuests() }
           </div>
       </div>
+    </Link>
     );
   }
 }

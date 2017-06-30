@@ -15,8 +15,9 @@ class HostShow extends React.Component {
   }
 
   render () {
-    // debugger
-    const hostId = this.props.hostDetails;
+    //
+
+    // const hostId = this.props.hostDetails;
     return (
       <div className='host-show-main'>
         <div className='host-show-user'>
@@ -25,11 +26,11 @@ class HostShow extends React.Component {
           </div>
 
           <div className='host-show-name'>
-            {this.props.hostDetails.hostId.fname} {this.props.hostDetails.hostId.lname}
+            {this.props.hostDetails.fname} {this.props.hostDetails.lname}
           </div>
 
           <div className='host-show-location'>
-            {this.props.hostDetails.hostId.city}, {this.props.hostDetails.hostId.country}
+            {this.props.hostDetails.city}, {this.props.hostDetails.country}
           </div>
 
           <div>

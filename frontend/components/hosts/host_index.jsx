@@ -9,7 +9,7 @@ class HostIndex extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
+    //
     if (this.props.hosts) {
       this.props.fetchHosts(this.props.hosts);
     }
