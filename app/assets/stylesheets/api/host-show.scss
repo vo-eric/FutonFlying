@@ -7,7 +7,24 @@
   flex-direction: ltr;
 }
 
-.host-photo {
+.about-me {
+  margin-top: 10px;
+  height: 100%;
+  background: white;
+  border-bottom: 2px solid #bfcad2;
+}
+
+.about-me-header {
+  padding: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.about-me-body {
+  margin: 5px 10px 0 10px;
+  padding: 5px;
+  font-size: 14px;
+
 }
 
 .host-show-photo {

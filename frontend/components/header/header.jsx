@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Redirect } from 'react-router-dom';
+import { Link, Route, Redirect, withRouter } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
 import ModalContainer from '../modal/modal_container';
 import { login, logout } from '../../actions/session_actions';
@@ -14,7 +14,7 @@ class Header extends React.Component {
   }
 
   handleClick(e) {
-    this.props.logout();
+    this.props.logout().then( () => this.props.history.push('/'));
   }
 
   handleDemoClick(e) {
@@ -42,7 +42,8 @@ class Header extends React.Component {
             <div className='header-right'>
               <button
                 className="sign-out"
-                onClick={this.handleClick}>Sign Out</button>
+                onClick={this.handleClick}>Sign Out
+              </button>
             </div>
           </section>
         </section>
@@ -98,4 +99,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

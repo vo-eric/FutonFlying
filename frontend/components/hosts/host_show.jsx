@@ -36,7 +36,7 @@ class HostShow extends React.Component {
     }
   }
 
-
+  
   render () {
     return (
       <div className='host-show-main'>
@@ -75,6 +75,16 @@ class HostShow extends React.Component {
               >
               <i className="fa fa-envelope-o message-icon" aria-hidden="true"></i>
               </button>
+            </div>
+          </div>
+
+          <div className='about-me'>
+            <div className='about-me-header'>
+              About Me
+            </div>
+
+            <div className='about-me-body'>
+              {this.props.hostDetails.description}
             </div>
           </div>
         </div>
