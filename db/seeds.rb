@@ -57,6 +57,36 @@ host4 = Host.create!(
   accepting_guests: true
 )
 
+host5 = Host.create!(
+  lat: 43.124499,
+  lng: -78.799183,
+  fname: 'Kevin',
+  lname: 'Garvey',
+  city: 'Mapleton',
+  country: 'New York',
+  accepting_guests: true
+)
+
+host6 = Host.create!(
+  lat: 34.113417,
+  lng: -117.600756,
+  fname: 'Mila',
+  lname: 'Navas',
+  city: 'Rancho Cucamonga',
+  country: 'United States',
+  accepting_guests: true
+)
+
+host7 = Host.create!(
+  lat: 43.703215,
+  lng: -79.403278,
+  fname: 'James',
+  lname: 'Somers',
+  city: 'Toronto',
+  country: 'Canada',
+  accepting_guests: true
+)
+
 booking1 = Booking.create!(
   check_in_date: Date.new(2017, 7, 4),
   check_out_date: Date.new(2017, 7, 7),

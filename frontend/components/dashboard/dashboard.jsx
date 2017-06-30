@@ -61,7 +61,10 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-              There will be three locations here(hopefully they'll be randomized)
+              <Link
+                to={'/hosts'}>
+                Browse all Hosts
+              </Link>
             </div>
           </div>
 

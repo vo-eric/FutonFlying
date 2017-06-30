@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Route, Redirect } from 'react-router-dom';
 import SessionFormContainer from '../session_form/session_form_container';
 import ModalContainer from '../modal/modal_container';
-import { login } from '../../actions/session_actions';
+import { login, logout } from '../../actions/session_actions';
 import { receiveErrors, clearErrors } from '../../actions/error_actions';
 
 class Header extends React.Component {
@@ -35,6 +35,7 @@ class Header extends React.Component {
           <section className='subheader'>
             <Link
               to={"/dashboard"}
+              className='wordmark-link'
               style={{ textDecoration: 'none', color: '#D4490B'}}>
               <span className='wordmark'>futon flying</span>
             </Link>

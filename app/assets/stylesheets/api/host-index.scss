@@ -2,6 +2,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 90%;
+  max-height: 500px;
   display: flex;
   flex-direction: ltr;
   padding: 5px;
@@ -26,6 +27,7 @@
   width: 55%;
   background: white;
   margin-right: 3px;
+  overflow: scroll;
 }
 
 .no-hosts {
