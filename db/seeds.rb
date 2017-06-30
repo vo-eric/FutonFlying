@@ -13,10 +13,8 @@ user1 = User.create!(
   username: "cthanhvo",
   password: "password",
   fname: "Can",
-  lname: "Vo",
-  avatar: "https://s3.us-east-2.amazonaws.com/futon-flying-pro/ctvo.jpg"
+  lname: "Vo"
 );
-
 
 host1 = Host.create!(
   lat: 40.418639,
@@ -37,8 +35,7 @@ host2 = Host.create!(
   city: "Woodbridge",
   country: "United Kingdom",
   accepting_guests: true,
-  description: "Ñaaaaaaaaaaaa!!!! Heeeello everyone!!! My name is Robbie and im 25. I'm from Spain but I currently live in streatham hill, London. I'm working as a registered nurse in a hospital making smile, helping and providing loveeee to people haha!!! I'm actually studing a degree in law at the same time for change the change in the world and try to help people in a bigger way! I'm a very happy, funny, positive, optimistic and social guy that always keeps his smile very high!!! :) I definitelly can not spend any second of my life doing nothing or not sharing a good moment with someone. I'm a very friendlyyy dude, lets just met and hang out so you can see whaaaat I am taaaalking abooouuuut! Love is always the answer!",
-  avatar: "https://s3.us-east-2.amazonaws.com/futon-flying-pro/robbie.jpg"
+  description: "Ñaaaaaaaaaaaa!!!! Heeeello everyone!!! My name is Robbie and im 25. I'm from Spain but I currently live in streatham hill, London. I'm working as a registered nurse in a hospital making smile, helping and providing loveeee to people haha!!! I'm actually studing a degree in law at the same time for change the change in the world and try to help people in a bigger way! I'm a very happy, funny, positive, optimistic and social guy that always keeps his smile very high!!! :) I definitelly can not spend any second of my life doing nothing or not sharing a good moment with someone. I'm a very friendlyyy dude, lets just met and hang out so you can see whaaaat I am taaaalking abooouuuut! Love is always the answer!"
 );
 
 host3 = Host.create!(
@@ -60,8 +57,7 @@ host4 = Host.create!(
   city: 'Copenhagen',
   country: 'Denmark',
   accepting_guests: true,
-  description: "I'm Wen Bo",
-  avatar: "	https://s3.us-east-2.amazonaws.com/futon-flying-pro/wenbo.jpg"
+  description: "I'm Wen Bo"
 )
 
 host5 = Host.create!(
@@ -96,12 +92,4 @@ host7 = Host.create!(
   accepting_guests: true,
   description: "We live on a farm in the Napa Valley. We have sheep, chickens, rabbits, turkeys, Australian Cattle Dogs, cats and one goofy Labradoodle. We have a large vegetable garden, fruit and nut trees and a Cabernet Sauvignon vineyard. We sell produce from the farm directly and give away any oversupply to the local food bank. We welcome day visitors to the farm and love sharing this beautiful area with cityfolk. Kirsten (thats's me)is a massage thearpist which allows her time to do lots of other things in life like farming and volunteering on the board of the Napa Valley Marathon. Ron has recently relocated to Napa from Reno. He has a business background and is now trying to figure out what he wants to be in his new life.
 Our dogs are our children although we enjoy visits from our nieces and any other children who would like to experience the farm."
-)
-
-booking1 = Booking.create!(
-  check_in_date: Date.new(2017, 7, 4),
-  check_out_date: Date.new(2017, 7, 7),
-  host_id: 19,
-  guest_id: 25,
-  num_guests: 2
 )
