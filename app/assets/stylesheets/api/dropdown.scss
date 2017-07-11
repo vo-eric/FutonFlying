@@ -1,0 +1,20 @@
+.dropdown-enter {
+  max-height: 0px;
+  -webkit-transition: max-height 1s ease;
+  overflow: hidden;
+}
+
+.dropdown-enter.dropdown-enter-active {
+  height: auto;
+  max-height: 400px;
+}
+
+.dropdown-leave {
+  max-height: 400px;
+  -webkit-transition: max-height 1s ease;
+}
+
+.dropdown-leave.dropdown-leave-active {
+  overflow: hidden;
+  max-height: 0px;
+}

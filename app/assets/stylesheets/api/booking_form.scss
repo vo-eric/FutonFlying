@@ -1,0 +1,19 @@
+.dropdown {
+  background: white;
+  border-bottom: 2px solid #bfcad2;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.booking-request-text {
+  text-transform: uppercase;
+  padding: 20px 0 10px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.booking-dates {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 75px;
+}

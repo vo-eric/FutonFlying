@@ -1,25 +1,23 @@
 import { connect } from 'react-redux';
-import HostShow from './host_show';
+import Dropdown from './dropdown';
 import { fetchSingleHost } from '../../actions/host_actions';
-import { clearErrors } from '../../actions/error_actions';
 import { openDropdown, closeDropdown } from '../../actions/dropdown_actions';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
-    hostDetails: state.hosts[ownProps.match.params.id]
-  };
+    dropdownIsOpen: state.dropdown.dropdownIsOpen,
+    state
+  }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchSingleHost: (id) => dispatch(fetchSingleHost(id)),
-    clearErrors: () => dispatch(clearErrors()),
-    openDropdown: () => dispatch(openDropdown()),
     closeDropdown: () => dispatch(closeDropdown())
-  };
+  }
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HostShow);
+)(Dropdown);

@@ -1,4 +1,4 @@
-## Design Documents
+.## Design Documents
 * [View Wireframes][wireframes]
 * [React Components][components]
 * [Sample State][sample-state]

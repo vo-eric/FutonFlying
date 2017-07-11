@@ -1,23 +1,28 @@
 import React from 'react';
 import HostShowDetail from './host_show_detail';
 import HostMapContainer from '../hosts_map/hosts_map_container';
-import ModalContainer from '../modal/modal_container';
-import BookingsFormContainer from '../booking/bookings_form_container'
+import BookingsFormContainer from '../booking/bookings_form_container';
+import DropdownContainer from '../dropdown/dropdown_container';
 
 class HostShow extends React.Component {
   constructor(props) {
     super(props);
+    this.openDropdown = this.openDropdown.bind(this);
+    this.closeDropdown = this.closeDropdown.bind(this);
+  }
+
+  openDropdown() {
+    this.props.openDropdown();
+  }
+
+  closeDropdown() {
+    this.props.closeDropdown();
   }
 
   componentDidMount() {
     if (this.props.host) {
       this.props.fetchSingleHost(this.props.hosts.id)
     }
-  }
-
-  clearErrorsOpenModal(component) {
-    this.props.clearErrors();
-    this.props.openModal(component);
   }
 
   acceptingGuests() {
@@ -36,7 +41,6 @@ class HostShow extends React.Component {
     }
   }
 
-  
   render () {
     return (
       <div className='host-show-main'>
@@ -64,8 +68,7 @@ class HostShow extends React.Component {
             <div className='booking-buttons'>
               <button
                 className='request-button'
-                onClick={() => this.clearErrorsOpenModal(
-                  <BookingsFormContainer />)}
+                onClick={() => this.openDropdown()}
               >
               Send Request
               </button>
@@ -77,7 +80,7 @@ class HostShow extends React.Component {
               </button>
             </div>
           </div>
-
+          <DropdownContainer />
           <div className='about-me'>
             <div className='about-me-header'>
               About Me

@@ -1,5 +1,4 @@
 import React from 'react';
-import ModalContainer from '../modal/modal_container';
 import { clearErrors } from '../../actions/error_actions';
 
 class BookingsForm extends React.Component {
@@ -17,25 +16,37 @@ class BookingsForm extends React.Component {
     });
   }
 
-  clearErrorsOpenModal(component) {
-    this.props.clearErrors();
-    this.props.openModal(component);
-  }
-
-
-
   render() {
     return (
-      <div className='booking-modal'>
-        <form onSubmit={this.handleSubmit}>
-          <div className='booking-form'>
-            <div className='booking-header'>
-              REQUEST TO STAY
-            </div>
+      <div className='booking-dropdown'>
+        <div className='booking-request-text'>
+          Request to stay
+        </div>
+        <div className='booking-dates'>
+          <div className='booking-arrival'>
+            THIS IS WHENI ARRIVE
           </div>
-        </form>
-      </div>
-    )
-  }
 
+          <div className='booking-departure'>
+            THIS IS WHEN I DEPART
+          </div>
+        </div>
+
+        <div className='booking-travelers'>
+          THIS IS HOW MANY PEOPLE ARE COMING WITH ME
+        </div>
+
+        <div className='booking-message'>
+          THIS IS A MESSAGE TO YOU
+        </div>
+
+        <div className='booking-actions'>
+          THIS IS WHERE I SEND YOU A HELLO
+        </div>
+      </div>
+    );
+
+  }
 }
+
+export default BookingsForm

@@ -52,9 +52,6 @@ class Header extends React.Component {
     }
   }
 
-
-    // user1 = User.create!({username: "thebigbo92", password: "boAndArro", fname: "Wen Bo", lname: "Xie"})
-
   notLoggedIn() {
     if (!this.props.currentUser) {
       return (

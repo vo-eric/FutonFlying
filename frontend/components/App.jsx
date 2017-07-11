@@ -11,7 +11,7 @@ import HostIndexContainer from './hosts/host_index_container';
 import HostShowContainer from './hosts/host_show_container';
 import DashboardContainer from './dashboard/dashboard_container';
 import SearchContainer from './search/search_container';
-
+import BookingContainer from './booking/bookings_container';
 
 const App = () => (
   <div>
@@ -26,6 +26,7 @@ const App = () => (
       <ProtectedRoute path='/search' component={SearchContainer} />
       <ProtectedRoute exact path='/hosts' component={HostIndexContainer} />
       <ProtectedRoute exact path='/hosts/:id' component={HostShowContainer} />
+      <ProtectedRoute exact path='/bookings' component={BookingContainer} />
     </Switch>
   </div>
 );

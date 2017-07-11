@@ -4,7 +4,7 @@ import { openModal } from '../../actions/modal_actions';
 import Header from './header';
 import { clearErrors } from '../../actions/error_actions';
 
-const mapStateToProps = ( state ) => {
+const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
     loggedIn: Boolean(state.session.currentUser)

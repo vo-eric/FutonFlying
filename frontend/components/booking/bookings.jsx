@@ -1,5 +1,4 @@
 import React from 'react';
-import ModalContainer from '../modal/modal_container';
 import BookingsDetail from './bookings_detail';
 
 class Bookings extends React.Component {
@@ -9,11 +8,6 @@ class Bookings extends React.Component {
 
   componentDidMount() {
     this.props.fetchBookings();
-  }
-
-  clearErrorsOpenModal(component) {
-    this.props.clearErrors();
-    this.props.openModal(component);
   }
 
   handleSubmit(e) {

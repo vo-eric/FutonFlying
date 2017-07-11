@@ -17,8 +17,6 @@ class Modal extends React.Component {
     e.stopPropagation();
   }
 
-  // onClick={() => this.props.closeModal()}
-
   render () {
     if (this.props.modalIsOpen) {
       return (
