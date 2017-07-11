@@ -4,10 +4,15 @@ import { clearErrors } from '../../actions/error_actions';
 class BookingsForm extends React.Component {
   constructor(props) {
     super(props);
+    this.closeDropdown = this.closeDropdown.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
     this.setState(newProps.booking);
+  }
+
+  closeDropdown() {
+    this.props.closeDropdown();
   }
 
   update(property) {
@@ -41,7 +46,17 @@ class BookingsForm extends React.Component {
         </div>
 
         <div className='booking-actions'>
-          THIS IS WHERE I SEND YOU A HELLO
+          <button
+            className="booking-cancel-button"
+            onClick={() => this.closeDropdown()}
+          >
+            Cancel
+          </button>
+          <button
+            className="booking-request-button"
+          >
+            Send
+          </button>
         </div>
       </div>
     );

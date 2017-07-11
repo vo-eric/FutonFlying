@@ -8,15 +8,10 @@ class HostShow extends React.Component {
   constructor(props) {
     super(props);
     this.openDropdown = this.openDropdown.bind(this);
-    this.closeDropdown = this.closeDropdown.bind(this);
   }
 
   openDropdown() {
     this.props.openDropdown();
-  }
-
-  closeDropdown() {
-    this.props.closeDropdown();
   }
 
   componentDidMount() {

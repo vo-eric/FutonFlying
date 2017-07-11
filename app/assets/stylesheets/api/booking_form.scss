@@ -7,13 +7,56 @@
 
 .booking-request-text {
   text-transform: uppercase;
-  padding: 20px 0 10px 0;
+  padding: 15px 0 10px 0;
   font-size: 14px;
   border-bottom: 1px solid #ecf0f1;
 }
 
 .booking-dates {
-  display: flex;
-  justify-content: space-between;
+  padding-top: 15px;
   padding-right: 75px;
+  text-align: left;
+  display: flex;
+}
+
+.booking-arrival {
+  margin-right: 100px;
+}
+
+.booking-actions {
+  text-align: right;
+  padding-bottom: 7px;
+}
+
+.booking-cancel-button {
+  line-height: 1;
+  font-family: 'Lato', sans-serif;
+  background: #afb7c3;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 12px;
+  max-width: 240px;
+  text-align: center;
+  margin-right: 7px;
+  outline: none;
+}
+
+.booking-request-button {
+  line-height: 1;
+  font-family: 'Lato', sans-serif;
+  border: none;
+  background: #287fb8;
+  color: white;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 12px;
+  max-width: 240px;
+  text-align: center;
+  outline: none;
 }

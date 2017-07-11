@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import BookingsForm from './bookings_form';
+import { closeDropdown } from '../../actions/dropdown_actions';
 import { fetchBookings, fetchSingleBooking, createBooking, deleteBooking }
   from '../../actions/booking_actions';
 
@@ -13,7 +14,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchBooking: id => dispatch(fetchBooking(id)),
     createBooking: booking => dispatch(action(booking)),
     removeBookingErrors: () => dispatch(removeBookingErrors()),
-    updateRoom: room => dispatch(updateRoom(room))
+    updateRoom: room => dispatch(updateRoom(room)),
+    closeDropdown: () => dispatch(closeDropdown())
   };
 };
 

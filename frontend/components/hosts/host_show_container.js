@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import HostShow from './host_show';
 import { fetchSingleHost } from '../../actions/host_actions';
 import { clearErrors } from '../../actions/error_actions';
-import { openDropdown, closeDropdown } from '../../actions/dropdown_actions';
+import { openDropdown } from '../../actions/dropdown_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,8 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchSingleHost: (id) => dispatch(fetchSingleHost(id)),
     clearErrors: () => dispatch(clearErrors()),
-    openDropdown: () => dispatch(openDropdown()),
-    closeDropdown: () => dispatch(closeDropdown())
+    openDropdown: () => dispatch(openDropdown())
   };
 };
 
