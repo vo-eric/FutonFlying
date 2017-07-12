@@ -9,10 +9,60 @@ class SplashScreen extends React.Component {
   render () {
     return (
       <div className='splash'>
+        <div className="welcome-screen">
+          <div className="welcome-overlay">
+            <div className="overlay-text">
+                Stay with locals and meet travelers
+            </div>
+            <div className="overlay-subtext">
+                Share your experiences.
+            </div>
+          </div>
+        </div>
+
+        <div className="how-it-works">
+          <div className="hiw-text">
+            How it Works
+          </div>
+
+          <div className="short-underline">
+          </div>
+
+          <div className="hiw-info">
+            <div className="hiw-discover">
+              <img src = {window.images.discover} />
+            <div className="hiw-info-text">
+                Meet Amazing People
+              </div>
+
+              <div className="shorter-underline">
+              </div>
+
+              <div className="hiw-info-text">
+                Futonfliers open their homes and share their lives. Be connected.
+              </div>
+            </div>
+
+            <div className="hiw-find">
+              <img src = {window.images.futon} />
+              <div className="hiw-info-text">
+                Find a Host
+              </div>
+
+              <div className="shorter-underline">
+              </div>
+
+              <div className="hiw-info-text">
+                Connect with hosts and confirm your stay through FutonFlying. Your stay with hosts is free!
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         <div className='tgp-header'>
           Top Futonflying Destinations
         </div>
-        <br/>
         <br/>
 
         <div className='the-grand-piece'>

@@ -2,10 +2,108 @@ body {
   background-color: #f1efea;
 }
 
-.splash {
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
+.welcome-screen {
+  background-position-x: center;
+  background-position-y: top;
+  height: 500px;
+  background-image: url("../welcome.jpg");
+}
+
+.welcome-overlay {
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.5);
+  z-index: 2;
+}
+
+.overlay-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 50px;
+  padding-top: 200px;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+
+.overlay-subtext {
+  font-family: 'Lato', sans-serif;
+  font-size: 26px;
+  color: white;
+  text-align: center;
+  font-weight: 100;
+}
+
+.how-it-works{
+  margin: 20px 0;
+  padding: 50px 0;
+  background: #ed6504;
+}
+
+.hiw-text {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.hiw-info {
+  display: flex;
+  padding-top: 30px;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.hiw-discover {
+  height: 200px;
+  background: #ff855c;
+  margin: 5px;
+  max-width: 500px;
+  height: 250px;
+}
+
+.hiw-find {
+  height: 200px;
+  background: #ff855c;
+  margin: 5px;
+  max-width: 400px;
+  height: 250px;
+}
+
+.hiw-discover img, .hiw-find img {
+  height: 40%;
+  margin: 0 auto;
+  padding-top: 5px;
+  display: block;
+}
+
+.hiw-info-text {
+  padding: 10px 5px;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+  line-height: 1.5em;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Lato', sans-serif;
+}
+
+.short-underline {
+  padding-top: 5px;
+  margin: 0 auto;
+  width: 50px;
+  border-bottom: 2px solid white;
+}
+
+.shorter-underline {
+  padding-top: 5px;
+  margin: 0 auto;
+  width: 30px;
+  border-bottom: 2px solid white;
+}
+
+.the-grand-piece {
+  margin: 0 auto;
+  width: 80%;
   height: 600px;
 }
 
