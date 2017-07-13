@@ -57,7 +57,12 @@ class Header extends React.Component {
       return (
         <section className='header'>
           <section className='subheader'>
-            <span className="wordmark">futon flying</span>
+            <Link
+              to={"/"}
+              className='wordmark-link'
+              style={{ textDecoration: 'none', color: '#D4490B'}}>
+              <span className="wordmark">futon flying</span>
+            </Link>
             <div className="auth-buttons">
               <button
                 className='join-button'

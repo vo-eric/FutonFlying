@@ -1,7 +1,9 @@
 class Api::HostsController < ApplicationController
 
   def index
-    @hosts = Host.all
+    # @hosts = Host.all
+    @hosts = bounds ? Host.in_bounds(bounds) : Host.all
+    render :index
   end
 
   def create

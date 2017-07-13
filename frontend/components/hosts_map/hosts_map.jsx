@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
-// import MarkerManager from '../../util/marker_manager';
+import MarkerManager from '../../util/marker_manager';
 
-// const getCoordsObj = latLng => {
-//   return {
-//     lat: latLng.lat(),
-//     lng: latLng.lng()
-//   };
-// };
+const getCoordsObj = latLng => {
+  return {
+    lat: latLng.lat(),
+    lng: latLng.lng()
+  };
+};
 
 const mapOptions = {
   center: {
-    lat: 10.252175,
-    lng: 106.369445
+    lat: 34.043911,
+    lng: -118.265189
   },
   zoom: 13,
   scrollwheel: false
@@ -21,9 +21,13 @@ const mapOptions = {
 
 class HostMap extends React.Component {
 
-  componentDidMount() {
+  componentDidMount(props) {
+    // let mapOptions = {
+    //   center: { lat: ne}
+    // }
+    // debugger
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-    // this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager = new MarkerManager(this.map);
     // this.MarkerManager.updateMarkers(this.props.hosts);
     // this.registerListeners();
   }
@@ -38,7 +42,7 @@ class HostMap extends React.Component {
   //     const bounds = {
   //       northEast: { lat: north, lng: east },
   //       southWest: { lat: south, lng: west } };
-  //     this.props.updateFilter('bounds', bounds);
+  //     this.props.updateBounds('bounds', bounds);
   //   });
   // }
 

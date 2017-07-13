@@ -3,9 +3,7 @@ body {
 }
 
 .welcome-screen {
-  background-position-x: center;
-  background-position-y: top;
-  height: 500px;
+  height: 600px;
   background-image: url("../welcome.jpg");
 }
 
@@ -34,7 +32,7 @@ body {
 }
 
 .how-it-works{
-  margin: 20px 0;
+  margin: 10px 0;
   padding: 50px 0;
   background: #ed6504;
 }
@@ -45,6 +43,7 @@ body {
   font-size: 40px;
   font-weight: 100;
   text-align: center;
+  margin-bottom: 7px;
 }
 
 .hiw-info {

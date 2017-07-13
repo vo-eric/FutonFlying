@@ -4,7 +4,6 @@ import HostIndexContainer from '../hosts/host_index_container';
 
 class Search extends React.Component {
   constructor(props) {
-
     super(props);
     // this.hosts = hosts
   }

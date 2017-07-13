@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
+    updateBounds: (bounds) => dispatch(updateBounds(bounds))
   };
 };
 
