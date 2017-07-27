@@ -1,5 +1,8 @@
 import React from 'react';
+import { DateRangePicker } from 'react-dates';
+// import css from 'react-dates/lib/css/_datepicker.css';
 import { clearErrors } from '../../actions/error_actions';
+// import { START_DATE, END_DATE } from 'react-dates/constants';
 
 class BookingsForm extends React.Component {
   constructor(props) {
@@ -22,27 +25,26 @@ class BookingsForm extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className='booking-dropdown'>
         <div className='booking-request-text'>
           Request to stay
         </div>
         <div className='booking-dates'>
-          <div className='booking-arrival'>
-            THIS IS WHENI ARRIVE
-          </div>
-
-          <div className='booking-departure'>
-            THIS IS WHEN I DEPART
-          </div>
+          <DateRangePicker
+            startDate={this.props.startDate}
+            endDate={this.props.endDate}
+            focusedInput={this.props.focused}
+            onDatesChange={({startDate, endDate}) => { this.setState({ startDate, endDate }); }}
+            onFocusChange={( focused ) => { this.setState({ focused }); }}
+          />
         </div>
 
         <div className='booking-travelers'>
-          THIS IS HOW MANY PEOPLE ARE COMING WITH ME
         </div>
 
         <div className='booking-message'>
-          THIS IS A MESSAGE TO YOU
         </div>
 
         <div className='booking-actions'>

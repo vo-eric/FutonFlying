@@ -216,13 +216,12 @@ body {
   display: inline-block;
   max-height: 100%;
   max-width: 100%;
-  border: 5px solid #f1efea;
+  margin: 5px;
 }
 
 .splash-img:hover {
   transform: scale(1.1);
   transition: .3s ease-out;
-
 }
 
 .p1 {
