@@ -49,8 +49,8 @@ class Api::BookingsController < ApplicationController
     params
       .require(:booking)
       .permit(
-        :check_in_date,
-        :check_out_date,
+        :startDate,
+        :endDate,
         :guest_id,
         :host_id,
         :num_guests

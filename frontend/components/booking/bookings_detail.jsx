@@ -20,8 +20,8 @@ class BookingsDetail extends React.Component {
             {this.props.booking.fname} {this.props.booking.lname}
           </div>
           <div classNamee='trip-details'>
-            {this.props.booking.check_in_date} TO
-            {this.props.booking.check_out_date}
+            {this.props.booking.startDate} TO
+            {this.props.booking.endDate}
           </div>
           <div>
             HERES SOME FILLER TEST TEXT

@@ -2,12 +2,19 @@
 #
 # Table name: hosts
 #
-#  id               :integer          not null, primary key
-#  lng              :float            not null
-#  lat              :float            not null
-#  owner_id         :integer          not null
-#  accepting_guests :boolean          not null
-#  description      :string
+#  id                  :integer          not null, primary key
+#  lng                 :float            not null
+#  lat                 :float            not null
+#  description         :string
+#  fname               :string           not null
+#  lname               :string           not null
+#  city                :string
+#  country             :string
+#  accepting_guests    :boolean          default(TRUE)
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 
 class Host < ActiveRecord::Base

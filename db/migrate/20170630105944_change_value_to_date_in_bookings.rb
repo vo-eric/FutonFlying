@@ -1,8 +1,8 @@
 class ChangeValueToDateInBookings < ActiveRecord::Migration[5.0]
   def change
-    remove_column :bookings, :check_in_date
-    remove_column :bookings, :check_out_date
-    add_column :bookings, :check_in_date, :date, null: false
-    add_column :bookings, :check_out_date, :date, null: false
+    remove_column :bookings, :startDate
+    remove_column :bookings, :endDate
+    add_column :bookings, :startDate, :date, null: false
+    add_column :bookings, :endDate, :date, null: false
   end
 end

@@ -2,18 +2,18 @@
 #
 # Table name: bookings
 #
-#  id             :integer          not null, primary key
-#  check_in_date  :integer          not null
-#  check_out_date :integer          not null
-#  host_id        :integer          not null
-#  guest_id       :integer          not null
-#  num_guests     :integer          default(1), not null
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
+#  id         :integer          not null, primary key
+#  host_id    :integer          not null
+#  guest_id   :integer          not null
+#  num_guests :integer          default(1), not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  startDate  :date
+#  endDate    :date
 #
 
 class Booking < ActiveRecord::Base
-  validates :check_in_date, :check_out_date, :guest_id, :host_id, :num_guests, presence: true
+  validates :startDate, :endDate, :guest_id, :host_id, :num_guests, presence: true
 
   validate :is_after?, :valid_range?
 
@@ -30,14 +30,14 @@ class Booking < ActiveRecord::Base
     optional: true
 
   def is_after?
-    if (check_in_date && check_out_date) && check_in_date < Date.today
-      errors.add(:check_in_date, "cannot be before today.")
+    if (startDate && endDate) && startDate < Date.today
+      errors.add(:startDate, "cannot be before today.")
     end
   end
 
   def valid_range?
-    if (check_in_date > check_out_date)
-      errors.add(:check_in_date, "cannot be after check in date")
+    if (startDate > endDate)
+      errors.add(:startDate, "cannot be after check in date")
     end
   end
 

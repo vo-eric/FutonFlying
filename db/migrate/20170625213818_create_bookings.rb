@@ -1,8 +1,8 @@
 class CreateBookings < ActiveRecord::Migration[5.0]
   def change
     create_table :bookings do |t|
-      t.integer :check_in_date, null: false
-      t.integer :check_out_date, null: false
+      t.integer :startDate, null: false
+      t.integer :endDate, null: false
       t.integer :host_id, null: false
       t.integer :guest_id, null: false
       t.integer :num_guests, default: 1, null: false

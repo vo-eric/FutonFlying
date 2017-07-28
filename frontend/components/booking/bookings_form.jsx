@@ -7,6 +7,7 @@ import { clearErrors } from '../../actions/error_actions';
 class BookingsForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = this.props.bookingInfo;
     this.closeDropdown = this.closeDropdown.bind(this);
   }
 
@@ -31,15 +32,17 @@ class BookingsForm extends React.Component {
         <div className='booking-request-text'>
           Request to stay
         </div>
-        <div className='booking-dates'>
-          <DateRangePicker
-            startDate={this.props.startDate}
-            endDate={this.props.endDate}
-            focusedInput={this.props.focused}
-            onDatesChange={({startDate, endDate}) => { this.setState({ startDate, endDate }); }}
-            onFocusChange={( focused ) => { this.setState({ focused }); }}
-          />
-        </div>
+        <form onSubmit={this.handleSubmit}>
+          <div className='booking-dates'>
+            <DateRangePicker
+              startDate={this.props.startDate}
+              endDate={this.props.endDate}
+              focusedInput={this.props.focused}
+              onDatesChange={({startDate, endDate}) => { this.setState({ startDate, endDate }); }}
+              onFocusChange={( focused ) => { this.setState({ focused }); }}
+            />
+          </div>
+        </form>
 
         <div className='booking-travelers'>
         </div>
