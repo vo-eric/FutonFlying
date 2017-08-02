@@ -5,8 +5,10 @@ import { fetchBookings, fetchSingleBooking, createBooking, deleteBooking }
   from '../../actions/booking_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let bookingInfo = {arrival_date: "", depart_date: "", num_travellers: ""};
-  return bookingInfo;
+  return {
+    user: state.session.currentUser,
+    host: state.hosts
+  }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

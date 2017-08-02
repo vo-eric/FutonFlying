@@ -12,13 +12,6 @@
   border-bottom: 1px solid #ecf0f1;
 }
 
-.booking-dates {
-  padding-top: 15px;
-  padding-right: 75px;
-  text-align: left;
-  display: flex;
-}
-
 .booking-arrival {
   margin-right: 100px;
 }
@@ -62,5 +55,5 @@
 }
 
 .booking-dates {
-  max-height: 400px;
+  width: 10%;
 }

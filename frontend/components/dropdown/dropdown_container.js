@@ -4,6 +4,7 @@ import { fetchSingleHost } from '../../actions/host_actions';
 import { openDropdown, closeDropdown } from '../../actions/dropdown_actions';
 
 const mapStateToProps = (state) => {
+  debugger
   return {
     dropdownIsOpen: state.dropdown.dropdownIsOpen,
     state
