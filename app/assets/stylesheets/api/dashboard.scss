@@ -14,7 +14,7 @@
 
 .dash-user {
   text-align: center;
-  width: 20%;
+  min-width: 20%;
   padding: 0px 10px 10px 10px;
 }
 
@@ -23,10 +23,14 @@
   width: 150px;
   height: 150px;
   border-radius: 75px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dash-user-info {
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 20%;
   background: white;
   border-bottom: 2px solid #bfcad2;
   padding-bottom: 20px;
@@ -40,11 +44,6 @@
   font-weight: 300;
 }
 
-.user-photo {
-  margin-left: auto;
-  margin-right: auto;
-
-}
 
 .trips {
   width: 80%;

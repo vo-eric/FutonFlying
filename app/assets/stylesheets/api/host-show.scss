@@ -40,7 +40,7 @@
 .host-show-user {
   text-align: center;
   background: white;
-  width: 20%;
+  min-width: 20%;
   height: auto;
   border-bottom: 2px solid #bfcad2;
   padding-bottom: 20px
@@ -115,7 +115,7 @@
  outline: none;
 }
 
-.message-icon {
+.mail-icon {
   color: white;
-  font-size: 20px;
+  font-size: 2em;
 }

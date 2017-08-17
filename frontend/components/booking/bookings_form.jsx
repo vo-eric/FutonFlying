@@ -1,6 +1,5 @@
 import React from 'react';
 import { DateRangePicker } from 'react-dates';
-// import 'react-dates/lib/css/_datepicker.css';
 // import css from 'react-dates/lib/css/_datepicker.css';
 import { clearErrors } from '../../actions/error_actions';
 // import { START_DATE, END_DATE } from 'react-dates/constants';
@@ -30,7 +29,7 @@ class BookingsForm extends React.Component {
     return (
       <div className='booking-dropdown'>
         <div className='booking-request-text'>
-          Request to stay with {this.props.host.name}
+          Request to stay
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className='booking-dates'>

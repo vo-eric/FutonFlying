@@ -67,12 +67,6 @@ class HostShow extends React.Component {
               >
               Send Request
               </button>
-
-              <button
-                className='message-button'
-              >
-              <i className="fa fa-envelope-o message-icon" aria-hidden="true"></i>
-              </button>
             </div>
           </div>
           <DropdownContainer />
