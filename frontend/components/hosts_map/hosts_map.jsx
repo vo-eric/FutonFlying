@@ -25,7 +25,6 @@ class HostMap extends React.Component {
     // let mapOptions = {
     //   center: { lat: ne}
     // }
-    // debugger
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     // this.MarkerManager.updateMarkers(this.props.hosts);
