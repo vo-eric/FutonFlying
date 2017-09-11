@@ -1,4 +1,8 @@
 var path = require("path");
+var webpack = require("weback");
+
+var plugins = [];
+var devPlugins = [];
 
 var prodPlugins = [
   new webpack.DefinePlugin({
@@ -12,6 +16,10 @@ var prodPlugins = [
     }
   })
 ];
+
+plugins = plugins.concat(
+  process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
+)
 
 module.exports = {
   context: __dirname,
