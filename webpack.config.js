@@ -1,5 +1,5 @@
 var path = require("path");
-var webpack = require("weback");
+var webpack = require("webpack");
 
 var plugins = [];
 var devPlugins = [];
