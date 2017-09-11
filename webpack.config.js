@@ -1,5 +1,18 @@
 var path = require("path");
 
+var prodPlugins = [
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
+    }
+  }),
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: true
+    }
+  })
+];
+
 module.exports = {
   context: __dirname,
   entry: "./frontend/futon_flying.jsx",
