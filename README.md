@@ -1,10 +1,8 @@
-### Heroku Link
+### FutonFlying
 
-[FutonFlying] https://futon-flying.herokuapp.com
+[FutonFlying] [link]
 
-## Project Details
-
-### About
+[link]: https://futon-flying.herokuapp.com
 
 FutonFlying is a web application inspired by CouchSurfing built using Ruby on Rails as well as React/Redux. The basic premise is that users(futonfliers) can stay with other users or host fellow travelers at no cost.
 
