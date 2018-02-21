@@ -1,19 +1,22 @@
-.sign-log {
-  border-radius: 3px;
-  width: 100%;
-  background: white;
+// Header of session modals
+span {
+  margin: 15px 20px 0 0;
+  cursor: pointer;
 }
 
-.whole-name {
+.modal-head {
   display: flex;
-  font-size: 14px;
-  margin-left: 5%;
-  margin-right: 5%;
   justify-content: space-between;
-  padding-bottom: 4px;
 }
 
-.left-name {
+.modal-head-text {
+  font: 18px;
+  color: #27374c;
+  font-weight: bold;
+  margin: 15px 0 10px 20px;
+}
+// First & Last Name of User
+.input-first-name {
   padding-left: 5px;
   border-radius: 4px;
   height: 30px;
@@ -24,7 +27,7 @@
   font-size: inherit;
 }
 
-.right-name {
+.input-last-name {
   padding-left: 5px;
   margin-left: 10px;
   border-radius: 4px;
@@ -34,4 +37,60 @@
   background: white;
   display: block;
   font-size: inherit;
+}
+
+.input-name {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 0 15px 5px 15px;
+}
+
+//Username, Password, and Submit button
+.auth-form-username, .auth-form-password {
+  padding-left: 5px;
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  border: 1px solid #aeb5ba;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.auth-form {
+  margin: 15px 20px 0 15px
+}
+
+.alt-text {
+  font-size: 16px;
+  text-align: center;
+}
+
+.submit-button {
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  height: 35px;
+  width: 102%;
+  background: #287fb8;
+  border: 1px solid #287fb8;
+  margin-bottom: 20px;
+}
+
+//Modal 'footer'
+.alt-text {
+  font-size: 20px;
+  text-align: center;
+}
+
+.form-switch {
+  width: 30%;
+  height: 30px;
+  font-size: 14px;
+  border: 1px solid #287fb8;
+  color: #287fb8;
+  border-radius: 5px;
+  outline: 0;
 }

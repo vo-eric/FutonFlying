@@ -6,33 +6,20 @@ import ModalContainer from './modal_container';
 class Modal extends React.Component {
   constructor (props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(e) {
-    this.props.closeModal();
-  }
-
-  stopPropagation(e) {
-    e.stopPropagation();
   }
 
   render () {
     if (this.props.modalIsOpen) {
       return (
         <div
-          className='outside-modal'
+          className='modal-background'
           onClick={this.handleClick}
         >
           <div
-            className="gen-modal"
+            className="modal"
             onClick={this.stopPropagation}
           >
-            <button
-              className="close-modal"
-              onClick={this.handleClick}
-              >
-              X</button>
+
             <SessionFormContainer />
           </div>
       </div>

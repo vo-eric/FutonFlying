@@ -1,98 +1,21 @@
-.modal-head {
-  line-height: 1.5;
+.modal {
   font-family: 'Lato', sans-serif;
-  font: 18px;
-  padding-bottom: 15px;
-  margin-left: 5%;
-  margin-right: 5%;
-  color: #27374c;
-  border-bottom: 1px solid #aeb5ba;
-  font-weight: bold;
-  justify-content: space-between;
-}
-
-.gen-modal {
-  border: 1px solid #aeb5ba;
-  transition: .3s;
-  font-family: 'Lato', sans-serif;
-  height: 60%;
+  height: 45%;
   width: 25%;
-  background: rgba(255, 255, 255, 1);
-  z-index: 2000;
+  background: #fff;
+  z-index: 2;
+  min-width: 400px;
   margin: 5% auto;
   border-radius: 7px;
-  overflow: auto;
 }
 
-.outside-modal {
+.modal-background {
   transition: .3s;
   z-index: 1;
-  background: rgba(0, 0, 0, .92);
+  background: rgba(0, 0, 0, .94);
   width: 100%;
   height: 100%;
   position: fixed;
   left: 0;
   top: 0;
-}
-
-.sign-log {
-  margin-right: 5%;
-  margin-left: 3px;
-  padding-left: 2%;
-  border-radius: 4px;
-  height: 30px;
-  width: 100%;
-  border: 1px solid #aeb5ba;
-  background: white;
-  display: block;
-  font-size: 14px;
-}
-
-.close-modal {
-  outline: none;
-  border: none;
-  background-color: white;
-  color: #aeb5ba;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.auth-form {
-  margin-top: 4%;
-  margin-right: 8%;
-  margin-left: 4%;
-}
-
-.submit-button {
-  text-align: left;
-  color: white;
-  text-align: center;
-  font: inherit;
-  border-radius: 2px;
-  font-size: 12px;
-  margin-right: 5%;
-  height: 30px;
-  width: 104%;
-  background: #287fb8;
-  border: 1px solid #287fb8;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-
-.alt-text {
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  text-align: center;
-}
-
-.form-switch {
-  width: 30%;
-  font-family: 'Lato', sans-serif;
-  font-size: 14px;
-  border: 1px solid #287fb8;
-  color: #287fb8;
-  background: white;
-  border-radius: 4px;
-  outline: 0;
 }

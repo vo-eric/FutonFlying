@@ -13,6 +13,15 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearErrorsOpenModal = this.clearErrorsOpenModal.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.props.closeModal();
+  }
+
+  stopPropagation(e) {
+    e.stopPropagation();
   }
 
   update(property) {
@@ -40,13 +49,13 @@ class SessionForm extends React.Component {
   handleName() {
     if (this.props.formType === 'signup') {
       return (
-        <div className='whole-name'>
+        <div className='input-name'>
           <input
             type="text"
             placeholder="first name"
             value={this.state.fname}
             onChange={this.update('fname')}
-            className="left-name"
+            className="input-first-name"
           />
 
           <input
@@ -54,7 +63,7 @@ class SessionForm extends React.Component {
             placeholder="last name"
             value={this.state.lname}
             onChange={this.update('lname')}
-            className="right-name"
+            className="input-last-name"
           />
       </div>
       );
@@ -78,16 +87,24 @@ class SessionForm extends React.Component {
       return(
         <section>
           <div className='modal-head'>
-            Log in to Futon Flying
+            <div className="modal-head-text">
+              Log in to Futon Flying
+            </div>
+            <span onClick={this.handleClick}>X</span>
           </div>
+          <hr></hr>
         </section>
       );
     } else if (this.props.formType === 'signup'){
       return(
         <section>
           <div className='modal-head'>
-            Join Futonflying for free
+            <div className="modal-head-text">
+              Join Futonflying for free
+            </div>
+            <span onClick={this.handleClick}>X</span>
           </div>
+          <hr></hr>
         </section>
       )
     }
@@ -165,7 +182,7 @@ class SessionForm extends React.Component {
                 placeholder="username"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="sign-log"
+                className="auth-form-username"
                 />
               <br/>
               <input
@@ -173,7 +190,7 @@ class SessionForm extends React.Component {
                 placeholder="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="sign-log"
+                className="auth-form-password"
                 />
               {this.renderButton()}
               {this.switchForm()}
