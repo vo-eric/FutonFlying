@@ -9,7 +9,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  //
   return {
     fetchHosts: (hosts) => dispatch(fetchHosts(hosts)),
     fetchSingleHost: (id) => dispatch(fetchSingleHost(id))

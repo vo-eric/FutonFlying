@@ -44,34 +44,34 @@ class Dashboard extends React.Component {
 
         <div className='trips'>
 
-          <div className='search-all'>
-            <div className='where-text'>
-              Where do you want to go?
+          <div className='teaser'>
+            <div className='teaser-text'>
+              Explore Europe
             </div>
 
-            <div className='inside-text'>
-              There should be a search bar here
-            </div>
-          </div>
+            <div className='city-images'>
+              <div className="city-image">
+                <img src={window.images.vienna} />
+              </div>
 
-          <div className='random-locations'>
-            <div className='dash-text'>
-              <i className="fa fa-globe icons" aria-hidden="true"></i>
-              THE WORLD'S FUTONS ARE AT YOUR FINGERTIPS
-            </div>
+              <div className="city-image">
+                <img src={window.images.berlin} />
+              </div>
 
-            <div className='inside-text'>
+              <div className="city-image">
+                <img src={window.images.porto} />
+              </div>
+            </div>
               <Link
+                className="browse-all-text"
                 to={'/hosts'}>
                 Browse all Hosts
               </Link>
-            </div>
           </div>
 
           <div className='travel'>
             <div className='dash-text'>
-              <i className="fa fa-plane icons" aria-hidden="true"></i>
-              MY TRAVEL PLANS
+              My Travel Plans
             </div>
 
             <div className='inside-text'>
@@ -81,8 +81,7 @@ class Dashboard extends React.Component {
 
           <div className='upcoming-guests'>
             <div className='dash-text'>
-              <i className="fa fa-home icons" aria-hidden="true"></i>
-                MY UPCOMING GUESTS
+                My Upcoming Guests
             </div>
 
             <div className='inside-text'>

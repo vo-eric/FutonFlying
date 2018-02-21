@@ -56,7 +56,7 @@ host4 = Host.create!(
   lname: 'Xie',
   city: 'Copenhagen',
   country: 'Denmark',
-  accepting_guests: true,
+  accepting_guests: false,
   description: "I'm Wen Bo"
 )
 

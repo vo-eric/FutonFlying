@@ -9,7 +9,6 @@ class HostIndex extends React.Component {
   }
 
   componentDidMount() {
-    //
     if (this.props.hosts) {
       this.props.fetchHosts(this.props.hosts);
     }
@@ -24,7 +23,7 @@ class HostIndex extends React.Component {
   }
 
   render() {
-    if (this.props.hosts.length === 0) {
+    if (!this.props.hosts) {
       return (
         <section className='hosts-search'>
           <div className='no-hosts'>

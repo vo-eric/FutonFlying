@@ -1,7 +1,7 @@
 .hosts-search {
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: 60%;
   max-height: 500px;
   display: flex;
   flex-direction: ltr;
@@ -47,14 +47,12 @@
 
 .host-index-module {
   display: flex;
-  flex-direction: ltr;
   padding-left: 10px;
   border-bottom: 1px solid #ecf0f1;
 }
 
 .host-index-details {
   display: flex;
-  flex-direction: ltr;
   justify-content: space-between;
 }
 
