@@ -1,10 +1,8 @@
 .host-show-main {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   width: 90%;
   font-family: 'Lato', sans-serif;
   display: flex;
-  flex-direction: ltr;
 }
 
 .about-me {
@@ -30,23 +28,20 @@
   margin-top: 5px;
   width: 150px;
   height: 150px;
-  border-radius: 75px;
-}
-
-.show-img-placeholder {
-  font-size: 5rem;
+  border-radius: 50%;
 }
 
 .host-show-user {
   text-align: center;
   background: white;
   min-width: 20%;
-  height: auto;
+  height: 300px;
   border-bottom: 2px solid #bfcad2;
-  padding-bottom: 20px
+  padding-top: 15px;
 }
 
 .host-show-name {
+  flex-wrap: wrap;
   margin-top: 10px;
   font-size: 30px;
   text-align: center;
@@ -64,34 +59,25 @@
 }
 
 .host-booking {
-  width: 100;
-  height: auto;
   display: flex;
-  flex-direction: ltr;
   background: white;
   border-bottom: 2px solid #bfcad2;
   justify-content: space-between;
   padding: 15px 8px;
 }
 
-.show-accepting-guests {
+.accepting-guests {
   color: #41b866;
-  font-size: 1.4em;
+  font-size: 1.5em;
 }
 
-.show-no-guests {
+.not-accepting-guests {
   color: #ff3f2e;
-  font-size: 1.4em;
-}
-
-.booking-buttons {
-  display: flex;
-  flex-direction: ltr;
+  font-size: 1.5em;
 }
 
 .request-button {
   background: #287fb8;
-  font-family: 'Lato', sans-serif;
   border: 1px solid #287fb8;
   width: auto;
   font-size: 14px;
@@ -102,20 +88,4 @@
   border-radius: 3px;
   margin-right: 5px;
   outline: none;
-}
-
-.message-button {
- background: #287fb8;
- border: 1px solid #287fb8;
- width: auto;
- cursor: pointer;
- padding: 5px 7px;
- text-align: center;
- border-radius: 3px;
- outline: none;
-}
-
-.mail-icon {
-  color: white;
-  font-size: 2em;
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import BookingsFormContainer from '../booking/bookings_form_container';
-import { CSSTransitionGroup } from 'react-transition-group';
 
 class Dropdown extends React.Component {
   constructor(props) {
@@ -16,13 +15,7 @@ class Dropdown extends React.Component {
     if (this.props.dropdownIsOpen) {
       return (
         <div className="dropdown">
-          <CSSTransitionGroup
-            transitionName="dropdown"
-            transitionEnterTimeout={1000}
-            transitionLeaveTimeout={1000}
-          >
-            <BookingsFormContainer />
-          </CSSTransitionGroup>
+          <BookingsFormContainer />
         </div>
       );
     } else {

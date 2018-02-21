@@ -19,6 +19,7 @@ const App = () => (
     <HeaderContainer />
     <br/>
     <br/>
+    <br/>
     <Switch>
       <AuthRoute exact path='/' component={SplashScreenContainer} />
       <ProtectedRoute exact path='/dashboard' component={DashboardContainer} />

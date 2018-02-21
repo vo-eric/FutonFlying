@@ -14,7 +14,7 @@ class Header extends React.Component {
   }
 
   handleClick(e) {
-    this.props.logout().then( () => this.props.history.push('/'));
+    this.props.logout()
   }
 
   handleDemoClick(e) {
@@ -26,8 +26,6 @@ class Header extends React.Component {
     this.props.openModal(component);
   }
 
-//Sign Out button will be changed to a photo with a drop down
-//containing dashboard, profile, and sign out
   isLoggedIn() {
     if (this.props.currentUser) {
       return (
@@ -41,6 +39,7 @@ class Header extends React.Component {
             </Link>
             <div className='header-right'>
               <button
+                Link to={'/'}
                 className="sign-out"
                 onClick={this.handleClick}>Sign Out
               </button>

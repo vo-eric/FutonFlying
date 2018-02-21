@@ -8,8 +8,8 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: "",
+      username: '',
+      password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearErrorsOpenModal = this.clearErrorsOpenModal.bind(this);
@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
       } else if (this.props.formType === 'signup') {
         this.props.signup({ user }).then(this.props.closeModal);
       }
-      this.setState({username: "", password: "", fname: "", lname: ""})
+      this.setState({username: '', password: '', fname: '', lname: ''})
   }
 
   handleName() {
@@ -51,19 +51,19 @@ class SessionForm extends React.Component {
       return (
         <div className='input-name'>
           <input
-            type="text"
-            placeholder="first name"
+            type='text'
+            placeholder='first name'
             value={this.state.fname}
             onChange={this.update('fname')}
-            className="input-first-name"
+            className='input-first-name'
           />
 
           <input
-            type="text"
-            placeholder="last name"
+            type='text'
+            placeholder='last name'
             value={this.state.lname}
             onChange={this.update('lname')}
-            className="input-last-name"
+            className='input-last-name'
           />
       </div>
       );
@@ -87,24 +87,24 @@ class SessionForm extends React.Component {
       return(
         <section>
           <div className='modal-head'>
-            <div className="modal-head-text">
+            <div className='modal-head-text'>
               Log in to Futon Flying
             </div>
-            <span onClick={this.handleClick}>X</span>
+            <span className='modal-exit' onClick={this.handleClick}>X</span>
           </div>
-          <hr></hr>
+          <hr />
         </section>
       );
     } else if (this.props.formType === 'signup'){
       return(
         <section>
           <div className='modal-head'>
-            <div className="modal-head-text">
+            <div className='modal-head-text'>
               Join Futonflying for free
             </div>
-            <span onClick={this.handleClick}>X</span>
+            <span className='modal-exit' onClick={this.handleClick}>X</span>
           </div>
-          <hr></hr>
+          <hr />
         </section>
       )
     }
@@ -178,19 +178,19 @@ class SessionForm extends React.Component {
             {this.handleName()}
             <div className='auth-form'>
               <input
-                type="text"
-                placeholder="username"
+                type='text'
+                placeholder='username'
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="auth-form-username"
+                className='auth-form-username'
                 />
               <br/>
               <input
-                type="password"
-                placeholder="password"
+                type='password'
+                placeholder='password'
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="auth-form-password"
+                className='auth-form-password'
                 />
               {this.renderButton()}
               {this.switchForm()}

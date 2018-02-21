@@ -1,19 +1,51 @@
 .dropdown {
-  background: white;
+  background: #fff;
   border-bottom: 2px solid #bfcad2;
   margin-top: 10px;
   padding: 0 10px;
 }
 
-.booking-request-text {
+.booking-request-header {
   text-transform: uppercase;
   padding: 15px 0 10px 0;
   font-size: 14px;
   border-bottom: 1px solid #ecf0f1;
 }
 
-.booking-arrival {
-  margin-right: 100px;
+.booking-dates {
+  margin-top: 10px;
+  display: flex;
+}
+
+.booking-request-dates, .booking-request-message {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-request-message span {
+  margin: 30px 0 10px 0;
+}
+
+.booking-request-message textarea {
+  height: 200px;
+  padding: 10px 0 0 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.booking-request-input {
+  padding: 8px;
+  margin-top: 10px;
+  font-family: 'Lato', sans-serif;
+  height: 10px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.booking-request-dates:first-of-type {
+  margin-right: 20px;
 }
 
 .booking-actions {
@@ -21,11 +53,9 @@
   padding-bottom: 7px;
 }
 
-.booking-cancel-button {
+.booking-dropdown-button {
   line-height: 1;
-  font-family: 'Lato', sans-serif;
-  background: #afb7c3;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 3px;
   display: inline-block;
@@ -38,22 +68,11 @@
   outline: none;
 }
 
-.booking-request-button {
-  line-height: 1;
-  font-family: 'Lato', sans-serif;
-  border: none;
-  background: #287fb8;
-  color: white;
-  border-radius: 3px;
-  display: inline-block;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 8px 12px;
-  max-width: 240px;
-  text-align: center;
-  outline: none;
+.booking-dropdown-button:first-of-type {
+  background: #afb7c3;
+  margin-right: 7px;
 }
 
-.booking-dates {
-  width: 10%;
+.booking-dropdown-button:last-of-type {
+  background: #287fb8;
 }

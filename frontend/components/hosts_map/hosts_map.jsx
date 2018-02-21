@@ -27,13 +27,14 @@ class HostMap extends React.Component {
     // }
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager.updateMarkers();
     // this.MarkerManager.updateMarkers(this.props.hosts);
     // this.registerListeners();
   }
 
-  // componentDidUpdate() {
-  //   this.MarkerManager.updateMarkers(this.props.hosts);
-  // }
+  componentDidUpdate() {
+    this.MarkerManager.updateMarkers();
+  }
 
   // registerListeners() {
   //   google.maps.event.addListener(this.map, 'idle', () => {

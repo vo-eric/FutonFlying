@@ -23,13 +23,13 @@ class HostShow extends React.Component {
   acceptingGuests() {
     if (this.props.hostDetails.accepting_guests) {
       return (
-        <div className='show-accepting-guests'>
+        <div className='accepting-guests'>
           Accepting Guests
         </div>
       );
     } else {
       return(
-        <div className='show-no-guests'>
+        <div className='not-accepting-guests'>
           Not Accepting Guests
         </div>
       );

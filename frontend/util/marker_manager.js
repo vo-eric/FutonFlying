@@ -5,16 +5,17 @@ export default class MarkerManager {
   }
 
   updateMarkers(hosts) {
-    const hostsArr = Object.values();
-    hosts.forEach(host => hostsObj[host.id] = host);
-
-    hosts
-      .filter(host => !this.markers[host.id])
-      .forEach((newHost) => this.createMarkerFromHost(newHost, this.handleClick))
-
-    Object.keys(this.markers)
-      .filter(hostId => !hostsObj[hostId])
-      .forEach((hostId) => this.removeMarker(this.markers[hostId]))
+    console.log('test');
+    // const hostsArr = Object.values();
+    // hosts.forEach(host => hostsObj[host.id] = host);
+    //
+    // hosts
+    //   .filter(host => !this.markers[host.id])
+    //   .forEach((newHost) => this.createMarkerFromHost(newHost, this.handleClick))
+    //
+    // Object.keys(this.markers)
+    //   .filter(hostId => !hostsObj[hostId])
+    //   .forEach((hostId) => this.removeMarker(this.markers[hostId]))
   }
 
   createMarkerFromHost(host) {
