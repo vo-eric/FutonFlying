@@ -55,16 +55,16 @@
 .dash-user {
   text-align: center;
   min-width: 20%;
-  padding: 0px 10px 10px 10px;
+  padding: 0 10px 10px 10px;
 }
 
 .user-photo {
-  margin-top: 10px;
+  padding-top: 10px;
   width: 150px;
   height: 150px;
   border-radius: 75px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  object-fit: cover;
 }
 
 .dash-user-info {

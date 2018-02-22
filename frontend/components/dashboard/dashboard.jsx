@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BookingsContainer from '../booking/bookings_container';
+// import BookingsContainer from '../booking/bookings_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -24,7 +24,14 @@ class Dashboard extends React.Component {
   //not so sure about this.
   //if time permits, have different groups of cities with their individual 'flairs'
 
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.user) {
+      this.props.history.push('/');
+    }
+  }
+
   render () {
+    console.log(this.props.user);
     return(
       <div className='dashboard'>
 
@@ -75,7 +82,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-              <BookingsContainer />
+              
             </div>
           </div>
 

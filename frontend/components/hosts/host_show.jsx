@@ -15,9 +15,7 @@ class HostShow extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.host) {
-      this.props.fetchSingleHost(this.props.hosts.id)
-    }
+    this.props.fetchSingleHost(this.props.match.params.id);
   }
 
   acceptingGuests() {
@@ -37,6 +35,11 @@ class HostShow extends React.Component {
   }
 
   render () {
+    if (!this.props.hostDetails) {
+      return (
+        <div>Loading...</div>
+      );
+    }
     return (
       <div className='host-show-main'>
         <div className='host-show-user'>
@@ -54,7 +57,6 @@ class HostShow extends React.Component {
           <div className='host-show-location'>
             {this.props.hostDetails.city}, {this.props.hostDetails.country}
           </div>
-
         </div>
 
         <div className='host-show-about'>

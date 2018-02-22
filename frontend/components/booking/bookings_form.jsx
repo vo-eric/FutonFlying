@@ -23,6 +23,7 @@ class BookingsForm extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className='booking-dropdown'>
         <div className='booking-request-header'>
@@ -46,7 +47,7 @@ class BookingsForm extends React.Component {
             <span>Message</span>
             <textarea
               type='text'
-              placeholder='Say Hi!'>
+              placeholder={`Say Hi to ${this.props.host.fname}!`}>
             </textarea>
           </div>
         </form>

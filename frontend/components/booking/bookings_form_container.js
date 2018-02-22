@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import BookingsForm from './bookings_form';
 import { closeDropdown } from '../../actions/dropdown_actions';
 import { fetchBookings, fetchSingleBooking, createBooking, deleteBooking }
   from '../../actions/booking_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     user: state.session.currentUser,
-    host: state.hosts
+    host: state.hosts[ownProps.match.params.id]
   }
 };
 
@@ -21,7 +23,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(BookingsForm);
+)(BookingsForm));

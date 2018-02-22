@@ -39,7 +39,6 @@ class Header extends React.Component {
             </Link>
             <div className='header-right'>
               <button
-                Link to={'/'}
                 className="sign-out"
                 onClick={this.handleClick}>Sign Out
               </button>
