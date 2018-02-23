@@ -35,6 +35,7 @@ host2 = Host.create!(
   city: "Woodbridge",
   country: "United Kingdom",
   accepting_guests: true,
+  avatar: 'https://s3.us-east-2.amazonaws.com/futon-flying-pro/robbie.jpg',
   description: "Ñaaaaaaaaaaaa!!!! Heeeello everyone!!! My name is Robbie and im 25. I'm from Spain but I currently live in streatham hill, London. I'm working as a registered nurse in a hospital making smile, helping and providing loveeee to people haha!!! I'm actually studing a degree in law at the same time for change the change in the world and try to help people in a bigger way! I'm a very happy, funny, positive, optimistic and social guy that always keeps his smile very high!!! :) I definitelly can not spend any second of my life doing nothing or not sharing a good moment with someone. I'm a very friendlyyy dude, lets just met and hang out so you can see whaaaat I am taaaalking abooouuuut! Love is always the answer!"
 );
 
@@ -56,7 +57,7 @@ host4 = Host.create!(
   lname: 'Xie',
   city: 'Copenhagen',
   country: 'Denmark',
-  accepting_guests: false,
+  accepting_guests: true,
   description: "I'm Wen Bo"
 )
 
