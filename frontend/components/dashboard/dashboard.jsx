@@ -30,6 +30,22 @@ class Dashboard extends React.Component {
     }
   }
 
+
+  // <div className='city-images'>
+  //   <div className="city-image">
+  //     <img src={window.images.vienna} />
+  //   </div>
+  //
+  //   <div className="city-image">
+  //     <img src={window.images.berlin} />
+  //   </div>
+  //
+  //   <div className="city-image">
+  //     <img src={window.images.porto} />
+  //   </div>
+  // </div>
+
+
   render () {
     console.log(this.props.user);
     return(
@@ -56,19 +72,7 @@ class Dashboard extends React.Component {
               Explore Europe
             </div>
 
-            <div className='city-images'>
-              <div className="city-image">
-                <img src={window.images.vienna} />
-              </div>
 
-              <div className="city-image">
-                <img src={window.images.berlin} />
-              </div>
-
-              <div className="city-image">
-                <img src={window.images.porto} />
-              </div>
-            </div>
               <Link
                 className="browse-all-text"
                 to={'/hosts'}>
@@ -82,7 +86,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-              
+
             </div>
           </div>
 

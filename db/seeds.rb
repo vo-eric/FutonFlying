@@ -58,6 +58,7 @@ host4 = Host.create!(
   city: 'Copenhagen',
   country: 'Denmark',
   accepting_guests: true,
+  avatar: 'https://s3.us-east-2.amazonaws.com/futon-flying-pro/wenbo.jpg',
   description: "I'm Wen Bo"
 )
 
