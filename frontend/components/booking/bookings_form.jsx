@@ -23,7 +23,6 @@ class BookingsForm extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className='booking-dropdown'>
         <div className='booking-request-header'>

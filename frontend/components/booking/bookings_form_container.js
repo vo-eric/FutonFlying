@@ -6,7 +6,6 @@ import { fetchBookings, fetchSingleBooking, createBooking, deleteBooking }
   from '../../actions/booking_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     user: state.session.currentUser,
     host: state.hosts[ownProps.match.params.id]

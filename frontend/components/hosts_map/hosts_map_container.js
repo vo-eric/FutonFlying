@@ -5,7 +5,7 @@ import { fetchHosts } from '../../actions/host_actions';
 
 const mapStateToProps = ({ hosts }) => {
   return {
-    hosts: hosts
+    hosts: Object.values(hosts)
   };
 };
 

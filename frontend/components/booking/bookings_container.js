@@ -3,7 +3,6 @@ import Bookings from './bookings';
 import { fetchBookings } from '../../actions/booking_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     bookings: Object.keys(state.bookings).map(id => state.bookings[id]),
   };

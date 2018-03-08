@@ -1,11 +1,8 @@
 .hosts-search {
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-  max-height: 500px;
+  width: 100%;
+  max-height: 90vh;
   display: flex;
-  flex-direction: ltr;
-  padding: 5px;
+  justify-content: center;
 }
 
 .img-placeholder {
@@ -19,14 +16,17 @@
 .host-index-photo {
   width: 75px;
   height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .hosts-index {
   font-family: 'Lato', sans-serif;
-  width: 55%;
+  width: 70%;
   background: white;
   margin-right: 3px;
   overflow: scroll;
+  height: 89vh;
 }
 
 .no-hosts {
@@ -47,12 +47,13 @@
 
 .host-index-module {
   display: flex;
-  padding-left: 10px;
-  border-bottom: 1px solid #ecf0f1;
+  padding: 5px 10px;
+  border-bottom: 1px solid #dbddde;
 }
 
 .host-index-details {
   display: flex;
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -73,18 +74,70 @@
 .index-accepting-guests {
   padding-top: 20px;
   text-align: center;
-  color: #41b866;
   font-size: .9rem;
   font-weight: bold;
   line-height: 1.25em;
-  right: 0
+  right: 0;
 }
 
-.index-no-guests {
-  padding-top: 20px;
-  text-align:  center;
-  color: #ff3f2e;
-  font-size: .75rem;
+.guest-indicator {
+  width: 70px;
+  align-self: center;
+  text-align: left;
+  font-size: .9rem;
   font-weight: bold;
-  line-height: 1.25em;
+  margin: 0 20px;
+}
+
+.accepting {
+  color: #41b866;
+}
+
+.not-accepting {
+  color: #ff3f2e;
+}
+
+// This is for the blurbs
+#map-canvas {
+  margin: 0;
+  padding: 0;
+  height: 400px;
+  max-width: none;
+}
+
+#map-canvas img {
+  max-width: none !important;
+}
+
+#iw-container .iw-title {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  padding: 10px;
+  background-color: #48b5e9;
+  color: white;
+  margin: 0;
+  border-radius: 2px 2px 0 0;
+}
+
+#iw-container .iw-content {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  margin-right: 1px;
+  padding: 15px 5px 20px 15px;
+  max-height: 140px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.iw-content img {
+  float: right;
+  margin: 0 5px 5px 10px;
+}
+
+.iw-subTitle {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 0;
 }

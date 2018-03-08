@@ -18,8 +18,7 @@
 #
 
 class Host < ActiveRecord::Base
-  validates :lng, :lat, :fname, :lname, :accepting_guests, presence: true
-  validates :accepting_guests, inclusion: { in: [true, false] }
+  validates :lng, :lat, :fname, :lname, presence: true
 
   has_attached_file :avatar, default_url: "generic-avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/

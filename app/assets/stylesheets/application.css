@@ -16,5 +16,6 @@
 
  #map-container {
    width: 450px;
-   height: 490px;
+   height: 100%;
+   transition: width .3s;
  }

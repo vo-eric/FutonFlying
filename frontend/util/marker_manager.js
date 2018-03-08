@@ -5,7 +5,6 @@ export default class MarkerManager {
   }
 
   updateMarkers(hosts) {
-    console.log('test');
     // const hostsArr = Object.values();
     // hosts.forEach(host => hostsObj[host.id] = host);
     //
