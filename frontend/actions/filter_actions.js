@@ -15,8 +15,8 @@ export const updateBounds = (bounds) => {
   return {
     type: UPDATE_BOUNDS,
     bounds
-  }
-}
+  };
+};
 
 // export const updateFilter = (filter, value) => (dispatch, getState) => {
 //   dispatch(changeFilter(filter, value));

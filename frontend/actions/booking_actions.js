@@ -23,8 +23,8 @@ export const cancelBooking = bookingId => {
   return {
     type: CANCEL_BOOKING,
     bookingId
-  }
-}
+  };
+};
 
 export const fetchBookings = (userId) => dispatch => {
   return APIUtil.fetchBookings(userId)
@@ -33,7 +33,7 @@ export const fetchBookings = (userId) => dispatch => {
         return dispatch(receiveErrors(err.responseJSON));
       }
     )
-  )
+  );
 };
 
 export const fetchSingleBooking = (id) => dispatch => {
@@ -43,7 +43,7 @@ export const fetchSingleBooking = (id) => dispatch => {
         return dispatch(receiveErrors(err.responseJSON));
       }
     )
-  )
+  );
 };
 
 export const createBooking = booking => dispatch => {
@@ -53,7 +53,7 @@ export const createBooking = booking => dispatch => {
         return dispatch(receiveErrors(err.responseJSON));
       }
     )
-  )
+  );
 };
 
 export const deleteBooking = bookingId => dispatch => {
@@ -63,5 +63,5 @@ export const deleteBooking = bookingId => dispatch => {
         return dispatch(receiveErrors(err.responseJSON));
       }
     )
-  )
+  );
 };

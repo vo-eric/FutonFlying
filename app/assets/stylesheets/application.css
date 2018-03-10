@@ -19,3 +19,7 @@
    height: 100%;
    transition: width .3s;
  }
+
+body {
+  font-family: 'Lato', sans-serif;
+}

@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     user: state.session.currentUser,
     host: state.hosts[ownProps.match.params.id]
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

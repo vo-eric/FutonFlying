@@ -5,11 +5,11 @@ export const receiveErrors = errors => {
   return {
     type: RECEIVE_ERRORS,
     errors
-  }
-}
+  };
+};
 
 export const clearErrors = () => {
   return {
     type: CLEAR_ERRORS
-  }
-}
+  };
+};

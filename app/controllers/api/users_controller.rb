@@ -2,7 +2,8 @@ class Api::UsersController < ApplicationController
 
   # need to add filtering to this as you don't want EVERY host
   def index
-    @users = User.all
+    @users = bounds ? User.in_bounds(bounds).where.not(id: current_user.id): User.all.where.not(id: current_user.id)
+    render :index
   end
 
   def create
@@ -32,7 +33,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  private
+private
   def user_params
     params.require(:user).permit(
     :fname,
@@ -41,7 +42,16 @@ class Api::UsersController < ApplicationController
     :password,
     :bio,
     :city_id,
-    :status
+    :status,
+    :lng,
+    :lat,
+    :city,
+    :country,
+    :accepting_guests
     )
+  end
+
+  def bounds
+    params[:bounds]
   end
 end

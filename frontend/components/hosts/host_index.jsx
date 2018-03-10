@@ -7,8 +7,8 @@ class HostIndex extends React.Component {
     super(props);
     this.state = {
       center: {
-        lat: 34.043911,
-        lng: -118.265189
+        lat: 40.7831,
+        lng: -73.9712
       },
       style: { width: "70vw" },
       mapInFocus: false,

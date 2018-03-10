@@ -36,6 +36,7 @@ class Api::HostsController < ApplicationController
   end
 
   private
+
   def host_params
     params.require(:host).permit(
       :lng,

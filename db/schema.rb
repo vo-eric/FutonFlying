@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170728185708) do
+ActiveRecord::Schema.define(version: 20180310003752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20170728185708) do
     t.integer  "num_guests", default: 1, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.date     "startDate"
-    t.date     "endDate"
+    t.date     "start_date"
+    t.date     "end_date"
     t.index ["guest_id"], name: "index_bookings_on_guest_id", using: :btree
     t.index ["host_id"], name: "index_bookings_on_host_id", using: :btree
   end
@@ -36,34 +36,24 @@ ActiveRecord::Schema.define(version: 20170728185708) do
     t.index ["owner_id"], name: "index_homes_on_owner_id", using: :btree
   end
 
-  create_table "hosts", force: :cascade do |t|
-    t.float    "lng",                                null: false
-    t.float    "lat",                                null: false
-    t.string   "description"
-    t.string   "fname",                              null: false
-    t.string   "lname",                              null: false
-    t.string   "city"
-    t.string   "country"
-    t.boolean  "accepting_guests",    default: true
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "fname"
     t.string   "lname"
-    t.string   "username",            null: false
-    t.string   "password_digest",     null: false
-    t.string   "session_token",       null: false
+    t.string   "username",                           null: false
+    t.string   "password_digest",                    null: false
+    t.string   "session_token",                      null: false
     t.text     "bio"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.float    "lat",                                null: false
+    t.float    "lng",                                null: false
+    t.string   "city"
+    t.string   "country"
+    t.boolean  "accepting_guests",    default: true
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 

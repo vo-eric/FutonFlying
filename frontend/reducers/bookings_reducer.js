@@ -9,12 +9,12 @@ const BookingReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_BOOKINGS:
-      return action.bookings
+      return action.bookings;
     case RECEIVE_CURRENT_BOOKING:
       let currentBooking = {[action.currentBooking]: action.booking};
       return Object.assign({}, state, currentBooking);
     case REMOVE_BOOKING:
-      let newState = Object.assign({}, state)
+      let newState = Object.assign({}, state);
       delete newState[action.bookingId];
       return newState;
     default:

@@ -1,5 +1,3 @@
-json.id user.id
-json.username user.username
-json.fname user.fname
-json.lname user.lname
+json.extract! user, :id, :bio, :lat, :lng, :accepting_guests, :fname, :lname, :city, :country
+
 json.avatar_url asset_path(user.avatar.url)

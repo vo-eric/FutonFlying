@@ -1,7 +1,7 @@
 export const fetchHosts = (data) => {
   return $.ajax({
     method: 'GET',
-    url: 'api/hosts',
+    url: 'api/users',
     data
   });
 };
@@ -9,6 +9,6 @@ export const fetchHosts = (data) => {
 export const fetchSingleHost = (id) => {
   return $.ajax({
     method: 'GET',
-    url: `api/hosts/${id}`,
+    url: `api/users/${id}`,
   });
 };

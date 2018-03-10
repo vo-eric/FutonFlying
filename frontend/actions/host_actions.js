@@ -21,10 +21,10 @@ export const receiveSingleHost = host => {
 
 export const fetchHosts = filters => dispatch => {
   return APIUtil.fetchHosts(filters)
-    .then((hosts) => dispatch(receiveHosts(hosts)))
+    .then((hosts) => dispatch(receiveHosts(hosts)));
 };
 
 export const fetchSingleHost = id => dispatch => {
   return APIUtil.fetchSingleHost(id)
-    .then((host) => dispatch(receiveSingleHost(host)))
+    .then((host) => dispatch(receiveSingleHost(host)));
 };

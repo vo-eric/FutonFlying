@@ -21,7 +21,6 @@
 }
 
 .hosts-index {
-  font-family: 'Lato', sans-serif;
   width: 70%;
   background: white;
   margin-right: 3px;
@@ -30,7 +29,6 @@
 }
 
 .no-hosts {
-  font-family: 'Lato', sans-serif;
   width: 55%;
   background: white;
   margin-right: 3px;
@@ -43,18 +41,26 @@
 
 .hosts-available {
   margin: 10px 5px;
+  text-align: center;
 }
 
 .host-index-module {
   display: flex;
   padding: 5px 10px;
   border-bottom: 1px solid #dbddde;
+
+  &:hover {
+    transition: .3s;
+    background-color: darken(white, 5);
+  }
 }
+
 
 .host-index-details {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .host-index-info {
@@ -113,8 +119,7 @@
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 22px;
   font-weight: 400;
-  padding: 10px;
-  background-color: #48b5e9;
+  padding: 10px 10px 0 10px;
   color: white;
   margin: 0;
   border-radius: 2px 2px 0 0;
@@ -140,4 +145,16 @@
   font-size: 16px;
   font-weight: 700;
   padding: 5px 0;
+}
+
+.iw-name-link {
+  text-decoration: none;
+  color: black;
+  // border-bottom: 1px solid #f1efea;
+}
+
+.iw-title hr {
+  margin-top: 5px;
+  border: 1px solid #f1efea;
+
 }
