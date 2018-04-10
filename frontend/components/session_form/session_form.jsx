@@ -133,7 +133,7 @@ class SessionForm extends React.Component {
   switchForm() {
     if (this.props.formType === 'signup') {
       return (
-        <div className='footer'>
+        <div>
           <div className='alt-text'>
             Already a member?
             <br/>
@@ -150,7 +150,7 @@ class SessionForm extends React.Component {
       );
     } else if (this.props.formType === 'login') {
       return (
-        <div className='footer'>
+        <div>
           <div className='alt-text'>
             Don't have an account?
             <br/>

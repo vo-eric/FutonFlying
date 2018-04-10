@@ -1,68 +1,61 @@
 // Header of session modals
 .modal-exit {
-  margin: 15px 20px 0 0;
   cursor: pointer;
 }
 
 .modal-head {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px 5px 20px;
 }
 
 .modal-head-text {
-  font: 18px;
+  font: 2rem;
   color: #27374c;
   font-weight: bold;
-  margin: 15px 0 10px 20px;
 }
+
 // First & Last Name of User
-.input-first-name {
-  padding-left: 5px;
-  border-radius: 4px;
-  height: 30px;
-  width: 100%;
-  border: 1px solid #aeb5ba;
-  background: white;
-  display: block;
-  font-size: inherit;
-}
-
-.input-last-name {
-  padding-left: 5px;
-  margin-left: 10px;
-  border-radius: 4px;
-  height: 30px;
-  width: 100%;
-  border: 1px solid #aeb5ba;
-  background: white;
-  display: block;
-  font-size: inherit;
-}
-
 .input-name {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  margin: 0 15px 5px 15px;
+  font-size: .9rem;
+  margin: 0 15px;
+
+  input {
+    padding-left: 5px;
+    border-radius: 4px;
+    height: 30px;
+    width: 100%;
+    border: 1px solid #aeb5ba;
+    font-size: inherit;
+  }
+
+  .input-last-name {
+    margin-left: 10px;
+  }
 }
 
+
 //Username, Password, and Submit button
-.auth-form-username, .auth-form-password {
+.auth-form-username, 
+.auth-form-password {
   padding-left: 5px;
   border-radius: 5px;
   height: 30px;
   width: 100%;
   border: 1px solid #aeb5ba;
-  font-size: 14px;
+  font-size: .9rem;
   margin-bottom: 15px;
 }
 
 .auth-form {
-  margin: 15px 20px 0 15px
+  margin: 15px 22px 0 15px;
 }
 
 .alt-text {
-  font-size: 16px;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -70,8 +63,8 @@
   color: white;
   text-align: center;
   border-radius: 5px;
-  font-size: 14px;
-  letter-spacing: 2px;
+  font-size: .9rem;
+  letter-spacing: 1px;
   height: 35px;
   width: 102%;
   background: #287fb8;
@@ -79,18 +72,19 @@
   margin-bottom: 20px;
 }
 
-//Modal 'footer'
+//Modal toggle
 .alt-text {
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: center;
 }
 
 .form-switch {
   width: 30%;
   height: 30px;
-  font-size: 14px;
+  font-size: .9rem;
   border: 1px solid #287fb8;
   color: #287fb8;
   border-radius: 5px;
-  outline: 0;
+  outline: none;
+  cursor: pointer;
 }

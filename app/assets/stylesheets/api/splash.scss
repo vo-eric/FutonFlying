@@ -2,99 +2,84 @@ body {
   background-color: #f1efea;
 }
 
-.welcome-screen {
-  height: 600px;
-  background: grey;
-  // background-image: url("../welcome.jpg");
-}
-
 .welcome-overlay {
-  background-image: url('https://s3.us-east-2.amazonaws.com/futon-flying-pro/welcome.jpg');
-  height: 100%;
+  background: linear-gradient(rgba(5, 5, 2, 0.7) 30%, transparent),
+    url('https://s3.us-east-2.amazonaws.com/futon-flying-pro/welcome.jpg')
+    center/cover;
+  height: 600px;
   width: 100%;
   position: relative;
+
+  .overlay-text {
+    font-size: 3.5rem;
+    padding-top: 250px;
+    color: white;
+    font-weight: 300;
+    text-align: center;
+  }
+  
+  .overlay-subtext {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    font-weight: 100;
+  }
 }
 
-.welcome-overlay .filter {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, .3);
-}
-
-.overlay-text {
-  font-family: 'Lato', sans-serif;
-  font-size: 50px;
-  padding-top: 200px;
-  color: white;
-  font-weight: 300;
-  text-align: center;
-}
-
-.overlay-subtext {
-  font-family: 'Lato', sans-serif;
-  font-size: 26px;
-  color: white;
-  text-align: center;
-  font-weight: 100;
-}
 
 .how-it-works{
   margin: 10px 0;
   padding: 50px 0;
   background: #ed6504;
+
+  .hiw-text {
+    color: white;
+    font-size: 3rem;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 7px;
+  }
+  
+  .hiw-info {
+    display: flex;
+    padding-top: 30px;
+    width: 40%;
+    margin: 0 auto;
+  }
+  
+  .hiw-discover {
+    height: 200px;
+    background: #ff855c;
+    margin: 5px;
+    max-width: 500px;
+    height: 250px;
+  }
+  
+  .hiw-find {
+    height: 200px;
+    background: #ff855c;
+    margin: 5px;
+    max-width: 400px;
+    height: 250px;
+  }
+  
+  .hiw-discover img, .hiw-find img {
+    height: 40%;
+    margin: 0 auto;
+    padding-top: 5px;
+    display: block;
+  }
+  
+  .hiw-info-text {
+    padding: 10px 5px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+  }
 }
 
-.hiw-text {
-  font-family: 'Lato', sans-serif;
-  color: white;
-  font-size: 40px;
-  font-weight: 100;
-  text-align: center;
-  margin-bottom: 7px;
-}
-
-.hiw-info {
-  display: flex;
-  padding-top: 30px;
-  width: 40%;
-  margin: 0 auto;
-}
-
-.hiw-discover {
-  height: 200px;
-  background: #ff855c;
-  margin: 5px;
-  max-width: 500px;
-  height: 250px;
-}
-
-.hiw-find {
-  height: 200px;
-  background: #ff855c;
-  margin: 5px;
-  max-width: 400px;
-  height: 250px;
-}
-
-.hiw-discover img, .hiw-find img {
-  height: 40%;
-  margin: 0 auto;
-  padding-top: 5px;
-  display: block;
-}
-
-.hiw-info-text {
-  padding: 10px 5px;
-  font-size: 14px;
-  text-align: center;
-  color: white;
-  line-height: 1.5em;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Lato', sans-serif;
-}
 
 .short-underline {
   padding-top: 5px;
@@ -117,13 +102,11 @@ body {
 }
 
 .tgp-text {
-  font-family: 'Lato', sans-serif;
   text-align: center;
   font-size: 56px;
 }
 
 .tgp-header {
-  font-family: 'Lato', sans-serif;
   color: #34495e;
   text-align: center;
   font-size: 50px;
@@ -131,7 +114,6 @@ body {
 }
 
 .other-destinations {
-  font-family: 'Lato', sans-serif;
   text-align: center;
   font-size: auto;
 }

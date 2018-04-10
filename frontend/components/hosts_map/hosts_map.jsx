@@ -49,7 +49,7 @@ class HostMap extends React.Component {
               About Me
             </div>
             <img src="${host.avatar_url}" alt="${host.fname}_picture height="100" width="100">
-            <p>${host.description}</p>
+            <p>${host.bio}</p>
           </div>`;
         const { lat, lng } = host;
 

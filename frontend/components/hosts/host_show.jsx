@@ -78,7 +78,7 @@ class HostShow extends React.Component {
             </div>
 
             <div className='about-me-body'>
-              {this.props.hostDetails.description}
+              {this.props.hostDetails.bio}
             </div>
           </div>
         </div>
