@@ -43,8 +43,8 @@ private
     :bio,
     :city_id,
     :status,
-    :lng,
-    :lat,
+    :longitude,
+    :latitude,
     :city,
     :country,
     :accepting_guests

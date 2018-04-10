@@ -25,7 +25,7 @@
 class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
-  validates :longitude, :latitude, :fname, :lname, presence: true
+  validates :lng, :lat, :fname, :lname, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_attached_file :avatar, default_url: "generic-avatar.png"
@@ -61,10 +61,10 @@ class User < ActiveRecord::Base
   end
 
   def self.in_bounds(bounds)
-    self.where("lat < ?", bounds[:northEast][:latitude])
-        .where("lat > ?", bounds[:southWest][:latitude])
-        .where("lng > ?", bounds[:southWest][:longitude])
-        .where("lng < ?", bounds[:northEast][:longitude])
+    self.where("lat < ?", bounds[:northEast][:lat])
+        .where("lat > ?", bounds[:southWest][:lat])
+        .where("lng > ?", bounds[:southWest][:lng])
+        .where("lng < ?", bounds[:northEast][:lng])
   end
 
   private
