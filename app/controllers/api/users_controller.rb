@@ -2,7 +2,8 @@ class Api::UsersController < ApplicationController
 
   # need to add filtering to this as you don't want EVERY host
   def index
-    @users = bounds ? User.in_bounds(bounds).where.not(id: current_user.id): User.all.where.not(id: current_user.id)
+    @users = params[:lat] ? User.near([params[:lat], params[:lng]], 300) : User.all.where.not(id: current_user.id)
+    # @users = bounds ? User.in_bounds(bounds).where.not(id: current_user.id): User.all.where.not(id: current_user.id)
     render :index
   end
 
@@ -45,6 +46,8 @@ private
     :status,
     :longitude,
     :latitude,
+    :lat,
+    :lng,
     :city,
     :country,
     :accepting_guests
@@ -54,4 +57,6 @@ private
   def bounds
     params[:bounds]
   end
+
+
 end

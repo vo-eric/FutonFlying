@@ -11,7 +11,7 @@ const mapStateToProps = ({ hosts }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchHosts: () => dispatch(fetchHosts())
+    fetchHosts: (location) => dispatch(fetchHosts(location))
   }
 };
 

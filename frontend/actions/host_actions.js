@@ -19,8 +19,8 @@ export const receiveSingleHost = host => {
   };
 };
 
-export const fetchHosts = filters => dispatch => {
-  return APIUtil.fetchHosts(filters)
+export const fetchHosts = location => dispatch => {
+  return APIUtil.fetchHosts(location)
     .then((hosts) => dispatch(receiveHosts(hosts)));
 };
 

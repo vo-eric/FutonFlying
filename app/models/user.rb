@@ -15,8 +15,8 @@
 #  avatar_content_type :string
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
-#  lat                 :float            not null
-#  lng                 :float            not null
+#  latitude            :float            not null
+#  longitude           :float            not null
 #  city                :string
 #  country             :string
 #  accepting_guests    :boolean          default(TRUE)
@@ -25,7 +25,7 @@
 class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
-  validates :lng, :lat, :fname, :lname, presence: true
+  validates :longitude, :latitude, :fname, :lname, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_attached_file :avatar, default_url: "generic-avatar.png"
@@ -33,6 +33,9 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token_uniqueness
   after_initialize :ensure_session_token
+
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode
 
   has_many :reviews
   has_many :bookings
@@ -61,10 +64,10 @@ class User < ActiveRecord::Base
   end
 
   def self.in_bounds(bounds)
-    self.where("lat < ?", bounds[:northEast][:lat])
-        .where("lat > ?", bounds[:southWest][:lat])
-        .where("lng > ?", bounds[:southWest][:lng])
-        .where("lng < ?", bounds[:northEast][:lng])
+    self.where("lat < ?", bounds[:northEast][:latitude])
+        .where("lat > ?", bounds[:southWest][:latitude])
+        .where("lng > ?", bounds[:southWest][:longitude])
+        .where("lng < ?", bounds[:northEast][:longitude])
   end
 
   private
@@ -78,4 +81,9 @@ class User < ActiveRecord::Base
       self.session_token = SecureRandom.urlsafe_base64(16)
     end
   end
+
+
+  # def address=
+  #   self.latitude.to_s + " " + self.longitude.to_s
+  # end
 end

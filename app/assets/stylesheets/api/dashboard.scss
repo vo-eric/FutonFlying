@@ -2,12 +2,12 @@
   margin: 0 auto;
   font-family: 'Lato', sans-serif;
   display: flex;
-  width: 60%;
+  width: 80%;
 }
 
 //Trips Module
 .trips {
-  width: 80%;
+  width: 70%;
 }
 
 //Explore Europe Module
@@ -60,9 +60,9 @@
 
 .user-photo {
   padding-top: 10px;
-  width: 150px;
-  height: 150px;
-  border-radius: 75px;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
   margin: 0 auto;
   object-fit: cover;
 }
@@ -73,18 +73,20 @@
   background: white;
   border-bottom: 2px solid #bfcad2;
   padding-bottom: 20px;
+  min-width: 150px;
+  margin-right: 10px;
 }
 
 .dash-name {
-  margin-top: 10px;
   padding: 10px;
-  font-size: 28px;
+  font-size: 1.5rem;
   text-align: center;
-  font-weight: 300;
 }
 
 //Travel Plans Module
-.upcoming-guests, .travel, .random-locations {
+.upcoming-guests, 
+.travel, 
+.random-locations {
   background: white;
   height: auto;
   margin-top: 7px;

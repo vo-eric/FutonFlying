@@ -34,6 +34,7 @@ gem 'annotate'
 gem 'faker'
 gem 'figaro'
 gem 'aws-sdk', '>=2.0'
+gem 'geocoder'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -43,6 +44,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'web-console', '>= 3.3.0'
   gem 'spring'
+
 end
 
 group :development do

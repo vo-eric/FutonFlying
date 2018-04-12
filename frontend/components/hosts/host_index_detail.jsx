@@ -9,23 +9,23 @@ class HostIndexDetail extends React.Component {
   handleClick(e) {
     e.stopPropagation();
     this.props.changeCenter({
-      lat: this.props.host.lat,
-      lng: this.props.host.lng,
+      lat: this.props.host.latitude,
+      lng: this.props.host.longitude,
     }, this.props.host.id);
   }
 
   acceptingGuests() {
     if (this.props.host.accepting_guests) {
       return (
-        <div className='guest-indicator accepting'>
+        <p className='guest-indicator accepting'>
           ACCEPTING GUESTS
-        </div>
+        </p>
       );
     } else {
       return (
-        <div className='guest-indicator not-accepting'>
+        <p className='guest-indicator not-accepting'>
           NOT ACCEPTING GUESTS
-        </div>
+        </p>
       );
     }
   }

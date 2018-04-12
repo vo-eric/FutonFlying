@@ -7,8 +7,8 @@ class HostIndex extends React.Component {
     super(props);
     this.state = {
       center: {
-        lat: 40.7831,
-        lng: -73.9712
+        lat: window.localStorage.latitude,
+        lng: window.localStorage.longitude
       },
       style: { width: "70vw" },
       mapInFocus: false,
@@ -16,13 +16,43 @@ class HostIndex extends React.Component {
     };
     this.changeCenter = this.changeCenter.bind(this);
     this.changeWidth = this.changeWidth.bind(this);
+    this.getLocation = this.getLocation.bind(this)
   }
 
   componentDidMount() {
-    if (this.props.hosts) {
-      this.props.fetchHosts(this.props.hosts);
-    }
+    // if (this.props.hosts) {
+    this.getLocation();
+    this.props.fetchHosts(this.state.center);
+    // }
+    // if (this.props.hosts) {
+    // this.getLocation()
+    // }
   }
+
+  getLocation() {
+    console.log("starting")
+    var getPosition = function (options) {
+      return new Promise(function (resolve, reject) {
+        navigator.geolocation.getCurrentPosition(resolve, reject, options);
+      });
+    };
+    getPosition()
+      .then((position) => {
+        window.localStorage['latitude'] = parseFloat(position.coords.latitude);
+        window.localStorage['longitude'] = parseFloat(position.coords.longitude);
+        this.setState({
+          center: {
+
+            lat: parseFloat(position.coords.latitude),
+            lng: parseFloat(position.coords.longitude)
+          }
+        });
+        console.log("YO YO");
+      })
+      .catch((err) => {
+        console.log("Using the default coords");
+      });
+  };
 
   changeCenter(center, selected) {
     this.setState({ center, selected });
@@ -44,7 +74,7 @@ class HostIndex extends React.Component {
     const { center, style } = this.state;
     return (
       <div className='google-map'>
-        <HostMapContainer center={center} style={style} />
+        <HostMapContainer changeCenter={this.changeCenter} center={center} style={style} />
       </div>
     );
   }

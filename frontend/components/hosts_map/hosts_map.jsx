@@ -2,16 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 import MarkerManager from '../../util/marker_manager';
+
 const getCoordsObj = latLng => {
   return {
-    lat: latLng.lat(),
-    lng: latLng.lng()
+    latitude: latLng.lat(),
+    longitude: latLng.lng()
   };
 };
+
 const mapOptions = {
   center: {
-    lat: 40.7831,
-    lng: 73.9712
+    lat: parseFloat(window.localStorage.latitude),
+    lng: parseFloat(window.localStorage.longitude)
   },
   zoom: 12,
   scrollwheel: false
@@ -23,16 +25,29 @@ class HostMap extends React.Component {
     this.state = {
       hosts: this.props.hosts,
       style: this.props.style,
-      previousMarker: null
+      previousMarker: null,
+      location: mapOptions.center
     };
     this.renderHosts = this.renderHosts.bind(this);
   }
+
   componentDidMount(props) {
     if (this.props.center) {
       mapOptions.center = this.props.center;
     }
+    if (window.localStorage.latitude) {
+      mapOptions.center = {lat: parseFloat(window.localStorage.latitude),lng: parseFloat(window.localStorage.longitude)};
+    }
     this.map = new google.maps.Map(this.mapNode, mapOptions);
+    this.map.addListener('idle',() => {
+      let location = { lat: this.map.getCenter().lat(), lng: this.map.getCenter().lng() };
+      if (this.state.location.lat != location.lat){
+        this.setState({ location });
+      }
+    });
   }
+
+
   renderHosts(hosts, map) {
     if (hosts.length) {
       hosts.forEach(host => {
@@ -51,10 +66,10 @@ class HostMap extends React.Component {
             <img src="${host.avatar_url}" alt="${host.fname}_picture height="100" width="100">
             <p>${host.bio}</p>
           </div>`;
-        const { lat, lng } = host;
+        const { latitude, longitude } = host;
 
         let marker = new google.maps.Marker({
-          position: { lat, lng },
+          position: { lat: latitude, lng: longitude },
           map,
           icon: "https://i.imgur.com/1kFqqW8.png"
         });
@@ -67,18 +82,26 @@ class HostMap extends React.Component {
             this.state.previousMarker.close();
           }
           infowindow.open(map, marker);
-          this.setState({previousMarker: infowindow});
+          this.setState({ previousMarker: infowindow });
         }.bind(this));
         google.maps.event.addListener(map, 'click', function () {
           infowindow.close();
         });
-      });
+      });}
     }
-  }
-  componentWillReceiveProps(nextProps) {
+  componentWillUpdate(nextProps, nextState) {
     if (this.props.center !== nextProps.center) {
       this.map.setZoom(12);
       this.map.panTo(nextProps.center);
+      this.props.fetchHosts(nextProps.center)
+      if (this.state.hosts !== nextProps.hosts) {
+        this.renderHosts(nextProps.hosts, this.map);
+      }
+    }
+    if (this.state.location !== nextState.location) {
+      // this.map.setZoom(12);
+      this.map.panTo(nextState.location);
+      this.props.fetchHosts(nextState.location)
       if (this.state.hosts !== nextProps.hosts) {
         this.renderHosts(nextProps.hosts, this.map);
       }

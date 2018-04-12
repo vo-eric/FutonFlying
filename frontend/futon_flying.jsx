@@ -3,6 +3,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 
+const getLocation = () => {
+  var getPosition = function (options) {
+    return new Promise(function (resolve, reject) {
+      navigator.geolocation.getCurrentPosition(resolve, reject, options);
+    });
+  };
+  getPosition()
+    .then((position) => {
+      window.localStorage['latitude'] = parseFloat(position.coords.latitude);
+      window.localStorage['longitude'] = parseFloat(position.coords.longitude);
+      console.log("YO YO")
+    })
+    .catch((err) => {
+      console.log("Using the default coords");
+    });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
@@ -13,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+  if (!window.localStorage.latitude){
+    window.localStorage['latitude'] = 40.215273;
+    window.localStorage['longitude'] = -74.129379;
+  }
+  getLocation();
 
   ReactDOM.render(<Root store={store} />, root);
 });

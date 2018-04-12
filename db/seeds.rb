@@ -20,8 +20,8 @@ user1 = User.create!(
   password: "password",
   fname: "Can",
   lname: "Vo",
-  lat: 10.11427,
-  lng: 106.22552,
+  latitude: 10.11427,
+  longitude: 106.22552,
   bio: "This is for my homeboy Wadah"
 )
 
@@ -34,22 +34,22 @@ def get_location(entry)
   data = JSON.parse(open(url).read)
   return [] if data['status'] == 'ZERO_RESULTS'
   location = {
-    lat: data['results'][0]['geometry']['location']['lat'],
-    lng: data['results'][0]['geometry']['location']['lng'],
+    latitude: data['results'][0]['geometry']['location']['lat'],
+    longitude: data['results'][0]['geometry']['location']['lng'],
     country:  data['results'][0]['address_components'][-2]['long_name'],
     city:  data['results'][0]['address_components'][2]['long_name']
 }
 
 end
 
-unified_hash[0..80].each do |user|
+unified_hash[0..15].each do |user|
   location = get_location(user)
   next if location.empty?
-  puts location['lat']
-  puts location['lng']
+  puts location['latitude']
+  puts location['longitude']
 User.create!(
-  lat: location[:lat],
-  lng: location[:lng],
+  latitude: location[:latitude],
+  longitude: location[:longitude],
   fname: user['name']['first'].capitalize,
   lname: user['name']['last'].capitalize,
   city: location[:city],
@@ -64,8 +64,8 @@ User.create!(
 end
 
 user8 = User.create!(
-  lat: 40.418639,
-  lng: -3.704602,
+  latitude: 40.418639,
+  longitude: -3.704602,
   password: Faker::Internet.password(8),
   username: Faker::Internet.user_name,
   fname: "Paulina",
@@ -78,8 +78,8 @@ user8 = User.create!(
 )
 
 user2 = User.create!(
-  lat: 5.092167,
-  lng: 1.317893,
+  latitude: 5.092167,
+  longitude: 1.317893,
   password: Faker::Internet.password(8),
   username: Faker::Internet.user_name,
   fname: "Robbie",
@@ -92,8 +92,8 @@ user2 = User.create!(
 )
 
 user3 = User.create!(
-  lat: 48.178217,
-  lng: 16.326814,
+  latitude: 48.178217,
+  longitude: 16.326814,
   password: Faker::Internet.password(8),
   username: Faker::Internet.user_name,
   fname: 'Hannah',
@@ -106,8 +106,8 @@ user3 = User.create!(
 )
 
 user4 = User.create!(
-  lat: 55.679553,
-  lng: 12.585516,
+  latitude: 55.679553,
+  longitude: 12.585516,
   password: Faker::Internet.password(8),
   username: Faker::Internet.user_name,
   fname: 'Wen Bo',
@@ -120,8 +120,8 @@ user4 = User.create!(
 )
 
 user5 = User.create!(
-  lat: 43.124499,
-  lng: -78.799183,
+  latitude: 43.124499,
+  longitude: -78.799183,
   password: Faker::Internet.password(8),
   username: Faker::Internet.user_name,
   fname: 'Kevin',
@@ -135,8 +135,8 @@ user5 = User.create!(
 )
 
 user6 = User.create!(
-  lat: 43.703215,
-  lng: -79.403278,
+  latitude: 43.703215,
+  longitude: -79.403278,
   password: Faker::Internet.password(8),
   username: Faker::Internet.user_name,
   fname: 'James',
