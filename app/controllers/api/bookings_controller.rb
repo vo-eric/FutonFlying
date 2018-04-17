@@ -12,7 +12,7 @@ class Api::BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(host_id: booking_params[:hostId], start_date: booking_params[:startDate], end_date: booking_params[:endDate], num_guests: booking_params[:numGuests])
     @booking.guest_id = @current_user.id
 
     if @booking.save
@@ -51,9 +51,8 @@ class Api::BookingsController < ApplicationController
       .permit(
         :startDate,
         :endDate,
-        :guest_id,
-        :host_id,
-        :num_guests
+        :hostId,
+        :numGuests
       )
   end
 

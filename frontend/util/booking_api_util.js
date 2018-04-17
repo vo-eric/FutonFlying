@@ -15,7 +15,7 @@ export const fetchSingleBooking = (id) => {
 export const createBooking = (booking) => {
   return $.ajax({
     method: 'POST',
-    url: `api/bookings/${id}`,
+    url: `api/bookings`,
     data: { booking }
   });
 };
@@ -25,4 +25,4 @@ export const deleteBooking = (bookingId) => {
     method: 'DELETE',
     url: `api/bookings/${bookingId}`
   });
-}
+};

@@ -12,7 +12,7 @@ const mapStateToProps = ({ hosts }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchHosts: (location) => dispatch(fetchHosts(location))
-  }
+  };
 };
 
 export default connect(

@@ -16,7 +16,7 @@ const mapOptions = {
     lng: parseFloat(window.localStorage.longitude)
   },
   zoom: 12,
-  scrollwheel: false
+  scrollwheel: true
 };
 
 class HostMap extends React.Component {
@@ -84,24 +84,25 @@ class HostMap extends React.Component {
           infowindow.open(map, marker);
           this.setState({ previousMarker: infowindow });
         }.bind(this));
+
         google.maps.event.addListener(map, 'click', function () {
           infowindow.close();
         });
-      });}
+      });
     }
+  }
   componentWillUpdate(nextProps, nextState) {
     if (this.props.center !== nextProps.center) {
       this.map.setZoom(12);
       this.map.panTo(nextProps.center);
-      this.props.fetchHosts(nextProps.center)
+      this.props.fetchHosts(nextProps.center);
       if (this.state.hosts !== nextProps.hosts) {
         this.renderHosts(nextProps.hosts, this.map);
       }
     }
     if (this.state.location !== nextState.location) {
-      // this.map.setZoom(12);
       this.map.panTo(nextState.location);
-      this.props.fetchHosts(nextState.location)
+      this.props.fetchHosts(nextState.location);
       if (this.state.hosts !== nextProps.hosts) {
         this.renderHosts(nextProps.hosts, this.map);
       }

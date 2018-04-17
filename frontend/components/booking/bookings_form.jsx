@@ -4,22 +4,52 @@ import { clearErrors } from '../../actions/error_actions';
 class BookingsForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.bookingInfo;
+    this.state = {
+      formInfo: {
+        hostId: this.props.host.id,
+        startDate: null,
+        endDate: null,
+        numGuests: 1
+      }
+    };
     this.closeDropdown = this.closeDropdown.bind(this);
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setState(newProps.booking);
-  }
+  // componentWillReceiveProps(newProps) {
+  //   this.setState(newProps.booking);
+  // }
 
   closeDropdown() {
     this.props.closeDropdown();
   }
 
-  update(property) {
-    return e => this.setState({
-      [property]: e.currentTarget.value
+  update(e, property) {
+    const {formInfo} = this.state;
+    formInfo[property] = e.currentTarget.value;
+    this.setState({
+      formInfo
     });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    let booking = this.state.formInfo;
+    this.props.createBooking(booking);
+  }
+
+  renderErrors() {
+    const {errors} = this.props;
+    if (errors.length){
+      debugger
+      return (
+        <p>{errors}</p>
+      );
+    } else {
+      return null;
+    }
   }
 
   render() {
@@ -33,14 +63,24 @@ class BookingsForm extends React.Component {
           <div className='booking-dates'>
             <div className='booking-request-dates'>
               <span>Arrival Date</span>
-              <input className='booking-request-input' type='date' />
+              <input
+                className='booking-request-input'
+                type='date'
+                onChange={(e) => this.update(e, "startDate")} />
             </div>
 
             <div className='booking-request-dates'>
               <span>Departure Date</span>
-              <input className='booking-request-input' type='date' />
+              <input
+                className='booking-request-input'
+                type='date'
+                min={this.state.formInfo.startDate}
+                onChange={(e) => this.update(e, "endDate")} />
             </div>
           </div>
+          <span>
+            {this.renderErrors()}
+          </span>
 
           <div className='booking-request-message'>
             <span>Message</span>
@@ -58,9 +98,11 @@ class BookingsForm extends React.Component {
             Cancel
           </button>
 
-          <button className='booking-dropdown-button'>
+          <button
+            onClick={this.handleSubmit}
+            className='booking-dropdown-button'>
             Send
-          </button>
+            </button>
         </div>
       </div>
     );

@@ -5,13 +5,15 @@ import HostsReducer from './hosts_reducer';
 // import FiltersReducer from './filters_reducer';
 import BookingsReducer from './bookings_reducer';
 import DropdownReducer from './dropdown_reducer';
+import ErrorsReducer from './errors_reducer';
 
 const rootReducer = combineReducers({
   session: SessionReducer,
   modal: ModalReducer,
   hosts: HostsReducer,
   bookings: BookingsReducer,
-  dropdown: DropdownReducer
+  dropdown: DropdownReducer,
+  errors: ErrorsReducer
   // filters: FiltersReducer
 
 });

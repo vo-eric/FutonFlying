@@ -39,7 +39,7 @@ private
 
   def is_taken?
     if Booking.where('? < end_date and ? > start_date', self.start_date, self.end_date).any?
-      errors.add(:end_date, 'Your callypigeoned stature must have prevented you from seeing these dates.')
+      errors.add(:date_conflict, 'Your callypigeoned stature must have prevented you from seeing these dates.')
     end
   end
 
