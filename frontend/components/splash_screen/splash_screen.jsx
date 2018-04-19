@@ -164,7 +164,6 @@ class SplashScreen extends React.Component {
       </div>
     );
   }
-  
 }
 
 export default SplashScreen;
