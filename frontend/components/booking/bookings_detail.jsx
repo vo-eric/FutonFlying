@@ -28,7 +28,7 @@ class BookingsDetail extends React.Component {
           </div>
         </div>
       </section>
-    )
+    );
   }
 }
 

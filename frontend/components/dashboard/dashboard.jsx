@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import BookingsContainer from '../booking/bookings_container';
+import BookingsContainer from '../booking/bookings_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
+    this.showTrips = this.showTrips.bind(this);
   }
 
   showTrips() {
-    // <BookingsContainer />
+    return <BookingsContainer />;
     //if trips > 0, show the upcoming trips
     //else "You don't have any upcoming trips"
   }
@@ -85,7 +86,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-
+              {this.showTrips()}
             </div>
           </div>
 

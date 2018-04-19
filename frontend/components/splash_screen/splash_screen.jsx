@@ -48,105 +48,118 @@ class SplashScreen extends React.Component {
 
           </div>
         </div>
+        <p className="tgp-header">Top Futonflying Destinations</p>
+        
         <div className='the-grand-piece'>
-          <div className='pic p1'>
-            <img
-              src={window.images.losangeles}
-              className='splash-img'
-            />
-            <span className='tgp-text'>
+          <div className='tgp-city p1'>
+            <img 
+              src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/losangeles.jpg" 
+              alt="Los Angeles"/>
+            <div className="tgp-text">
               Los Angeles
-            </span>
+            </div>
           </div>
 
-          <div className='pic p2'>
+          <div className='tgp-city p2'>
             <img
-              src={window.images.copenhagen}
-              className='splash-img'
+              src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/copenhagen.jpg"
+              alt="Copenhagen"
             />
-            <span className='tgp-text'>
+            <div className='tgp-text'>
               Copenhagen
-            </span>
+            </div>
           </div>
 
-          <div className='pic p3'>
+          <div className='tgp-city p3'>
             <img
-              src={window.images.lyon}
-              className='splash-img'
+              src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/vienna.jpg"
+              alt="Vienna"
             />
-            <span className='tgp-text'>
-              Lyon
-            </span>
-          </div>
-
-          <div className='pic p4'>
-            <img
-              src={window.images.vienna}
-              className='splash-img'
-            />
-            <span className='tgp-text'>
+            <div className='tgp-text'>
               Vienna
-            </span>
+            </div>
           </div>
 
-          <div className='pic p5'>
+          <div className='tgp-city p4'>
             <img
-              src={window.images.halong}
-              className='splash-img'
+              src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/lyon.jpg"
+              alt="Lyon"
             />
-            <span className='tgp-text'>
+            <div className='tgp-text'>
+              Lyon
+            </div>
+          </div>
+
+
+          <div className='tgp-city p5'>
+            <img
+              src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/halong.jpeg"
+              alt="Ha Long Bay"
+            />
+            <div className='tgp-text'>
               Ha Long Bay
-            </span>
+            </div>
           </div>
-          <div className='pic p6'>
+          <div className='tgp-city p6'>
             <img
-              src={window.images.london}
-              className='splash-img'
+              src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/london.jpg"
+              alt="London"
             />
-            <span className='tgp-text'>
+            <div className='tgp-text'>
               London
-            </span>
+            </div>
           </div>
 
-          <div className='pic p7'>
+          <div className='tgp-city p7'>
             <img
-              src={window.images.newyork}
-              className='splash-img'
+              src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/newyork.jpg"
+              alt="New York"
             />
-            <span className='tgp-text'>
+            <div className='tgp-text'>
               New York
-            </span>
+            </div>
           </div>
 
-          <div className='pic p8'>
+          <div className='tgp-city p8'>
             <img
-              src={window.images.berlin}
-              className='splash-img'
+              src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/berlin.jpg"
+              alt="Berlin"
             />
-            <span className='tgp-text'>
+            <div className='tgp-text'>
               Berlin
-            </span>
+            </div>
           </div>
 
-          <div className='pic p9'>
+          <div className='tgp-city p9'>
             <img
-              src={window.images.porto}
-              className='splash-img'
+              src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/porto.jpg"
+              alt="Porto"
             />
-            <span className='tgp-text'>
+            <div className='tgp-text'>
               Porto
-            </span>
+            </div>
           </div>
 
-          <div className='pic p10'>
+          <div className='tgp-city p10'>
               <img
-                src={window.images.madrid}
-                className='splash-img'
+                src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/rome.jpg"
+                alt="Rome"
               />
-            <span className='tgp-text'>
-              Madrid
-            </span>
+            <div className='tgp-text'>
+              Rome
+            </div>
           </div>
+
+          <div className='tgp-city p11'>
+              <img
+                src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/budapest.jpg"
+                alt="Budapest"
+              />
+            <div className='tgp-text'>
+              Budapest
+            </div>
+          </div>
+          
         </div>
       </div>
     );
