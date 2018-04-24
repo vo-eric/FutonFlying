@@ -13,14 +13,15 @@
 
 .about-me-header {
   padding: 10px;
-  font-size: 18px;
+  font-size: 1.2rem;
   border-bottom: 1px solid #ecf0f1;
 }
 
 .about-me-body {
   margin: 5px 10px 0 10px;
-  padding: 5px;
-  font-size: 14px;
+  padding: 2px;
+  line-height: 1.5;
+  font-size: .9rem;
 }
 
 .host-show-photo {
@@ -42,12 +43,13 @@
 .host-show-name {
   flex-wrap: wrap;
   margin-top: 10px;
-  font-size: 30px;
+  font-size: 1.8rem;
   text-align: center;
 }
 
 .host-show-location {
-  font-size: 14px;
+  margin-top: 5px;
+  font-size: .8rem;
   text-align: center;
 }
 
@@ -67,19 +69,20 @@
 
 .accepting-guests {
   color: #41b866;
-  font-size: 1.5em;
+  font-size: 1.4rem;
+  align-self: center;
 }
 
 .not-accepting-guests {
   color: #ff3f2e;
-  font-size: 1.5em;
+  font-size: 1.4rem;
+  align-self: center;
 }
 
 .request-button {
-  background: #287fb8;
-  border: 1px solid #287fb8;
-  width: auto;
-  font-size: 14px;
+  background-color: #287fb8;
+  border: none;
+  font-size: 1rem;
   cursor: pointer;
   color: white;
   padding: 8px 12px;
@@ -87,4 +90,9 @@
   border-radius: 3px;
   margin-right: 5px;
   outline: none;
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: darken(#287fb8, 10%);
+  }
 }

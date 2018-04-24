@@ -51,6 +51,10 @@ class HostMap extends React.Component {
   renderHosts(hosts, map) {
     if (hosts.length) {
       hosts.forEach(host => {
+        var hostBio = host.bio;
+        if (!hostBio) {
+          hostBio = `${host.fname} has not added a bio yet.`;
+        }
         var contentString = `<div id="iw-container">
           <div class="iw-title">
             <a class="iw-name-link" href="/#/hosts/${host.id}">
@@ -64,7 +68,7 @@ class HostMap extends React.Component {
               About Me
             </div>
             <img src="${host.avatar_url}" alt="${host.fname}_picture height="100" width="100">
-            <p>${host.bio}</p>
+            <p>${hostBio}</p>
           </div>`;
         const { latitude, longitude } = host;
 

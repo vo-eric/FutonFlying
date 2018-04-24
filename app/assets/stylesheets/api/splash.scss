@@ -1,249 +1,195 @@
 body {
-    background-color: #f1efea;
-    margin: 0;
+  background-color: #f1efea;
+  margin: 0;
 }
 
 .welcome-overlay {
-    background: linear-gradient(rgba(5, 5, 2, 0.7) 30%, transparent), url("https://s3.us-east-2.amazonaws.com/futon-flying-pro/welcome.jpg") (center / cover);
-    height: 85vh;
-    width: 100%;
+  background: linear-gradient(rgba(5, 5, 2, 0.7) 30%, transparent), url("https://s3.us-east-2.amazonaws.com/futon-flying-pro/welcome.jpg") (center / cover);
+  height: 85vh;
+  width: 100%;
 
-    p {
-        color: white;
-        text-align: center;
-    }
+  p {
+    color: white;
+    text-align: center;
+  }
 
-    .overlay-text {
-        font-size: 3.5rem;
-        padding-top: 250px;
-        font-weight: 300;
-        margin: 0;
-    }
+  .overlay-text {
+    font-size: 3rem;
+    padding-top: 300px;
+    font-weight: 300;
+    margin: 0;
+  }
 
-    .overlay-subtext {
-        font-size: 2rem;
-        font-weight: 100;
-        margin-top: 0px;
-    }
+  .overlay-subtext {
+    font-size: 2rem;
+    font-weight: 100;
+    margin-top: 0px;
+  }
 }
 
 .how-it-works {
-    margin: 10px 0;
-    padding: 50px 0;
-    height: 70vh;
-    background: #ed6504;
+  margin: 10px 0;
+  padding: 50px 0;
+  height: 70vh;
+  background: #ed6504;
 
-    p {
-        color: white;
-        text-align: center;
-        padding: 0 5px;
-        font-size: .9rem;
-        line-height: 1.3rem;
-    }
+  p {
+    color: white;
+    text-align: center;
+    padding: 0 5px;
+    font-size: .9rem;
+    line-height: 1.3rem;
+  }
 
-    .hiw-text {
-        font-size: 3rem;
-        font-weight: 100;
-        margin-bottom: 7px;
-    }
+  .hiw-text {
+    font-size: 3rem;
+    font-weight: 100;
+    margin-bottom: 7px;
+  }
 
-    .hiw-info {
-        display: flex;
-        padding-top: 30px;
-        width: 40%;
-        margin: 0 auto;
-    }
+  .hiw-info {
+    display: flex;
+    padding-top: 30px;
+    width: 40%;
+    margin: 0 auto;
+  }
 
-    .hiw-discover,
-    .hiw-find {
-        height: 200px;
-        background: #ff855c;
-        margin: 5px;
-        max-width: 400px;
-        min-height: 300px;
-    }
+  .hiw-discover,
+  .hiw-find {
+    height: 200px;
+    background: #ff855c;
+    margin: 5px;
+    max-width: 400px;
+    min-height: 300px;
+  }
 
-    .hiw-discover img,
-    .hiw-find img {
-        height: 40%;
-        margin: 0 auto;
-        padding-top: 5px;
-        display: block;
-    }
+  .hiw-discover img,
+  .hiw-find img {
+    height: 40%;
+    margin: 0 auto;
+    padding-top: 5px;
+    display: block;
+  }
 
-    .short-underline {
-        padding-top: 10px;
-        margin: 0 auto;
-        width: 50px;
-        border-bottom: 2px solid white;
-    }
+  .short-underline {
+    padding-top: 10px;
+    margin: 0 auto;
+    width: 50px;
+    border-bottom: 2px solid white;
+  }
 
-    .shorter-underline {
-        padding-top: 5px;
-        margin: 0 auto;
-        width: 30px;
-        border-bottom: 2px solid white;
-    }
+  .shorter-underline {
+    padding-top: 5px;
+    margin: 0 auto;
+    width: 30px;
+    border-bottom: 2px solid white;
+  }
 }
 
 .tgp-header {
-    color: #34495e;
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin: 20px 0;
+  color: #34495e;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 20px 0;
 }
 
 .the-grand-piece {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(4, 175px);
-    grid-gap: 5px;
-    height: 80vh;
-    width: 90vw;
-    grid-template-areas: "los-angeles lyon ha-long ha-long" "los-angeles copenhagen berlin london" "porto porto rome london" "vienna budapest rome new-york";
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(4, 175px);
+  grid-gap: 5px;
+  height: 80vh;
+  width: 90vw;
+  grid-template-areas: 
+    "los-angeles    lyon          ha-long     ha-long" 
+    "los-angeles    copenhagen    berlin      london" 
+    "porto          porto         rome        london" 
+    "vienna         budapest      rome        new-york";
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .tgp-city {
+    display: block;
+    position: relative;
+    overflow: hidden;
 
     img {
-        width: 100%;
-        height: 100%;
+      display: block;
+      transition: all .3s;
     }
 
-    .tgp-city {
-        display: block;
-        position: relative;
-
-        img {
-            display: block;
-            transition: all .3s;
-        }
-
-        .tgp-text {
-            transition: all .3s;
-            opacity: 0;
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            text-align: center;
-            letter-spacing: 1px;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        &:hover {
-            filter: grayscale(1);
-
-            // -webkit-transform: scale(1.1);
-            // transform: scale(1.1);
-
-            .tgp-text {
-                opacity: 1;
-            }
-        }
+    .tgp-text {
+      transition: all .3s;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      letter-spacing: 1px;
+      font-size: 1.5rem;
+      color: white;
     }
 
-    .p1 {
-        grid-area: los-angeles;
+    &:hover {
+      filter: grayscale(1);
+
+      img {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+      
+      .tgp-text {
+          opacity: 1;
+      }
     }
+  }
 
-    .p2 {
-        grid-area: copenhagen;
-    }
+  .p1 {
+    grid-area: los-angeles;
+  }
 
-    .p3 {
-        grid-area: vienna;
-    }
+  .p2 {
+    grid-area: copenhagen;
+  }
 
-    .p4 {
-        grid-area: lyon;
-    }
+  .p3 {
+    grid-area: vienna;
+  }
 
-    .p5 {
-        grid-area: ha-long;
-    }
+  .p4 {
+    grid-area: lyon;
+  }
 
-    .p6 {
-        grid-area: london;
-    }
+  .p5 {
+    grid-area: ha-long;
+  }
 
-    .p7 {
-        grid-area: new-york;
-    }
+  .p6 {
+    grid-area: london;
+  }
 
-    .p8 {
-        grid-area: berlin;
-    }
+  .p7 {
+    grid-area: new-york;
+  }
 
-    .p9 {
-        grid-area: porto;
-    }
+  .p8 {
+    grid-area: berlin;
+  }
 
-    .p10 {
-        grid-area: rome;
-    }
+  .p9 {
+    grid-area: porto;
+  }
 
-    .p11 {
-        grid-area: budapest;
-    }
+  .p10 {
+    grid-area: rome;
+  }
 
-    // .p1 {
-    //   grid-row: 1 / 3;
-    // }
-    // .p3 {
-    //   // grid-column: 2;
-    // }
-    // .pic {
-    //   overflow: hidden;
-    //   display: block;
-
-    //   img {
-    //     object-fit: cover;
-    //     -webkit-transition: all 0.3s ease-in-out;
-    //     transition: all 0.3s ease-in-out;
-
-    //     &:hover {
-    //           .tgp-text {
-    //             opacity: 1;
-    //             top: 100%;
-    //             background-color: white;
-    //             color: rgba(0, 0, 0, .8);
-    //           }
-    //       background: linear-gradient(rgba(5, 5, 2, 0.7) 30%, transparent);
-    //       -webkit-transform: scale(1.1);
-    //       transform: scale(1.1);
-    //     }
-    //   }
-    // }
-
-    // .p1 {
-    //   transition: all .3s;
-    //   color: white;
-    //   opacity: 0;
-
-    //   &:hover {
-    //     filter: grayscale(.5);
-    //     opacity: 1;
-    //   }
-
-    // }
-    // .pic:nth-child(5n+1) {
-    //   grid-column: span 1;
-    //   grid-row: span 2;
-    // }
-    // .pic:nth-child(5n+2) {
-    //   grid-column: span 1;
-    //   grid-row: span 1;
-    // }
-    // .pic:nth-child(5n+3) {
-    //   grid-column: span 1;
-    //   grid-row: span 1;
-    // }
-    // .pic:nth-child(5n+4) {
-    //   grid-column: span 2;
-    //   grid-row: span 1;
-    // }
-    // .pic:nth-child(5n+0) {
-    //   grid-column: span 1;
-    //   grid-row: span 1;
-    // }
+  .p11 {
+    grid-area: budapest;
+  }
 }

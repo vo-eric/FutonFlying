@@ -34,8 +34,15 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token_uniqueness
   after_initialize :ensure_session_token
 
-  reverse_geocoded_by :latitude, :longitude
+
+  reverse_geocoded_by :latitude, :longitude do |obj,results|
+    if geo = results.first
+      obj.city    = geo.city
+      obj.country = geo.country
+    end
+  end
   after_validation :reverse_geocode
+
 
   has_many :reviews
   has_many :bookings

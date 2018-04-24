@@ -14,12 +14,12 @@ class Dropdown extends React.Component {
   render () {
     if (this.props.dropdownIsOpen) {
       return (
-        <div className="dropdown">
+        <div className="dropdown active">
           <BookingsFormContainer />
         </div>
       );
     } else {
-      return <div className="dropdown-not-active"></div>;
+      return <div className="dropdown inactive"></div>;
     }
   }
 }

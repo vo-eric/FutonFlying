@@ -1,8 +1,19 @@
 .dropdown {
+  transition: max-height .5s;
+  overflow: hidden;
   background: #fff;
   border-bottom: 2px solid #bfcad2;
   margin-top: 10px;
   padding: 0 10px;
+}
+
+.active {
+  max-height: 1000px;
+}
+
+.inactive {
+  max-height: 0;
+  border-bottom: none;
 }
 
 .booking-request-header {

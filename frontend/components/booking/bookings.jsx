@@ -17,6 +17,8 @@ class Bookings extends React.Component {
 
   render () {
     let bookings;
+    console.log(this.props.bookings);
+    
     if (this.props.bookings.length > 0) {
       bookings = (
         <section className='bookings-index'>

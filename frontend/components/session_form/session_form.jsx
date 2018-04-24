@@ -10,6 +10,8 @@ class SessionForm extends React.Component {
     this.state = {
       username: '',
       password: '',
+      latitude: window.localStorage['latitude'],
+      longitude: window.localStorage['longitude']
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearErrorsOpenModal = this.clearErrorsOpenModal.bind(this);

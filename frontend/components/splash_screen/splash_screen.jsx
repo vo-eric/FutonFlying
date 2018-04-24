@@ -11,7 +11,7 @@ class SplashScreen extends React.Component {
       <div className='splash'>
         <div className="welcome-overlay">
           <p className="overlay-text">
-              Stay with locals and meet travelers
+              Stay With Locals and Meet Fellow Travelers
           </p>
           <p className="overlay-subtext">
               Share your experiences.
