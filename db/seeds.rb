@@ -22,7 +22,8 @@ user1 = User.create!(
   lname: "Vo",
   latitude: 10.11427,
   longitude: 106.22552,
-  bio: "This is for my homeboy Wadah"
+  bio: "This is for my homeboy Wadah",
+  avatar: "https://s3.us-east-2.amazonaws.com/futon-flying-pro/ctvo.jpg"
 )
 
 def get_location(entry)

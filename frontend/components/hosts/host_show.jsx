@@ -8,6 +8,7 @@ class HostShow extends React.Component {
   constructor(props) {
     super(props);
     this.openDropdown = this.openDropdown.bind(this);
+    this.renderBio = this.renderBio.bind(this);
   }
 
   openDropdown() {
@@ -31,6 +32,14 @@ class HostShow extends React.Component {
           Not Accepting Guests
         </div>
       );
+    }
+  }
+
+  renderBio() {
+    if (!this.props.hostDetails.bio) {
+      return `${this.props.hostDetails.fname} has not added a bio yet.`;
+    } else {
+      return this.props.hostDetails.bio;
     }
   }
 
@@ -78,7 +87,7 @@ class HostShow extends React.Component {
             </div>
 
             <div className='about-me-body'>
-              {this.props.hostDetails.bio}
+              {this.renderBio()}
             </div>
           </div>
         </div>

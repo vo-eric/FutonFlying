@@ -6,6 +6,7 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.showTrips = this.showTrips.bind(this);
+    // this.renderUserPhoto = this.renderUserPhoto.bind(this);
   }
 
   showTrips() {
@@ -19,33 +20,11 @@ class Dashboard extends React.Component {
     //else "You don't have any upcoming guests"
   }
 
-  //Where are you going's search bar is going to to navigate to the city page
-
-  //random locations is going to include a search bar that goes to the index page of hosts given the city
-  //not so sure about this.
-  //if time permits, have different groups of cities with their individual 'flairs'
-
   componentWillReceiveProps(nextProps) {
     if (!nextProps.user) {
       this.props.history.push('/');
     }
   }
-
-
-  // <div className='city-images'>
-  //   <div className="city-image">
-  //     <img src={window.images.vienna} />
-  //   </div>
-  //
-  //   <div className="city-image">
-  //     <img src={window.images.berlin} />
-  //   </div>
-  //
-  //   <div className="city-image">
-  //     <img src={window.images.porto} />
-  //   </div>
-  // </div>
-
 
   render () {
     return(
@@ -54,10 +33,9 @@ class Dashboard extends React.Component {
         <div className='dash-user'>
           <div className='dash-user-info'>
             <div className='user-image'>
-              <img
-                src={window.images.ctvo}
-                className='user-photo'
-              />
+              <img 
+                src={this.props.user.avatar_url} 
+                className="user-photo" />
             </div>
             <div className='dash-name'>
               {this.props.user.fname} {this.props.user.lname}
