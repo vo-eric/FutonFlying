@@ -149,11 +149,22 @@
 .iw-name-link {
   text-decoration: none;
   color: black;
-  // border-bottom: 1px solid #f1efea;
 }
 
 .iw-title hr {
   margin-top: 5px;
   border: 1px solid #f1efea;
 
+}
+
+.fa-comment-alt {
+  font-size: 1.5rem;
+}
+
+.accepting {
+  color: green;
+}
+
+.not-accepting {
+  color: red;
 }

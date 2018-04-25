@@ -1,5 +1,5 @@
 .dropdown {
-  transition: max-height .5s;
+  transition: height .5s;
   overflow: hidden;
   background: #fff;
   border-bottom: 2px solid #bfcad2;
@@ -8,11 +8,11 @@
 }
 
 .active {
-  max-height: 1000px;
+  height: 475px;
 }
 
 .inactive {
-  max-height: 0;
+  height: 0;
   border-bottom: none;
 }
 

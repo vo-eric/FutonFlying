@@ -69,16 +69,19 @@
   width: 102%;
   background: #287fb8;
   border: 1px solid #287fb8;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 //Modal toggle
-.alt-text {
+
+.form-toggle__text {
   font-size: 1.25rem;
   text-align: center;
 }
 
-.form-switch {
+.form-toggle__button {
+  display: block;
+  margin: 10px auto 0 auto;
   width: 30%;
   height: 30px;
   font-size: .9rem;
