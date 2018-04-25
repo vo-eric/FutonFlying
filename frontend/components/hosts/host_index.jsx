@@ -15,7 +15,7 @@ class HostIndex extends React.Component {
       selected: null
     };
     this.changeCenter = this.changeCenter.bind(this);
-    this.changeWidth = this.changeWidth.bind(this);
+    // this.changeWidth = this.changeWidth.bind(this);
     this.getLocation = this.getLocation.bind(this)
   }
 
@@ -58,17 +58,17 @@ class HostIndex extends React.Component {
     this.setState({ center, selected });
   }
 
-  changeWidth(e) {
-    let newState = Object.assign({}, this.state);
-    if (e.target.classList.value !== "") {
-      newState.style = {};
-      newState.mapInFocus = false;
-    } else {
-      newState.style = { width: '70vw' };
-      newState.mapInFocus = true;
-    }
-    this.setState(newState);
-  }
+  // changeWidth(e) {
+  //   let newState = Object.assign({}, this.state);
+  //   if (e.target.classList.value !== "") {
+  //     newState.style = {};
+  //     newState.mapInFocus = false;
+  //   } else {
+  //     newState.style = { width: '70vw' };
+  //     newState.mapInFocus = true;
+  //   }
+  //   this.setState(newState);
+  // }
 
   searchMap() {
     const { center, style } = this.state;
@@ -83,10 +83,10 @@ class HostIndex extends React.Component {
     const { selected } = this.state;
     if (!this.props.hosts) {
       return (
-        <section className='hosts-search' onClick={(e) => this.changeWidth(e)} >
+        <section className='hosts-search'>
           <div className='no-hosts'>
             <p>
-              There are no rooms available at this city
+              There are no rooms available at this location
             </p>
           </div>
           {this.searchMap()}
@@ -109,7 +109,7 @@ class HostIndex extends React.Component {
         </div>
       );
       return (
-        <section className='hosts-search' onClick={(e) => this.changeWidth(e)} >
+        <section className='hosts-search'>
           <div className="hosts-index">
             <div className="hosts-available">
               Available Hosts

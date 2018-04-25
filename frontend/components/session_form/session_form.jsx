@@ -135,35 +135,35 @@ class SessionForm extends React.Component {
   switchForm() {
     if (this.props.formType === 'signup') {
       return (
-        <div>
-          <div className='alt-text'>
+        <div className="form-toggle">
+          <div className='form-toggle__text'>
             Already a member?
-            <br/>
-            <br/>
-            <button
-              className='form-switch'
-              onClick={() => this.clearErrorsOpenModal(
-                <SessionFormContainer formType='login' />)}
-            >
-            Log In
-            </button>
+            {/* <div className="form"> */}
+              <button
+                className="form-toggle__button"
+                onClick={() => this.clearErrorsOpenModal(
+                  <SessionFormContainer formType='login' />)}
+              >
+              Log In
+              </button>
+            {/* </div> */}
           </div>
         </div>
       );
     } else if (this.props.formType === 'login') {
       return (
-        <div>
-          <div className='alt-text'>
+        <div className="form-toggle">
+          <div className='form-toggle__text'>
             Don't have an account?
-            <br/>
-            <br/>
-            <button
-              className='form-switch'
-              onClick={() => this.clearErrorsOpenModal(
-                <SessionFormContainer formType='signup' />)}
-            >
-            Join
-            </button>
+            {/* <div className='form'> */}
+              <button
+                className="form-toggle__button"
+                onClick={() => this.clearErrorsOpenModal(
+                  <SessionFormContainer formType='signup' />)}
+              >
+              Join
+              </button>
+            {/* </div> */}
           </div>
         </div>
       )
@@ -186,7 +186,6 @@ class SessionForm extends React.Component {
                 onChange={this.update('username')}
                 className='auth-form-username'
                 />
-              <br/>
               <input
                 type='password'
                 placeholder='password'

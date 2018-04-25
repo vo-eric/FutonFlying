@@ -43,7 +43,6 @@ class BookingsForm extends React.Component {
   renderErrors() {
     const {errors} = this.props;
     if (errors.length){
-      debugger
       return (
         <p>{errors}</p>
       );

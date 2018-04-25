@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   validates :longitude, :latitude, :fname, :lname, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_attached_file :avatar, default_url: "generic-avatar.png"
+  has_attached_file :avatar, default_url: "https://s3.us-east-2.amazonaws.com/futon-flying-pro/generic-avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   before_validation :ensure_session_token_uniqueness
@@ -76,6 +76,25 @@ class User < ActiveRecord::Base
         .where("lng > ?", bounds[:southWest][:longitude])
         .where("lng < ?", bounds[:northEast][:longitude])
   end
+  
+  def user_bookings
+    Booking.where(guest_id: self.id)
+  end
+
+  def user_hostings
+    Booking.where(host_id: self.id)
+  end
+
+  def find_bookings
+    hostings = user_bookings()
+    guestings = user_hostings()
+
+    return {
+      hostings: hostings,
+      guestings: guestings
+    }
+  end
+
 
   private
 

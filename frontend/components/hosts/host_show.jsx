@@ -49,6 +49,7 @@ class HostShow extends React.Component {
         <div>Loading...</div>
       );
     }
+    let buttonStyle = !this.props.hostDetails.accepting_guests ? {cursor: 'not-allowed'} : {cursor: 'pointer'};
     return (
       <div className='host-show-main'>
         <div className='host-show-user'>
@@ -74,7 +75,9 @@ class HostShow extends React.Component {
             <div className='booking-buttons'>
               <button
                 className='request-button'
+                disabled={!this.props.hostDetails.accepting_guests}
                 onClick={() => this.openDropdown()}
+                style={buttonStyle}
               >
               Send Request
               </button>

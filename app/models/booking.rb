@@ -23,7 +23,6 @@ class Booking < ActiveRecord::Base
   belongs_to :host,
     class_name: :User
 
-
 private
   def is_after?
     if start_date < Date.today

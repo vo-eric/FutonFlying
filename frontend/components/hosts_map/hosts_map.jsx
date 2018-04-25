@@ -29,6 +29,7 @@ class HostMap extends React.Component {
       location: mapOptions.center
     };
     this.renderHosts = this.renderHosts.bind(this);
+    this.renderChatOption = this.renderChatOption.bind(this);
   }
 
   componentDidMount(props) {
@@ -47,18 +48,26 @@ class HostMap extends React.Component {
     });
   }
 
+  renderChatOption(host) {
+    if (host.accepting_guests) {
+      return '<i class="far fa-calendar-alt accepting"></i>';
+    } else {
+      return '<i class="far fa-calendar-alt not-accepting"></i>';
+    }
+  }
 
   renderHosts(hosts, map) {
     if (hosts.length) {
       hosts.forEach(host => {
-        var hostBio = host.bio;
+        let hostBio = host.bio;
         if (!hostBio) {
-          hostBio = `${host.fname} has not added a bio yet.`;
+          hostBio = `${host.fname} has not added a bio yet!`;
         }
-        var contentString = `<div id="iw-container">
+        let contentString = `<div id="iw-container">
           <div class="iw-title">
             <a class="iw-name-link" href="/#/hosts/${host.id}">
               ${host.fname} ${host.lname}
+              ${this.renderChatOption(host)}
             </a>
             <hr>
           </div>
@@ -77,7 +86,7 @@ class HostMap extends React.Component {
           map,
           icon: "https://i.imgur.com/1kFqqW8.png"
         });
-        var infowindow = new google.maps.InfoWindow({
+        let infowindow = new google.maps.InfoWindow({
           content: contentString,
           title: host.city
         });

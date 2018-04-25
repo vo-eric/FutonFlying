@@ -5,12 +5,14 @@ import { fetchBookings } from '../../actions/booking_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     bookings: Object.keys(state.bookings).map(id => state.bookings[id]),
+    currentUser: state.session.currentUser,
+    formType: ownProps.formType
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchBookings: () => dispatch(fetchBookings()),
+    fetchBookings: id => dispatch(fetchBookings(id)),
   };
 };
 

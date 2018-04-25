@@ -28,18 +28,19 @@ export const cancelBooking = bookingId => {
   };
 };
 
-export const fetchBookings = (userId) => dispatch => {
-  return APIUtil.fetchBookings(userId)
-    .then((bookings) => dispatch(receiveBookings(bookings),
+export const fetchBookings = id => dispatch => {
+  return APIUtil.fetchBookings(id)
+    .then((bookings) => {
+      dispatch(receiveBookings(bookings))},
       (err) => {
         return dispatch(receiveErrors(err.responseJSON));
       }
-    ));
+    );
 };
 
-export const fetchSingleBooking = (id) => dispatch => {
+export const fetchSingleBooking = id => dispatch => {
   return APIUtil.fetchSingleBooking(id)
-    .then((booking) => dispatch(receiveSingleBooking(booking),
+    .then((booking) => dispatch(receiveCurrentBooking(booking),
       (err) => {
         return dispatch(receiveErrors(err.responseJSON));
       }
@@ -52,7 +53,7 @@ export const createBooking = booking => dispatch => (
 
 export const deleteBooking = bookingId => dispatch => {
   return APIUtil.deleteBooking(bookingId)
-    .then(() => dispatch(cancelBooking(booking),
+    .then(() => dispatch(cancelBooking(bookingId),
       (err) => {
         return dispatch(receiveErrors(err.responseJSON));
       }

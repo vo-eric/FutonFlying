@@ -6,18 +6,16 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.showTrips = this.showTrips.bind(this);
+    this.showGuests = this.showGuests.bind(this);
     // this.renderUserPhoto = this.renderUserPhoto.bind(this);
   }
 
   showTrips() {
-    return <BookingsContainer />;
-    //if trips > 0, show the upcoming trips
-    //else "You don't have any upcoming trips"
+    return <BookingsContainer formType="bookings"/>;
   }
 
   showGuests() {
-    //if guests > 0, show all upcoming guests
-    //else "You don't have any upcoming guests"
+    return <BookingsContainer formType="hostings"/>;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -74,7 +72,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='inside-text'>
-              You don't have any upcoming guests
+              {this.showGuests()}
             </div>
           </div>
 

@@ -17,17 +17,17 @@ const App = () => (
   <div>
     <ModalContainer />
     <HeaderContainer />
-    <br/>
-    <br/>
-    <br/>
-    <Switch>
-      <AuthRoute exact path='/' component={SplashScreenContainer} />
-      <ProtectedRoute exact path='/dashboard' component={DashboardContainer} />
-      <ProtectedRoute path='/search' component={SearchContainer} />
-      <ProtectedRoute exact path='/hosts' component={HostIndexContainer} />
-      <ProtectedRoute exact path='/hosts/:id' component={HostShowContainer} />
-      <ProtectedRoute exact path='/bookings' component={BookingContainer} />
-    </Switch>
+    
+    <div id="main-content">
+      <Switch>
+          <AuthRoute exact path='/' component={SplashScreenContainer} />
+          <ProtectedRoute exact path='/dashboard' component={DashboardContainer} />
+          <ProtectedRoute path='/search' component={SearchContainer} />
+          <ProtectedRoute exact path='/hosts' component={HostIndexContainer} />
+          <ProtectedRoute exact path='/hosts/:id' component={HostShowContainer} />
+          <ProtectedRoute exact path='/bookings' component={BookingContainer} />
+      </Switch>
+    </div>
   </div>
 );
 export default App;
