@@ -15,18 +15,13 @@ class HostIndex extends React.Component {
       selected: null
     };
     this.changeCenter = this.changeCenter.bind(this);
-    // this.changeWidth = this.changeWidth.bind(this);
-    this.getLocation = this.getLocation.bind(this)
+    this.getLocation = this.getLocation.bind(this);
   }
 
   componentDidMount() {
-    // if (this.props.hosts) {
     this.getLocation();
     this.props.fetchHosts(this.state.center);
-    // }
-    // if (this.props.hosts) {
-    // this.getLocation()
-    // }
+
   }
 
   getLocation() {
@@ -50,29 +45,20 @@ class HostIndex extends React.Component {
       .catch((err) => {
         return "Using the default coordinates";
       });
-  };
+  }
 
   changeCenter(center, selected) {
     this.setState({ center, selected });
   }
 
-  // changeWidth(e) {
-  //   let newState = Object.assign({}, this.state);
-  //   if (e.target.classList.value !== "") {
-  //     newState.style = {};
-  //     newState.mapInFocus = false;
-  //   } else {
-  //     newState.style = { width: '70vw' };
-  //     newState.mapInFocus = true;
-  //   }
-  //   this.setState(newState);
-  // }
-
   searchMap() {
     const { center, style } = this.state;
     return (
       <div className='google-map'>
-        <HostMapContainer changeCenter={this.changeCenter} center={center} style={style} />
+        <HostMapContainer 
+          changeCenter={this.changeCenter} 
+          center={center} 
+          style={style} />
       </div>
     );
   }

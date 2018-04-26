@@ -27,7 +27,7 @@ class SplashScreen extends React.Component {
 
           <div className="hiw-info">
             <div className="hiw-discover">
-              <img src = {window.images.discover} />
+              <img src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/discover.png" />
               <p>Meet Amazing People</p>
               <div className="shorter-underline" />
               <p>
@@ -36,7 +36,7 @@ class SplashScreen extends React.Component {
             </div>
 
             <div className="hiw-find">
-              <img src = {window.images.futon} />
+              <img src="https://s3.us-east-2.amazonaws.com/futon-flying-pro/futon.png" />
               <p>Find a Host</p>
 
               <div className="shorter-underline" />

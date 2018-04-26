@@ -1,6 +1,4 @@
 import React from 'react';
-import HostShowDetail from './host_show_detail';
-import HostMapContainer from '../hosts_map/hosts_map_container';
 import BookingsFormContainer from '../booking/bookings_form_container';
 import DropdownContainer from '../dropdown/dropdown_container';
 
