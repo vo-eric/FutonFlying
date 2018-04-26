@@ -30,7 +30,6 @@ class HostIndex extends React.Component {
   }
 
   getLocation() {
-    console.log("starting")
     var getPosition = function (options) {
       return new Promise(function (resolve, reject) {
         navigator.geolocation.getCurrentPosition(resolve, reject, options);
@@ -47,10 +46,9 @@ class HostIndex extends React.Component {
             lng: parseFloat(position.coords.longitude)
           }
         });
-        console.log("YO YO");
       })
       .catch((err) => {
-        console.log("Using the default coords");
+        return "Using the default coordinates";
       });
   };
 

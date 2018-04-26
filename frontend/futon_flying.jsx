@@ -15,7 +15,7 @@ const getLocation = () => {
       window.localStorage['longitude'] = parseFloat(position.coords.longitude);
     })
     .catch((err) => {
-      console.log("Using the default coords");
+      return "Using the default coordinates";
     });
 };
 

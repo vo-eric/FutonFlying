@@ -7,7 +7,6 @@ import Header from '../header/header'
 import { clearErrors } from '../../actions/error_actions';
 
 const mapStateToProps = state => {
-  debugger
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.session.errors,
