@@ -1,0 +1,50 @@
+.booking,
+.hosting {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+
+  .booking__image,
+  .hosting__image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0;
+  }
+
+  .booking__full-name,
+  .hosting__full-name {
+    margin: 0;
+  }
+
+  .booking__start-date,
+  .booking__end-date,
+  .hosting__start-date,
+  .hosting__end-date {
+    p {
+      margin: 10px 0 5px 0;
+    }
+
+    hr {
+      color: black;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  .booking__dates,
+  .hosting__dates {
+    align-self: center;
+  }
+
+}
+
+.booking__hr,
+.hosting__hr {
+  color: black;
+}
+
+.booking__hr:last-of-type,
+.hosting__hr:last-of-type {
+  display: none;
+}

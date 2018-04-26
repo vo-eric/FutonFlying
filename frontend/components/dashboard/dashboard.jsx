@@ -38,6 +38,9 @@ class Dashboard extends React.Component {
             <div className='dash-name'>
               {this.props.user.fname} {this.props.user.lname}
             </div>
+            <div className="dash-location">
+              {this.props.user.city}, {this.props.user.country}
+            </div>
           </div>
         </div>
 
@@ -45,7 +48,7 @@ class Dashboard extends React.Component {
 
           <div className='teaser'>
             <div className='teaser-text'>
-              Explore Europe
+              Explore The World
             </div>
 
 

@@ -16,15 +16,29 @@ class Bookings extends React.Component {
     let bookings;
     if (this.props.bookings.length) {
       bookings = (
-        <section className='bookings-index'>
+        <section className='bookings-list'>
           {Object.values(this.props.bookings[0]).map((booking) => (
             [
-              <div key={booking.id}>
-                <img src={booking.avatar} alt="" />
-                {booking.fname} {booking.lname}
-                {booking.start_date} - {booking.end_date}
+              <div className="booking" key={booking.id}>
+                <div className="booking__user">
+                  <img className="booking__image" src={booking.avatar} alt={booking.fname} />
+                  <p className="booking__full-name">
+                    {booking.fname} {booking.lname}
+                  </p>
+                </div>
+                
+                <div className="booking__start-date">
+                  <p>Arriving At</p>
+                  <hr />
+                  {booking.start_date} 
+                </div>
+                <div className="booking__end-date">
+                  <p>Leaving At</p>
+                  <hr />
+                  {booking.end_date}
+                </div>
               </div>,
-              <hr style={{ backgroundColor: 'black' }} />
+              <hr className="booking__hr" />
             ]
           )
           )}
@@ -32,7 +46,7 @@ class Bookings extends React.Component {
       );
     } else {
       bookings = (
-        <div className='bookings-index'>
+        <div className='bookings-list'>
           You don't have any bookings
         </div>
       );
@@ -44,15 +58,29 @@ class Bookings extends React.Component {
     let hostings;
     if (this.props.bookings.length) {
       hostings = (
-        <section className='hostings-index'>
+        <section className='hostings-list'>
           {Object.values(this.props.bookings[1]).map((hosting) => (
             [
-              <div key={hosting.id}>
-                <img src={hosting.avatar} alt="" />
-                {hosting.fname} {hosting.lname}
-                {hosting.start_date} - {hosting.end_date}
+              <div className="hosting" key={hosting.id}>
+                <div className="hosting__user">
+                  <img className="hosting__image" src={hosting.avatar} alt="{hosting.fname" />
+                  <div className="hosting__full-name">
+                    {hosting.fname} {hosting.lname}
+                  </div> 
+                </div>
+
+                <div className="booking__start-date">
+                  <p>Arriving At</p>
+                  <hr />
+                  {hosting.start_date}
+                </div>
+                <div className="booking__end-date">
+                  <p>Leaving At</p>
+                  <hr />
+                  {hosting.end_date}
+                </div>
               </div>,
-              <hr style={{ backgroundColor: 'black' }} />
+              <hr className="hosting__hr" />
             ]
           )
           )}
@@ -60,7 +88,7 @@ class Bookings extends React.Component {
       );
     } else {
       hostings = (
-        <div className='hostings-index'>
+        <div className='hostings-list'>
           You aren't hosting anyone!
         </div>
       );
