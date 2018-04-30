@@ -10,7 +10,6 @@ import SplashScreenContainer from './splash_screen/splash_screen_container';
 import HostIndexContainer from './hosts/host_index_container';
 import HostShowContainer from './hosts/host_show_container';
 import DashboardContainer from './dashboard/dashboard_container';
-import SearchContainer from './search/search_container';
 import BookingContainer from './booking/bookings_container';
 import BookingsShowContainer from './booking/bookings_show_container';
 
@@ -23,7 +22,6 @@ const App = () => (
       <Switch>
           <AuthRoute exact path='/' component={SplashScreenContainer} />
           <ProtectedRoute exact path='/dashboard' component={DashboardContainer} />
-          <ProtectedRoute path='/search' component={SearchContainer} />
           <ProtectedRoute exact path='/hosts' component={HostIndexContainer} />
           <ProtectedRoute exact path='/hosts/:id' component={HostShowContainer} />
           <ProtectedRoute exact path='/bookings' component={BookingContainer} />
