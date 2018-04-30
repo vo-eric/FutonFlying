@@ -24,32 +24,28 @@ class Dashboard extends React.Component {
     }
   }
 
+  //add option to expand on click
   render () {
+    let user = this.props.user;
     return(
       <div className='dashboard'>
-
-        <div className='dash-user'>
-          <div className='dash-user-info'>
-            <div className='user-image'>
-              <img 
-                src={this.props.user.avatar_url} 
-                className="user-photo" />
-            </div>
-            <div className='dash-name'>
-              {this.props.user.fname} {this.props.user.lname}
-            </div>
-            <div className="dash-location">
-              {this.props.user.city}, {this.props.user.country}
-            </div>
-          </div>
+        <div className='dashboard-user'>
+          <img 
+            src={user.avatar_url} 
+            className="user-module__photo" />
+          <p className='user-module__name'>
+            {user.fname} {user.lname}
+          </p>
+          <p className="user-module__location">
+            {user.city}, {user.country}
+          </p>
         </div>
 
-        <div className='trips'>
-
-          <div className='teaser'>
-            <div className='teaser-text'>
+        <div className='dashboard-main'>
+          <div className='search-module'>
+            <p className='teaser-text'>
               Explore The World
-            </div>
+            </p>
 
 
               <Link

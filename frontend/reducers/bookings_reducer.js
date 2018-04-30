@@ -11,7 +11,7 @@ const BookingReducer = (state = {}, action) => {
     case RECEIVE_BOOKINGS:
       return action.bookings;
     case RECEIVE_CURRENT_BOOKING:
-      let currentBooking = {[action.currentBooking]: action.booking};
+      let currentBooking = {[action.booking.id]: action.booking};
       return Object.assign({}, state, currentBooking);
     case REMOVE_BOOKING:
       let newState = Object.assign({}, state);

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Bookings from './bookings';
-import { fetchBookings } from '../../actions/booking_actions';
+import { fetchBookings, fetchSingleBooking } from '../../actions/booking_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchBookings: id => dispatch(fetchBookings(id)),
+    fetchSingleBooking: id => dispatch(fetchBookings(id))
   };
 };
 

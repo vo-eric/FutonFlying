@@ -32,13 +32,13 @@ private
 
   def valid_range?
     if start_date > end_date
-      self.errors.add(:start_date, "cannot be after check in date")
+      self.errors.add(:start_date, "cannot be after check in date.")
     end
   end
 
   def is_taken?
     if Booking.where('? < end_date and ? > start_date', self.start_date, self.end_date).any?
-      errors.add(:date_conflict, 'Your callypigeoned stature must have prevented you from seeing these dates.')
+      errors.add(:date_conflict, 'These dates are already taken.')
     end
   end
 

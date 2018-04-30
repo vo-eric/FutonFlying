@@ -3,6 +3,10 @@
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
+  padding: 10px;
+  transition: background-color .3s;
+  text-decoration: none;
+  color: black;
 
   .booking__image,
   .hosting__image {
@@ -37,14 +41,25 @@
     align-self: center;
   }
 
+    &:hover {
+      background-color: darken(#fff, 10%);
+    }
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
 }
 
 .booking__hr,
 .hosting__hr {
   color: black;
-}
+  margin: 0;
 
-.booking__hr:last-of-type,
-.hosting__hr:last-of-type {
-  display: none;
+  &:last-of-type {
+    display: none;
+  }
 }

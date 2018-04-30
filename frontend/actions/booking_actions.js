@@ -28,8 +28,8 @@ export const cancelBooking = bookingId => {
   };
 };
 
-export const fetchBookings = id => dispatch => {
-  return APIUtil.fetchBookings(id)
+export const fetchBookings = userId => dispatch => {
+  return APIUtil.fetchBookings(userId)
     .then((bookings) => {
       dispatch(receiveBookings(bookings))},
       (err) => {

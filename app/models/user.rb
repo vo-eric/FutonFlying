@@ -78,11 +78,11 @@ class User < ActiveRecord::Base
   end
   
   def user_bookings
-    Booking.where(guest_id: self.id)
+    Booking.where("guest_id = ? AND end_date >= ?", self.id, Date.today)
   end
 
   def user_hostings
-    Booking.where(host_id: self.id)
+    Booking.where("host_id = ? AND end_date >= ?", self.id, Date.today)
   end
 
   def find_bookings

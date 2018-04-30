@@ -53,35 +53,35 @@ class BookingsForm extends React.Component {
 
   render() {
     return (
-      <div className='booking-dropdown'>
-        <div className='booking-request-header'>
+      <div className='booking-form'>
+        <p className='booking-form-header'>
           Request to stay
-        </div>
+        </p>
 
         <form onSubmit={this.handleSubmit}>
-          <div className='booking-dates'>
-            <div className='booking-request-dates'>
+          <section className='booking-form__dates'>
+            <div className='booking-form__date'>
               <span>Arrival Date</span>
               <input
-                className='booking-request-input'
+                className='booking-form__date-input'
                 type='date'
                 onChange={(e) => this.update(e, "startDate")} />
             </div>
 
-            <div className='booking-request-dates'>
+            <div className='booking-form__date'>
               <span>Departure Date</span>
               <input
-                className='booking-request-input'
+                className='booking-form__date-input'
                 type='date'
                 min={this.state.formInfo.startDate}
                 onChange={(e) => this.update(e, "endDate")} />
             </div>
-          </div>
+          </section>
           <span>
             {this.renderErrors()}
           </span>
 
-          <div className='booking-request-message'>
+          <div className='booking-form__message'>
             <span>Message</span>
             <textarea
               type='text'
@@ -90,22 +90,21 @@ class BookingsForm extends React.Component {
           </div>
         </form>
 
-        <div className='booking-actions'>
+        <div className='booking-form__buttons'>
           <button
-            className='booking-dropdown-button'
+            className='booking-form-button'
             onClick={() => this.closeDropdown()}>
             Cancel
           </button>
 
           <button
             onClick={this.handleSubmit}
-            className='booking-dropdown-button'>
+            className='booking-form-button'>
             Send
             </button>
         </div>
       </div>
     );
-
   }
 }
 

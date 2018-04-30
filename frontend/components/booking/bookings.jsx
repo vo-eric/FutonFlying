@@ -1,5 +1,6 @@
 import React from 'react';
-import BookingsDetail from './bookings_detail';
+import BookingsShow from './bookings_show';
+import { Link } from 'react-router-dom';
 
 class Bookings extends React.Component {
   constructor(props) {
@@ -17,11 +18,18 @@ class Bookings extends React.Component {
     if (this.props.bookings.length) {
       bookings = (
         <section className='bookings-list'>
-          {Object.values(this.props.bookings[0]).map((booking) => (
-            [
-              <div className="booking" key={booking.id}>
+          {Object.values(this.props.bookings[0]).map((booking) => {
+            return ([
+              <a
+                className="booking" 
+                href={`/#/bookings/${booking.id}`}
+                key={booking.id}
+                >
                 <div className="booking__user">
-                  <img className="booking__image" src={booking.avatar} alt={booking.fname} />
+                  <img 
+                    className="booking__image" 
+                    src={booking.avatar} 
+                    alt={booking.fname} />
                   <p className="booking__full-name">
                     {booking.fname} {booking.lname}
                   </p>
@@ -37,10 +45,12 @@ class Bookings extends React.Component {
                   <hr />
                   {booking.end_date}
                 </div>
-              </div>,
+              </a>,
               <hr className="booking__hr" />
-            ]
-          )
+
+            ]);
+            
+          }
           )}
         </section>
       );
@@ -61,9 +71,16 @@ class Bookings extends React.Component {
         <section className='hostings-list'>
           {Object.values(this.props.bookings[1]).map((hosting) => (
             [
-              <div className="hosting" key={hosting.id}>
+                <a
+                  className="hosting"
+                  href={`/#/bookings/${hosting.id}`}
+                  key={hosting.id}
+                >
                 <div className="hosting__user">
-                  <img className="hosting__image" src={hosting.avatar} alt="{hosting.fname" />
+                  <img 
+                    className="hosting__image" 
+                    src={hosting.avatar} 
+                    alt="{hosting.fname" />
                   <div className="hosting__full-name">
                     {hosting.fname} {hosting.lname}
                   </div> 
@@ -79,7 +96,7 @@ class Bookings extends React.Component {
                   <hr />
                   {hosting.end_date}
                 </div>
-              </div>,
+              </a>,
               <hr className="hosting__hr" />
             ]
           )

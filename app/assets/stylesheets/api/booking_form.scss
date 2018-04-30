@@ -8,7 +8,7 @@
 }
 
 .active {
-  height: 475px;
+  height: 460px;
 }
 
 .inactive {
@@ -16,72 +16,82 @@
   border-bottom: none;
 }
 
-.booking-request-header {
-  text-transform: uppercase;
-  padding: 15px 0 10px 0;
-  font-size: 14px;
-  border-bottom: 1px solid #ecf0f1;
-}
+.booking-form {
+  .booking-form-header {
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    font-size: .9rem;
+    border-bottom: 1px solid #ecf0f1;
+  }
+  
+  .booking-form__dates {
+    margin-top: 10px;
+    display: flex;
+  }
+  
+  .booking-form__date, 
+  .booking-form__message {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .booking-form__date {
+    span {
+      font-size: .9rem;
+    }
 
-.booking-dates {
-  margin-top: 10px;
-  display: flex;
-}
+    &:first-of-type {
+      margin-right: 20px;
+    }
+  }
 
-.booking-request-dates, .booking-request-message {
-  display: flex;
-  flex-direction: column;
-}
+  .booking-form__date-input {
+    padding: 8px;
+    margin-top: 10px;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+  }
 
-.booking-request-message span {
-  margin: 30px 0 10px 0;
-}
+  .booking-form__message {
+    span {
+      margin: 30px 0 10px 0;
+      font-size: 1rem;
+    }
 
-.booking-request-message textarea {
-  height: 200px;
-  padding: 10px 0 0 10px;
-  font-size: 16px;
-  outline: none;
-  margin-bottom: 20px;
-}
+    textarea {
+      height: 200px;
+      padding: 10px;
+      font-size: 1rem;
+      outline: none;
+      margin-bottom: 20px;
+    }
+  }  
 
-.booking-request-input {
-  padding: 8px;
-  margin-top: 10px;
-  height: 10px;
-  border-radius: 5px;
-  outline: none;
-}
+  .booking-form__buttons {
+    text-align: right;
 
-.booking-request-dates:first-of-type {
-  margin-right: 20px;
-}
-
-.booking-actions {
-  text-align: right;
-  padding-bottom: 7px;
-}
-
-.booking-dropdown-button {
-  line-height: 1;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  display: inline-block;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 8px 12px;
-  max-width: 240px;
-  text-align: center;
-  margin-right: 7px;
-  outline: none;
-}
-
-.booking-dropdown-button:first-of-type {
-  background: #afb7c3;
-  margin-right: 7px;
-}
-
-.booking-dropdown-button:last-of-type {
-  background: #287fb8;
+    .booking-form-button {
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: .9rem;
+      padding: 8px 12px;
+      max-width: 240px;
+      outline: none;
+      border: 1px solid #287fb8;
+    }
+    
+    .booking-form-button:first-of-type {
+      background: #fff;
+      color: #287fb8;
+      margin-right: 10px;
+    }
+    
+    .booking-form-button:last-of-type {
+      background: #287fb8;
+      color: #fff;
+      margin-right: 0;
+    }
+  }
 }
