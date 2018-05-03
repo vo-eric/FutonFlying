@@ -1,170 +1,184 @@
 .hosts-search {
-  width: 100%;
-  max-height: 90vh;
-  display: flex;
-  justify-content: center;
+    width: 100%;
+    max-height: 90vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .img-placeholder {
-  color: black;
-  margin-top: auto;
-  margin-bottom: auto;
-  font-size: 2.5em;
-  padding-right: 10px;
+    color: black;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 2.5em;
+    padding-right: 10px;
 }
 
 .host-index-photo {
-  width: 75px;
-  height: 75px;
-  object-fit: cover;
-  border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .hosts-index {
-  width: 70%;
-  background: white;
-  margin-right: 3px;
-  overflow: scroll;
-  height: 89vh;
+    width: 70%;
+    background: white;
+    margin-right: 3px;
+    overflow: scroll;
+    height: 89vh;
 }
 
 .no-hosts {
-  width: 55%;
-  background: white;
-  margin-right: 3px;
+    width: 55%;
+    background: white;
+    margin-right: 3px;
 }
 
 .google-map {
-  background: white;
-  padding: 5px;
+    background: white;
+    padding: 5px;
 }
 
 .hosts-available {
-  margin: 10px 5px;
-  text-align: center;
+    margin: 10px 5px;
+    text-align: center;
 }
 
 .host-index-module {
-  display: flex;
-  padding: 5px 10px;
-  border-bottom: 1px solid #dbddde;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 5px 10px;
+    border-bottom: 1px solid #dbddde;
 
-  &:hover {
-    transition: .3s;
-    background-color: darken(white, 5);
-  }
+    &:hover {
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
+        background-color: darken(white, 5);
+    }
 }
 
 .host-index-details {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .host-index-info {
-  padding: 10px 5px;
+    padding: 10px 5px;
 }
 
 .host-index-name {
-  padding-top: 10px;
-  font-size: 14px;
-  font-weight: bold;
+    padding-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .host-index-location {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 .index-accepting-guests {
-  padding-top: 20px;
-  text-align: center;
-  font-size: .9rem;
-  font-weight: bold;
-  line-height: 1.25em;
-  right: 0;
+    padding-top: 20px;
+    text-align: center;
+    font-size: .9rem;
+    font-weight: bold;
+    line-height: 1.25em;
+    right: 0;
 }
 
 .guest-indicator {
-  width: 70px;
-  align-self: center;
-  text-align: left;
-  font-size: .9rem;
-  font-weight: bold;
-  margin: 0 20px;
+    width: 70px;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    text-align: left;
+    font-size: .9rem;
+    font-weight: bold;
+    margin: 0 20px;
 }
 
 .accepting {
-  color: #41b866;
+    color: #41b866;
 }
 
 .not-accepting {
-  color: #ff3f2e;
+    color: #ff3f2e;
 }
 
 // This is for the blurbs
 #map-canvas {
-  margin: 0;
-  padding: 0;
-  height: 400px;
-  max-width: none;
+    margin: 0;
+    padding: 0;
+    height: 400px;
+    max-width: none;
 }
 
 #map-canvas img {
-  max-width: none !important;
+    max-width: none !important;
 }
 
 #iw-container .iw-title {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 22px;
-  font-weight: 400;
-  padding: 10px 10px 0 10px;
-  color: white;
-  margin: 0;
-  border-radius: 2px 2px 0 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 10px 10px 0 10px;
+    color: white;
+    margin: 0;
+    border-radius: 2px 2px 0 0;
 }
 
 #iw-container .iw-content {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  margin-right: 1px;
-  padding: 15px 5px 20px 15px;
-  max-height: 140px;
-  overflow-y: auto;
-  overflow-x: hidden;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    margin-right: 1px;
+    padding: 15px 5px 20px 15px;
+    max-height: 140px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .iw-content img {
-  float: right;
-  margin: 0 5px 5px 10px;
+    float: right;
+    margin: 0 5px 5px 10px;
 }
 
 .iw-subTitle {
-  font-size: 16px;
-  font-weight: 700;
-  padding: 5px 0;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 5px 0;
 }
 
 .iw-name-link {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .iw-title hr {
-  margin-top: 5px;
-  border: 1px solid #f1efea;
-
+    margin-top: 5px;
+    border: 1px solid #f1efea;
 }
 
 .fa-comment-alt {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .accepting {
-  color: green;
+    color: green;
 }
 
 .not-accepting {
-  color: red;
+    color: red;
 }

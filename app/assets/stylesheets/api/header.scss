@@ -1,63 +1,68 @@
 .header {
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: 5;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 5;
 
-  .subheader {
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    display: flex;
-    height: 50px;
-    border-bottom: 2px solid #bfcad2;
-  }
+    .subheader {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background: white;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 50px;
+        border-bottom: 2px solid #bfcad2;
+    }
 
-  .wordmark {
-    margin-left: 10px;
-    font-size: 2rem;
-    font-family: 'Delius', cursive;
-    color: #D4490B;
-    font-weight: bold;
-  }
+    .wordmark {
+        margin-left: 10px;
+        font-size: 2rem;
+        font-family: 'Delius', cursive;
+        color: #D4490B;
+        font-weight: bold;
+    }
 
+    button {
+        font-family: 'Lato', sans-serif;
+        line-height: 1.5;
+        display: inline-block;
+        cursor: pointer;
+        padding: 8px 12px;
+        max-width: 240px;
+        font-size: .9rem;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 3px;
+        outline: none;
+    }
 
-  button {
-    font-family: 'Lato', sans-serif;
-    line-height: 1.5;
-    display: inline-block;
-    cursor: pointer;
-    padding: 8px 12px;
-    max-width: 240px;
-    font-size: .9rem;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 3px;
-    outline: none;
-  }
+    .join-button,
+    .sign-out {
+        border: 1px solid #287fb8;
+        background: #287fb8;
+        color: white;
+        margin: 5px;
+    }
 
-  .join-button,
-  .sign-out {
-    border: 1px solid #287fb8;
-    background: #287fb8;
-    color: white;
-    margin: 5px;
-  }
+    .login-guest {
+        border: 1px solid #D4490B;
+        background: #D4490B;
+        color: white;
+        margin: 5px;
+    }
 
-  .login-guest {
-    border: 1px solid #D4490B;
-    background: #D4490B;
-    color: white;
-    margin: 5px;
-  }
-
-  .login-button {
-    border: 1px solid #287fb8;
-    color: #287fb8;
-  }
+    .login-button {
+        border: 1px solid #287fb8;
+        color: #287fb8;
+    }
 }
 
 #main-content {
-  margin-top: 4%;
+    margin-top: 4%;
 }

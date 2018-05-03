@@ -1,97 +1,110 @@
 .host-show-main {
-  margin: 0 auto;
-  width: 60%;
-  display: flex;
+    margin: 0 auto;
+    width: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 
 .about-me {
-  margin-top: 10px;
-  height: 100%;
-  background: white;
-  border-bottom: 2px solid #bfcad2;
+    margin-top: 10px;
+    height: 100%;
+    background: white;
+    border-bottom: 2px solid #bfcad2;
 }
 
 .about-me-header {
-  padding: 10px;
-  font-size: 1.2rem;
-  border-bottom: 1px solid #ecf0f1;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ecf0f1;
 }
 
 .about-me-body {
-  margin: 5px 10px 0 10px;
-  padding: 2px;
-  line-height: 1.5;
-  font-size: .9rem;
+    margin: 5px 10px 0 10px;
+    padding: 2px;
+    line-height: 1.5;
+    font-size: .9rem;
 }
 
 .host-show-photo {
-  margin-top: 5px;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+    margin-top: 5px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
 
 .host-show-user {
-  text-align: center;
-  background: white;
-  min-width: 20%;
-  height: 300px;
-  border-bottom: 2px solid #bfcad2;
-  padding-top: 15px;
+    text-align: center;
+    background: white;
+    min-width: 20%;
+    height: 300px;
+    border-bottom: 2px solid #bfcad2;
+    padding-top: 15px;
 }
 
 .host-show-name {
-  flex-wrap: wrap;
-  margin-top: 10px;
-  font-size: 1.8rem;
-  text-align: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    font-size: 1.8rem;
+    text-align: center;
 }
 
 .host-show-location {
-  margin-top: 5px;
-  font-size: .8rem;
-  text-align: center;
+    margin-top: 5px;
+    font-size: .8rem;
+    text-align: center;
 }
 
 .host-show-about {
-  width: 80%;
-  height: auto;
-  margin-left: 10px;
+    width: 80%;
+    height: auto;
+    margin-left: 10px;
 }
 
 .host-booking {
-  display: flex;
-  background: white;
-  border-bottom: 2px solid #bfcad2;
-  justify-content: space-between;
-  padding: 15px 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: white;
+    border-bottom: 2px solid #bfcad2;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 15px 8px;
 }
 
 .accepting-guests {
-  color: #41b866;
-  font-size: 1.4rem;
-  align-self: center;
+    color: #41b866;
+    font-size: 1.4rem;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
 }
 
 .not-accepting-guests {
-  color: #ff3f2e;
-  font-size: 1.4rem;
-  align-self: center;
+    color: #ff3f2e;
+    font-size: 1.4rem;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
 }
 
 .request-button {
-  background-color: #287fb8;
-  border: none;
-  font-size: 1rem;
-  color: white;
-  padding: 8px 12px;
-  text-align: center;
-  border-radius: 3px;
-  margin-right: 5px;
-  outline: none;
-  transition: background-color .3s;
+    background-color: #287fb8;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 3px;
+    margin-right: 5px;
+    outline: none;
+    -webkit-transition: background-color .3s;
+    -o-transition: background-color .3s;
+    transition: background-color .3s;
 
-  &:hover {
-    background-color: darken(#287fb8, 10%);
-  }
+    &:hover {
+        background-color: darken(#287fb8, 10%);
+    }
 }

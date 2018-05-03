@@ -1,6 +1,8 @@
 .dashboard {
     margin: 0 auto;
     font-family: 'Lato', sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 80%;
 }
@@ -10,6 +12,7 @@
     height: 120px;
     border-radius: 60px;
     margin: 0 auto;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -39,7 +42,12 @@
 
     .search-module {
         background: white;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
 
         .teaser-text {
@@ -53,8 +61,13 @@
     .city-images {
         margin-top: 20px;
         padding: 0 10px 15px 10px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
     }
 

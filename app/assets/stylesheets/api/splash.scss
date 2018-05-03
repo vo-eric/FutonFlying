@@ -1,195 +1,232 @@
 body {
-  background-color: #f1efea;
-  margin: 0;
+    background-color: #f1efea;
+    margin: 0;
 }
 
 .welcome-overlay {
-  background: linear-gradient(rgba(5, 5, 2, 0.7) 30%, transparent), url("https://s3.us-east-2.amazonaws.com/futon-flying-pro/welcome.jpg") (center / cover);
-  height: 85vh;
-  width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgba(5, 5, 2, 0.7)), to(transparent)), url("https://s3.us-east-2.amazonaws.com/futon-flying-pro/welcome.jpg") (center / cover);
+    background: -webkit-linear-gradient(rgba(5, 5, 2, 0.7) 30%, transparent), url("https://s3.us-east-2.amazonaws.com/futon-flying-pro/welcome.jpg") (center / cover);
+    background: -o-linear-gradient(rgba(5, 5, 2, 0.7) 30%, transparent), url("https://s3.us-east-2.amazonaws.com/futon-flying-pro/welcome.jpg") (center / cover);
+    background: linear-gradient(rgba(5, 5, 2, 0.7) 30%, transparent), url("https://s3.us-east-2.amazonaws.com/futon-flying-pro/welcome.jpg") (center / cover);
+    height: 85vh;
+    width: 100%;
 
-  p {
-    color: white;
-    text-align: center;
-  }
+    p {
+        color: white;
+        text-align: center;
+    }
 
-  .overlay-text {
-    font-size: 3rem;
-    padding-top: 300px;
-    font-weight: 300;
-    margin: 0;
-  }
+    .overlay-text {
+        font-size: 3rem;
+        padding-top: 300px;
+        font-weight: 300;
+        margin: 0;
+    }
 
-  .overlay-subtext {
-    font-size: 2rem;
-    font-weight: 100;
-    margin-top: 0px;
-  }
+    .overlay-subtext {
+        font-size: 2rem;
+        font-weight: 100;
+        margin-top: 0px;
+    }
 }
 
 .how-it-works {
-  margin: 10px 0;
-  padding: 50px 0;
-  height: 70vh;
-  background: #ed6504;
+    margin: 10px 0;
+    padding: 50px 0;
+    height: 70vh;
+    background: #ed6504;
 
-  p {
-    color: white;
-    text-align: center;
-    padding: 0 5px;
-    font-size: .9rem;
-    line-height: 1.3rem;
-  }
+    p {
+        color: white;
+        text-align: center;
+        padding: 0 5px;
+        font-size: .9rem;
+        line-height: 1.3rem;
+    }
 
-  .hiw-text {
-    font-size: 3rem;
-    font-weight: 100;
-    margin-bottom: 7px;
-  }
+    .hiw-text {
+        font-size: 3rem;
+        font-weight: 100;
+        margin-bottom: 7px;
+    }
 
-  .hiw-info {
-    display: flex;
-    padding-top: 30px;
-    width: 40%;
-    margin: 0 auto;
-  }
+    .hiw-info {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding-top: 30px;
+        width: 40%;
+        margin: 0 auto;
+    }
 
-  .hiw-discover,
-  .hiw-find {
-    height: 200px;
-    background: #ff855c;
-    margin: 5px;
-    max-width: 400px;
-    min-height: 300px;
-  }
+    .hiw-discover,
+    .hiw-find {
+        height: 200px;
+        background: #ff855c;
+        margin: 5px;
+        max-width: 400px;
+        min-height: 300px;
+    }
 
-  .hiw-discover img,
-  .hiw-find img {
-    height: 40%;
-    margin: 0 auto;
-    padding-top: 5px;
-    display: block;
-  }
+    .hiw-discover img,
+    .hiw-find img {
+        height: 40%;
+        margin: 0 auto;
+        padding-top: 5px;
+        display: block;
+    }
 
-  .short-underline {
-    padding-top: 10px;
-    margin: 0 auto;
-    width: 50px;
-    border-bottom: 2px solid white;
-  }
+    .short-underline {
+        padding-top: 10px;
+        margin: 0 auto;
+        width: 50px;
+        border-bottom: 2px solid white;
+    }
 
-  .shorter-underline {
-    padding-top: 5px;
-    margin: 0 auto;
-    width: 30px;
-    border-bottom: 2px solid white;
-  }
+    .shorter-underline {
+        padding-top: 5px;
+        margin: 0 auto;
+        width: 30px;
+        border-bottom: 2px solid white;
+    }
 }
 
 .tgp-header {
-  color: #34495e;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 300;
-  margin: 20px 0;
+    color: #34495e;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 20px 0;
 }
 
 .the-grand-piece {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(4, 175px);
-  grid-gap: 5px;
-  height: 80vh;
-  width: 90vw;
-  grid-template-areas: 
-    "los-angeles    lyon          ha-long     ha-long" 
-    "los-angeles    copenhagen    berlin      london" 
-    "porto          porto         rome        london" 
-    "vienna         budapest      rome        new-york";
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .tgp-city {
-    display: block;
-    position: relative;
-    overflow: hidden;
+    margin: 0 auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto [4];
+    grid-template-columns: repeat(4, auto);
+    -ms-grid-rows: 175px [4];
+    grid-template-rows: repeat(4, 175px);
+    grid-gap: 5px;
+    height: 80vh;
+    width: 90vw;
+    grid-template-areas: "los-angeles    lyon          ha-long     ha-long"  "los-angeles    copenhagen    berlin      london"  "porto          porto         rome        london"  "vienna         budapest      rome        new-york";
 
     img {
-      display: block;
-      transition: all .3s;
+        width: 100%;
+        height: 100%;
     }
 
-    .tgp-text {
-      transition: all .3s;
-      opacity: 0;
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      text-align: center;
-      letter-spacing: 1px;
-      font-size: 1.5rem;
-      color: white;
+    .tgp-city {
+        display: block;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            display: block;
+            -webkit-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+        }
+
+        .tgp-text {
+            -webkit-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        &:hover {
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+
+            img {
+                -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+
+            .tgp-text {
+                opacity: 1;
+            }
+        }
     }
 
-    &:hover {
-      filter: grayscale(1);
-
-      img {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-      }
-      
-      .tgp-text {
-          opacity: 1;
-      }
+    .p1 {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 1;
+        grid-area: los-angeles;
     }
-  }
 
-  .p1 {
-    grid-area: los-angeles;
-  }
+    .p2 {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+        grid-area: copenhagen;
+    }
 
-  .p2 {
-    grid-area: copenhagen;
-  }
+    .p3 {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        grid-area: vienna;
+    }
 
-  .p3 {
-    grid-area: vienna;
-  }
+    .p4 {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        grid-area: lyon;
+    }
 
-  .p4 {
-    grid-area: lyon;
-  }
+    .p5 {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 2;
+        grid-area: ha-long;
+    }
 
-  .p5 {
-    grid-area: ha-long;
-  }
+    .p6 {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 4;
+        grid-area: london;
+    }
 
-  .p6 {
-    grid-area: london;
-  }
+    .p7 {
+        -ms-grid-row: 4;
+        -ms-grid-column: 4;
+        grid-area: new-york;
+    }
 
-  .p7 {
-    grid-area: new-york;
-  }
+    .p8 {
+        -ms-grid-row: 2;
+        -ms-grid-column: 3;
+        grid-area: berlin;
+    }
 
-  .p8 {
-    grid-area: berlin;
-  }
+    .p9 {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        grid-area: porto;
+    }
 
-  .p9 {
-    grid-area: porto;
-  }
+    .p10 {
+        -ms-grid-row: 3;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 3;
+        grid-area: rome;
+    }
 
-  .p10 {
-    grid-area: rome;
-  }
-
-  .p11 {
-    grid-area: budapest;
-  }
+    .p11 {
+        -ms-grid-row: 4;
+        -ms-grid-column: 2;
+        grid-area: budapest;
+    }
 }

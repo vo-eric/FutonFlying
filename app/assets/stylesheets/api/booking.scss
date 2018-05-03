@@ -1,65 +1,66 @@
-.booking,
-.hosting {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1rem;
-  padding: 10px;
-  transition: background-color .3s;
-  text-decoration: none;
-  color: black;
+.booking {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 1rem;
+    padding: 10px;
+    -webkit-transition: background-color .3s;
+    -o-transition: background-color .3s;
+    transition: background-color .3s;
+    text-decoration: none;
+    color: black;
 
-  .booking__image,
-  .hosting__image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin: 0;
-  }
-
-  .booking__full-name,
-  .hosting__full-name {
-    margin: 0;
-  }
-
-  .booking__start-date,
-  .booking__end-date,
-  .hosting__start-date,
-  .hosting__end-date {
-    p {
-      margin: 10px 0 5px 0;
+    .booking__image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0;
     }
 
-    hr {
-      color: black;
-      margin-top: 0;
-      margin-bottom: 15px;
+    .booking__full-name {
+        margin: 0;
     }
-  }
 
-  .booking__dates,
-  .hosting__dates {
-    align-self: center;
-  }
+    .booking__start-date,
+    .booking__end-date {
+        p {
+            margin: 10px 0 5px 0;
+        }
+
+        hr {
+            margin-top: 0;
+            margin-bottom: 15px;
+            border: .5px solid black;
+        }
+    }
+
+    .booking__dates {
+        -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    }
 
     &:hover {
-      background-color: darken(#fff, 10%);
+        background-color: darken(#fff, 10%);
     }
 
     &:first-of-type {
-      padding-top: 0;
+        padding-top: 0;
     }
 
     &:last-of-type {
-      padding-bottom: 0;
+        padding-bottom: 0;
     }
 }
 
-.booking__hr,
-.hosting__hr {
-  color: black;
-  margin: 0;
+.booking__hr {
+    color: black;
+    margin: 0;
 
-  &:last-of-type {
-    display: none;
-  }
+    &:last-of-type {
+        display: none;
+    }
 }
