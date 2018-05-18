@@ -13,6 +13,10 @@
     text-decoration: none;
     color: black;
 
+    .booking__user {
+        align-self: center;
+    }
+
     .booking__image {
         width: 80px;
         height: 80px;
@@ -20,12 +24,11 @@
         margin: 0;
     }
 
-    .booking__full-name {
+    .booking__name {
         margin: 0;
     }
 
-    .booking__start-date,
-    .booking__end-date {
+    .booking__date {
         p {
             margin: 10px 0 5px 0;
         }
@@ -37,22 +40,16 @@
         }
     }
 
-    .booking__dates {
-        -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    }
-
     &:hover {
         background-color: darken(#fff, 10%);
     }
 
     &:first-of-type {
-        padding-top: 0;
+        padding-top: 5px;
     }
 
     &:last-of-type {
-        padding-bottom: 0;
+        padding-bottom: 5px;
     }
 }
 

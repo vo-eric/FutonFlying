@@ -7,10 +7,6 @@ class Dropdown extends React.Component {
     super(props);
   }
 
-  // componentWillMount() {
-  //   this.props.fetchSingleHost(this.props.hosts.id)
-  // }
-
   render () {
     if (this.props.dropdownIsOpen) {
       return (

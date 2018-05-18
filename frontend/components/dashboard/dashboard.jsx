@@ -7,7 +7,6 @@ class Dashboard extends React.Component {
     super(props);
     this.showTrips = this.showTrips.bind(this);
     this.showGuests = this.showGuests.bind(this);
-    // this.renderUserPhoto = this.renderUserPhoto.bind(this);
   }
 
   showTrips() {
