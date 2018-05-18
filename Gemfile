@@ -35,6 +35,7 @@ gem 'faker'
 gem 'figaro'
 gem 'aws-sdk', '>=2.0'
 gem 'geocoder'
+gem 'seed_dump'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

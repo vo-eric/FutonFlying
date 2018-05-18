@@ -1,152 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-require 'faker'
-
-men = File.read('db/men.json')
-ladies = File.read('db/ladies.json')
-unified = File.read('db/unified.json')
-men_hash = JSON.parse(men)["results"]
-ladies_hash = JSON.parse(ladies)["results"]
-unified_hash = JSON.parse(unified)["results"]
-
-user1 = User.create!(
-  username: "cthanhvo",
-  password: "password",
-  fname: "Can",
-  lname: "Vo",
-  latitude: 10.11427,
-  longitude: 106.22552,
-  bio: "This is for my homeboy Wadah",
-  avatar: "https://s3.us-east-2.amazonaws.com/futon-flying-pro/ctvo.jpg"
-)
-
-def get_location(entry)
-  street = entry['location']['street'].split(" ").join("+")
-  city = entry['location']['city'].split(" ").join("+")
-  state = entry['location']['state'].split(" ").join("+")
-  address = [ActiveSupport::Inflector.transliterate(city), ActiveSupport::Inflector.transliterate(state)].join(",")
-  url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{address}&key=#{ENV["google_key"]}"
-  data = JSON.parse(open(url).read)
-  return [] if data['status'] == 'ZERO_RESULTS'
-  location = {
-    latitude: data['results'][0]['geometry']['location']['lat'],
-    longitude: data['results'][0]['geometry']['location']['lng'],
-    country:  data['results'][0]['address_components'][-2]['long_name'],
-    city:  data['results'][0]['address_components'][2]['long_name']
-}
-
-end
-
-unified_hash[0..15].each do |user|
-  location = get_location(user)
-  next if location.empty?
-  puts location['latitude']
-  puts location['longitude']
-User.create!(
-  latitude: location[:latitude],
-  longitude: location[:longitude],
-  fname: user['name']['first'].capitalize,
-  lname: user['name']['last'].capitalize,
-  city: location[:city],
-  country: location[:country],
-  accepting_guests: Faker::Boolean.boolean,
-  avatar: user['picture']["large"],
-  bio:  Faker::Lorem.paragraph,
-  username: Faker::Internet.user_name,
-  password_digest: Faker::Internet.password(8)
-)
-
-end
-
-user8 = User.create!(
-  latitude: 40.418639,
-  longitude: -3.704602,
-  password: Faker::Internet.password(8),
-  username: Faker::Internet.user_name,
-  fname: "Paulina",
-  lname: "Rutkowska",
-  city: "Madrid",
-  country: "Spain",
-  accepting_guests: true,
-  avatar: ladies_hash[0]['picture']["large"],
-  bio: "En este 2017 con mi compañera y amor decidimos salir de las sierras de Córdoba Argentina, para recorrer el continente Europeo y Norte Africano. Ambos somos trabajadores del arte y la cultura, este viaje es una especie de peregrinación en que cada pasa es un enriquecimiento sobre cultura, paisaje e historia. Estamos produciendo obra y compartiendo. Personalmente me dedico mas al audiovisual y Lucía a la caracterización de personajes para obras de opera y para dibujo."
-)
-
-user2 = User.create!(
-  latitude: 5.092167,
-  longitude: 1.317893,
-  password: Faker::Internet.password(8),
-  username: Faker::Internet.user_name,
-  fname: "Robbie",
-  lname: "Miles",
-  city: "Woodbridge",
-  country: "United Kingdom",
-  accepting_guests: true,
-  avatar: 'https://s3.us-east-2.amazonaws.com/futon-flying-pro/robbie.jpg',
-  bio: "Ñaaaaaaaaaaaa!!!! Heeeello everyone!!! My name is Robbie and im 25. I'm from Spain but I currently live in streatham hill, London. I'm working as a registered nurse in a hospital making smile, helping and providing loveeee to people haha!!! I'm actually studing a degree in law at the same time for change the change in the world and try to help people in a bigger way! I'm a very happy, funny, positive, optimistic and social guy that always keeps his smile very high!!! :) I definitelly can not spend any second of my life doing nothing or not sharing a good moment with someone. I'm a very friendlyyy dude, lets just met and hang out so you can see whaaaat I am taaaalking abooouuuut! Love is always the answer!"
-)
-
-user3 = User.create!(
-  latitude: 48.178217,
-  longitude: 16.326814,
-  password: Faker::Internet.password(8),
-  username: Faker::Internet.user_name,
-  fname: 'Hannah',
-  lname: 'Beck',
-  city: 'Vienna',
-  country: 'Austria',
-  accepting_guests: true,
-    avatar: ladies_hash[1]['picture']["large"],
-  bio: "I'm and Austro-American who grew up in Austria. I spent my High School years in Tirana Albania where I also graduated, and met the love of my life. We both live in Rome, Italy together and I'm now starting to study Performing Arts in October. I love traveling, so when I heard about CouchSurfing I wanted to do my part to make traveling on low budget easier for everyone. We hope to meet lots of friendly new faces and be able to call as many as possible our friends. We'd be glad to hang out around town, go to museums, listen to live music, or just crack open a beer. Flexibility is important.I'm and Austro-American who grew up in Austria. I spent my High School years in Tirana Albania where I also graduated, and met the love of my life. We both live in Rome, Italy together and I'm now starting to study Performing Arts in October. I love traveling, so when I heard about CouchSurfing I wanted to do my part to make traveling on low budget easier for everyone. We hope to meet lots of friendly new faces and be able to call as many as possible our friends. We'd be glad to hang out around town, go to museums, listen to live music, or just crack open a beer. Flexibility is important."
-)
-
-user4 = User.create!(
-  latitude: 55.679553,
-  longitude: 12.585516,
-  password: Faker::Internet.password(8),
-  username: Faker::Internet.user_name,
-  fname: 'Wen Bo',
-  lname: 'Xie',
-  city: 'Copenhagen',
-  country: 'Denmark',
-  accepting_guests: false,
-  avatar: 'https://s3.us-east-2.amazonaws.com/futon-flying-pro/wenbo.jpg',
-  bio: "I'm Wen Bo"
-)
-
-user5 = User.create!(
-  latitude: 43.124499,
-  longitude: -78.799183,
-  password: Faker::Internet.password(8),
-  username: Faker::Internet.user_name,
-  fname: 'Kevin',
-  lname: 'Garvey',
-  city: 'Mapleton',
-  country: 'New York',
-  accepting_guests: true,
-  avatar: men_hash[0]['picture']["large"],
-
-  bio: "I'm and Austro-American who grew up in Austria. I spent my High School years in Tirana Albania where I also graduated, and met the love of my life. We both live in Rome, Italy together and I'm now starting to study Performing Arts in October. I love traveling, so when I heard about CouchSurfing I wanted to do my part to make traveling on low budget easier for everyone. We hope to meet lots of friendly new faces and be able to call as many as possible our friends. We'd be glad to hang out around town, go to museums, listen to live music, or just crack open a beer. Flexibility is important.I'm and Austro-American who grew up in Austria. I spent my High School years in Tirana Albania where I also graduated, and met the love of my life. We both live in Rome, Italy together and I'm now starting to study Performing Arts in October. I love traveling, so when I heard about CouchSurfing I wanted to do my part to make traveling on low budget easier for everyone. We hope to meet lots of friendly new faces and be able to call as many as possible our friends. We'd be glad to hang out around town, go to museums, listen to live music, or just crack open a beer. Flexibility is important."
-)
-
-user6 = User.create!(
-  latitude: 43.703215,
-  longitude: -79.403278,
-  password: Faker::Internet.password(8),
-  username: Faker::Internet.user_name,
-  fname: 'James',
-  lname: 'Somers',
-  city: 'Toronto',
-  country: 'Canada',
-  accepting_guests: true,
-  avatar: men_hash[1]['picture']["large"],
-
-  bio: "We live on a farm in the Napa Valley. We have sheep, chickens, rabbits, turkeys, Australian Cattle Dogs, cats and one goofy Labradoodle. We have a large vegetable garden, fruit and nut trees and a Cabernet Sauvignon vineyard. We sell produce from the farm directly and give away any oversupply to the local food bank. We welcome day visitors to the farm and love sharing this beautiful area with cityfolk. Kirsten (thats's me)is a massage thearpist which allows her time to do lots of other things in life like farming and volunteering on the board of the Napa Valley Marathon. Ron has recently relocated to Napa from Reno. He has a business background and is now trying to figure out what he wants to be in his new life.
-Our dogs are our children although we enjoy visits from our nieces and any other children who would like to experience the farm."
-)
+User.create!([
+  {fname: "Can", lname: "Vo", username: "cthanhvo", password_digest: "$2a$10$Wfz2GkZY0WySmPHX0TNHC.eR.fAYlcP4UtoebG6kQIzwwJ656Ja1C", session_token: "iq0NBNDwihbM_lEpB_mPnQ", bio: "This is for my homeboy Wadah", avatar_file_name: "ctvo.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 1191470, avatar_updated_at: "2018-05-18 18:49:15", latitude: 10.11427, longitude: 106.22552, city: "Thanh Bình", country: "Vietnam", accepting_guests: true, address: nil},
+  {fname: "Lise", lname: "Lemaire", username: "floy", password_digest: "6iX098Rc", session_token: "fUtac_KbxwbKwnVMzJfVEg", bio: "Eos vero occaecati illum qui et. Et aut quo illum non laboriosam. Eveniet laudantium voluptatibus sequi aut in error. Tempore quo autem ipsum nihil aut.", avatar_file_name: "2.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 5157, avatar_updated_at: "2018-05-18 18:49:18", latitude: 48.885929, longitude: 2.172032, city: "Rueil-Malmaison", country: "France", accepting_guests: false, address: nil},
+  {fname: "Barbara", lname: "Ross", username: "elisa.oreilly", password_digest: "Gp71Di5341P", session_token: "TvIUCXxtUVzvqEDhL32jaw", bio: "Id maiores facere aliquid consequatur dolores repellat voluptatem. Et neque eius corrupti dicta. Magni fugiat dolor vel.", avatar_file_name: "45.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 4515, avatar_updated_at: "2018-05-18 18:49:19", latitude: 38.4275178, longitude: -75.5067276, city: "5, Parsons", country: "United States", accepting_guests: true, address: nil},
+  {fname: "Randy", lname: "Thomas", username: "kristina.robel", password_digest: "AoBp5aO5G", session_token: "LvkorIFANn5Mu9p3MCm4DA", bio: "Rem at iste illum. Distinctio animi tempora quam. Et eius laborum nobis est molestiae. Officiis rerum iusto inventore aspernatur. Rerum culpa ex quam numquam ut dicta.", avatar_file_name: "32.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 5242, avatar_updated_at: "2018-05-18 18:49:20", latitude: 26.6867471, longitude: -81.8009342, city: "Fort Myers", country: "United States", accepting_guests: true, address: nil},
+  {fname: "Holly", lname: "Walker", username: "yesenia", password_digest: "U7Oo9uDhK", session_token: "dhV1HMWcTMaqe8kk6p4LYA", bio: "Eveniet eos ex. Et odit voluptatum quas cum rerum quod totam. Aliquam atque numquam enim ducimus.", avatar_file_name: "26.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 4680, avatar_updated_at: "2018-05-18 18:49:21", latitude: 41.5742165, longitude: -81.5479001, city: "Cleveland", country: "United States", accepting_guests: true, address: nil},
+  {fname: "Donald", lname: "Green", username: "shirley_volkman", password_digest: "IoEiVkWhYi6fTg", session_token: "XQ5jn-Wd3hqx69aa5hWzDQ", bio: "Dolorem sint sunt beatae deserunt. Molestiae qui quo. Non quos sit fugit qui est. Rerum sit nam veritatis sed architecto consequatur quo. Reiciendis sed est voluptatum perspiciatis quisquam architecto et.", avatar_file_name: "32.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 5242, avatar_updated_at: "2018-05-18 18:49:22", latitude: 32.8291106, longitude: -96.907667, city: "Irving", country: "United States", accepting_guests: false, address: nil},
+  {fname: "Rick", lname: "Clarke", username: "terence", password_digest: "UpQ0ThHwJ56qU", session_token: "pVXap26S356PfrL5qxaJyg", bio: "Eius sed explicabo aut corporis dolor. Et vero qui. Provident labore laboriosam omnis. Perspiciatis aperiam eum id magnam.", avatar_file_name: "24.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 18074, avatar_updated_at: "2018-05-18 18:49:23", latitude: 51.280233, longitude: 1.0789089, city: "Kent", country: "England", accepting_guests: false, address: nil},
+  {fname: "Amelia", lname: "Adams", username: "nils", password_digest: "GkU66xT07c4r8t", session_token: "PqC7BfGc5ryNwt2KSOZQkg", bio: "Perspiciatis iste qui velit. Nam esse ex rerum sunt. Omnis iste in corporis et.", avatar_file_name: "64.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 7522, avatar_updated_at: "2018-05-18 18:49:24", latitude: 52.2937332, longitude: -1.5306092, city: "Royal Leamington Spa", country: "United Kingdom", accepting_guests: true, address: nil},
+  {fname: "Nicole", lname: "Riley", username: "kathlyn.torp", password_digest: "NqFq5fYq0988", session_token: "4wu2xxKPkMwRnuKsdUxYBw", bio: "Commodi quam unde officia ut eos. Pariatur at non itaque dolores. Cumque qui ipsum inventore vel maiores quis cum. Doloremque dolores vel qui dolor. Omnis esse voluptatum aut sunt et.", avatar_file_name: "14.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 4458, avatar_updated_at: "2018-05-18 18:49:25", latitude: 56.462018, longitude: -2.970721, city: "Dundee", country: "United Kingdom", accepting_guests: false, address: nil},
+  {fname: "Kiara", lname: "Garcia", username: "domenick", password_digest: "Da5kJ79dNnUmV5K", session_token: "3mAGkWmINfwkT3KzS8VdaQ", bio: "Assumenda placeat dicta. Qui ipsa distinctio explicabo. Iusto reiciendis earum architecto assumenda voluptatem.", avatar_file_name: "78.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 4675, avatar_updated_at: "2018-05-18 18:49:26", latitude: 46.9917906, longitude: 3.1645399, city: "Nevers", country: "France", accepting_guests: true, address: nil},
+  {fname: "Chester", lname: "Brown", username: "laria.wyman", password_digest: "T1NjN84nBa0xZ4G5", session_token: "YwPrhnhWnIPm8EKLTAF3Ow", bio: "Voluptatem asperiores a nostrum. Ratione veritatis ut. Et omnis iste qui porro. Tenetur qui autem.", avatar_file_name: "27.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 4051, avatar_updated_at: "2018-05-18 18:49:28", latitude: 40.2663689, longitude: -76.6486454, city: "Hershey", country: "United States", accepting_guests: true, address: nil},
+  {fname: "Adam", lname: "Brun", username: "desiree", password_digest: "637z1eS94zHd1zQz", session_token: "Qh1JhQ0i4Ch0Ve_9m9W3gA", bio: "Eius provident id culpa similique facere. Suscipit architecto dolores quia dolores molestias eum. Expedita optio odio dolor minima quaerat.", avatar_file_name: "28.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 5024, avatar_updated_at: "2018-05-18 18:49:29", latitude: 47.9828276, longitude: 0.2189554, city: "Le Mans", country: "France", accepting_guests: true, address: nil},
+  {fname: "Clifton", lname: "Fuller", username: "shane_turcotte", password_digest: "5982ZhDmI", session_token: "e0levedH1XWfKgPWtosqAw", bio: "Et enim veritatis assumenda nemo. Aut possimus aut et illum aut officia. Officiis quis ducimus.", avatar_file_name: "82.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 5081, avatar_updated_at: "2018-05-18 18:49:30", latitude: 43.7043444, longitude: -71.4339298, city: "Moultonborough", country: "United States", accepting_guests: false, address: nil},
+  {fname: "Jo", lname: "Little", username: "beaulah_bradtke", password_digest: "F9XyXnPoDj1v6", session_token: "b5QeZZFJGK15rdGD44vdhg", bio: "Quaerat qui nobis non excepturi dolores. Et quaerat et culpa unde iusto aut. Rerum natus repellendus aut. Suscipit laborum asperiores eos consequatur beatae nam minus.", avatar_file_name: "4.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 3218, avatar_updated_at: "2018-05-18 18:49:30", latitude: 41.832883, longitude: -88.1197385, city: "Wheaton", country: "United States", accepting_guests: true, address: nil},
+  {fname: "Timeo", lname: "Deschamps", username: "ashleigh", password_digest: "6aGt2dJb", session_token: "w5lrqZw1OE3MnzOgXdu_uw", bio: "Facere repudiandae consequuntur excepturi vel nobis rerum accusantium. Quia aspernatur consequatur odio numquam asperiores est. Sunt at omnis. Aliquam qui non mollitia rem autem eum et.", avatar_file_name: "60.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 4563, avatar_updated_at: "2018-05-18 18:49:31", latitude: 49.8874407, longitude: 2.3055844, city: "Amiens", country: "France", accepting_guests: true, address: nil},
+  {fname: "Owen", lname: "Hale", username: "amiya.haley", password_digest: "Po7s42Q1X20qM6", session_token: "qj5Kl-rFgzsP6wsIHEgacQ", bio: "Expedita tenetur aut ex ratione. Et maiores iusto adipisci omnis minima consequatur. Tempore error nulla consequatur perferendis temporibus ipsum laudantium.", avatar_file_name: "56.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 3733, avatar_updated_at: "2018-05-18 18:49:32", latitude: 31.5232308, longitude: -97.1722189, city: "Waco", country: "United States", accepting_guests: true, address: nil},
+  {fname: "Louane", lname: "Aubert", username: "kenyon.wilkinson", password_digest: "WaJtNqQg7", session_token: "gqESSyUnriLhwvf0zKPjvQ", bio: "Voluptatem in necessitatibus et consequatur saepe sunt. Aliquam ratione distinctio culpa voluptatum inventore sunt minima. Sunt ut dolorum quia quos quaerat. Possimus sed iusto est officia ea dolores.", avatar_file_name: "57.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 5874, avatar_updated_at: "2018-05-18 18:49:33", latitude: 48.828508, longitude: 2.2188068, city: "Saint-Cloud", country: "France", accepting_guests: false, address: nil},
+  {fname: "Paulina", lname: "Rutkowska", username: "ro", password_digest: "$2a$10$qb/owIgGwoxFImaGD8f2/OBtqgcw/mF5KLmihW91JhSMIH2/3qfZ2", session_token: "6d-a_vsXn-nxeVUxDgcSiw", bio: "En este 2017 con mi compañera y amor decidimos salir de las sierras de Córdoba Argentina, para recorrer el continente Europeo y Norte Africano. Ambos somos trabajadores del arte y la cultura, este viaje es una especie de peregrinación en que cada pasa es un enriquecimiento sobre cultura, paisaje e historia. Estamos produciendo obra y compartiendo. Personalmente me dedico mas al audiovisual y Lucía a la caracterización de personajes para obras de opera y para dibujo.", avatar_file_name: "83.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 4771, avatar_updated_at: "2018-05-18 18:49:33", latitude: 40.418639, longitude: -3.704602, city: "Madrid", country: "Spain", accepting_guests: true, address: nil},
+  {fname: "Robbie", lname: "Miles", username: "carey_stehr", password_digest: "$2a$10$5Y9CDkzFAH3Qm7zac00YNeKOxwfUMIR0zLJ5ENk4bgrWEPUxUTwey", session_token: "wVPJbapLPUdR0WdnpGgQ8Q", bio: "Ñaaaaaaaaaaaa!!!! Heeeello everyone!!! My name is Robbie and im 25. I'm from Spain but I currently live in streatham hill, London. I'm working as a registered nurse in a hospital making smile, helping and providing loveeee to people haha!!! I'm actually studing a degree in law at the same time for change the change in the world and try to help people in a bigger way! I'm a very happy, funny, positive, optimistic and social guy that always keeps his smile very high!!! :) I definitelly can not spend any second of my life doing nothing or not sharing a good moment with someone. I'm a very friendlyyy dude, lets just met and hang out so you can see whaaaat I am taaaalking abooouuuut! Love is always the answer!", avatar_file_name: "robbie.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 211502, avatar_updated_at: "2018-05-18 18:49:34", latitude: 5.092167, longitude: 1.317893, city: "Woodbridge", country: "United Kingdom", accepting_guests: true, address: nil},
+  {fname: "Hannah", lname: "Beck", username: "rocio.reichel", password_digest: "$2a$10$e7ogVobMVaybsr79LGgHNOLDle/73Tqy6XoUae6cUAKqgEUZU48iW", session_token: "P3WXvQTxHciXNPjYkOZGaQ", bio: "I'm and Austro-American who grew up in Austria. I spent my High School years in Tirana Albania where I also graduated, and met the love of my life. We both live in Rome, Italy together and I'm now starting to study Performing Arts in October. I love traveling, so when I heard about CouchSurfing I wanted to do my part to make traveling on low budget easier for everyone. We hope to meet lots of friendly new faces and be able to call as many as possible our friends. We'd be glad to hang out around town, go to museums, listen to live music, or just crack open a beer. Flexibility is important.I'm and Austro-American who grew up in Austria. I spent my High School years in Tirana Albania where I also graduated, and met the love of my life. We both live in Rome, Italy together and I'm now starting to study Performing Arts in October. I love traveling, so when I heard about CouchSurfing I wanted to do my part to make traveling on low budget easier for everyone. We hope to meet lots of friendly new faces and be able to call as many as possible our friends. We'd be glad to hang out around town, go to museums, listen to live music, or just crack open a beer. Flexibility is important.", avatar_file_name: "12.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 4067, avatar_updated_at: "2018-05-18 18:49:35", latitude: 48.178217, longitude: 16.326814, city: "Wien", country: "Austria", accepting_guests: true, address: nil},
+  {fname: "Wen Bo", lname: "Xie", username: "larue.powlowski", password_digest: "$2a$10$2XZHPGPF2fsse74I/qq5aOD0xckmo4qgFXI4NferZJ9FO32XW4dS.", session_token: "Nt18tXTwQtbvYQ2Q22B9jQ", bio: "I'm Wen Bo", avatar_file_name: "wenbo.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 36091, avatar_updated_at: "2018-05-18 18:49:35", latitude: 55.679553, longitude: 12.585516, city: "København", country: "Denmark", accepting_guests: false, address: nil},
+  {fname: "Kevin", lname: "Garvey", username: "major", password_digest: "$2a$10$6WiItW7DCekFJrJDCe8s6.82RGJqHiWWR4EQvZ3Iahro9Jc7mU2zm", session_token: "JJLsDGPmOM1D9fHqGNAe6w", bio: "I'm and Austro-American who grew up in Austria. I spent my High School years in Tirana Albania where I also graduated, and met the love of my life. We both live in Rome, Italy together and I'm now starting to study Performing Arts in October. I love traveling, so when I heard about CouchSurfing I wanted to do my part to make traveling on low budget easier for everyone. We hope to meet lots of friendly new faces and be able to call as many as possible our friends. We'd be glad to hang out around town, go to museums, listen to live music, or just crack open a beer. Flexibility is important.I'm and Austro-American who grew up in Austria. I spent my High School years in Tirana Albania where I also graduated, and met the love of my life. We both live in Rome, Italy together and I'm now starting to study Performing Arts in October. I love traveling, so when I heard about CouchSurfing I wanted to do my part to make traveling on low budget easier for everyone. We hope to meet lots of friendly new faces and be able to call as many as possible our friends. We'd be glad to hang out around town, go to museums, listen to live music, or just crack open a beer. Flexibility is important.", avatar_file_name: "37.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 5084, avatar_updated_at: "2018-05-18 18:49:36", latitude: 43.124499, longitude: -78.799183, city: "Lockport", country: "United States", accepting_guests: true, address: nil},
+  {fname: "James", lname: "Somers", username: "francisca_oreilly", password_digest: "$2a$10$gTD0xFYNacMFQFqSLSejz..RYZ8uPGkcK6DlAvd8jg7qiUJVxDbuC", session_token: "8vJckqDvXcZc6Qcb-1K8JA", bio: "We live on a farm in the Napa Valley. We have sheep, chickens, rabbits, turkeys, Australian Cattle Dogs, cats and one goofy Labradoodle. We have a large vegetable garden, fruit and nut trees and a Cabernet Sauvignon vineyard. We sell produce from the farm directly and give away any oversupply to the local food bank. We welcome day visitors to the farm and love sharing this beautiful area with cityfolk. Kirsten (thats's me)is a massage thearpist which allows her time to do lots of other things in life like farming and volunteering on the board of the Napa Valley Marathon. Ron has recently relocated to Napa from Reno. He has a business background and is now trying to figure out what he wants to be in his new life.\nOur dogs are our children although we enjoy visits from our nieces and any other children who would like to experience the farm.", avatar_file_name: "5.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 3249, avatar_updated_at: "2018-05-18 18:49:36", latitude: 43.703215, longitude: -79.403278, city: "Toronto", country: "Canada", accepting_guests: true, address: nil}
+])
