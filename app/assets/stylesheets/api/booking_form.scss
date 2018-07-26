@@ -10,7 +10,7 @@
 }
 
 .active {
-    height: 460px;
+    height: 550px;
 }
 
 .inactive {
@@ -31,6 +31,16 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+    }
+
+    .booking-errors {
+        color: rgb(253, 69, 69);
+        margin-bottom: 0;
+        
+        p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
     }
 
     .booking-form__date,

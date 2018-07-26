@@ -18,10 +18,6 @@ class BookingsForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   this.setState(newProps.booking);
-  // }
-
   closeDropdown() {
     this.props.closeDropdown();
   }
@@ -44,7 +40,9 @@ class BookingsForm extends React.Component {
     const {errors} = this.props;
     if (errors.length){
       return (
-        <p>{errors}</p>
+        <p className="booking-errors">
+          {errors.map(error => <p>{error}</p> )}
+        </p>
       );
     } else {
       return null;

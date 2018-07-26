@@ -1,7 +1,5 @@
 import * as APIUtil from '../util/booking_api_util';
-import {
-  receiveErrors
-} from './error_actions';
+import { receiveErrors } from './error_actions';
 
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_CURRENT_BOOKING = 'RECEIVE_CURRENT_BOOKING';
@@ -49,7 +47,8 @@ export const fetchSingleBooking = id => dispatch => {
 
 export const createBooking = booking => dispatch => (
   APIUtil.createBooking(booking)
-  .then(confirmation => dispatch(receiveCurrentBooking(confirmation)), (err) => dispatch(receiveErrors(err.responseJSON))));
+  .then(confirmation => dispatch(receiveCurrentBooking(confirmation)), 
+    (err) => dispatch(receiveErrors(err.responseJSON))));
 
 export const deleteBooking = bookingId => dispatch => {
   return APIUtil.deleteBooking(bookingId)
