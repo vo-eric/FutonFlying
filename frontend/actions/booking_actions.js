@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/booking_api_util';
-import { receiveErrors } from './error_actions';
+import { receiveErrors,clearErrors } from './error_actions';
 
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_CURRENT_BOOKING = 'RECEIVE_CURRENT_BOOKING';

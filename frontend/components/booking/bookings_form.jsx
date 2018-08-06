@@ -33,7 +33,11 @@ class BookingsForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let booking = this.state.formInfo;
-    this.props.createBooking(booking);
+    this.props.createBooking(booking).then(() => {
+      if (!this.state.errors) {
+        this.props.history.push('/');
+      }
+    });
   }
 
   renderErrors() {
@@ -99,7 +103,7 @@ class BookingsForm extends React.Component {
             onClick={this.handleSubmit}
             className='booking-form-button'>
             Send
-            </button>
+          </button>
         </div>
       </div>
     );

@@ -51,7 +51,7 @@ class Bookings extends React.Component {
   render() {
     if (this.props.formType === "bookings") {
       let bookings;
-        if (this.props.bookings.length) {
+        if (this.props.bookings.length !== 0) {
           bookings = (
             <section className="bookings-list">
               {Object.values(this.props.bookings[0]).map((booking) => {
@@ -69,7 +69,7 @@ class Bookings extends React.Component {
           );
         } else {
           bookings = (
-            <div className="bookings-list">
+            <div className="bookings-list-none">
               You don't have any bookings
             </div>
           );
@@ -77,12 +77,12 @@ class Bookings extends React.Component {
       return bookings;
     } else if (this.props.formType === "hostings") {
       let hostings;
-      if (this.props.bookings.length) {
+      if (this.props.bookings[1]) {
+        debugger
         hostings = (
           <section className="bookings-list">
             {Object.values(this.props.bookings[1]).map((hosting) => {
-              return (
-                [
+              return ([
                 <div className="booking">
                   {this.renderBookingsTemplate(hosting)}
                 </div>,
@@ -94,7 +94,7 @@ class Bookings extends React.Component {
         );
       } else {
         hostings = (
-          <div className="hostings-list">
+          <div className="hostings-list-none">
             You don't have any hostings
             </div>
         );

@@ -2,7 +2,8 @@ import {
   RECEIVE_BOOKINGS,
   RECEIVE_CURRENT_BOOKING,
   RECEIVE_ERRORS,
-  REMOVE_BOOKING
+  REMOVE_BOOKING,
+  CLEAR_ERRORS
 } from '../actions/booking_actions';
 
 const BookingReducer = (state = {}, action) => {

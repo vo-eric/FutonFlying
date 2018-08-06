@@ -122,5 +122,10 @@
         text-align: center;
         background: #fbfcfc;
         border-bottom: 2px solid #bfcad2;
+        
+        .hostings-list-none,
+        .bookings-list-none {
+            padding: 20px;
+        }    
     }
 }

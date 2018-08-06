@@ -23,7 +23,6 @@ class Dashboard extends React.Component {
     }
   }
 
-  //add option to expand on click
   render () {
     let user = this.props.user;
     return(
